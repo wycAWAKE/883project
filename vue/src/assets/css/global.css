@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Arial, sans-serif;
+}
+
+html,
+body,
+#app {
+    min-height: 100%;
+}
+
+body {
+    color: #182233;
+    background:
+        radial-gradient(circle at 12% 10%, rgba(73, 140, 255, 0.12), transparent 28%),
+        linear-gradient(135deg, #f6f9ff 0%, #eef4ff 48%, #f7faf8 100%);
+    overflow: hidden;
+}
+
+:root {
+    --brand: #2f74e8;
+    --brand-dark: #1d4f9d;
+    --brand-soft: #e8f1ff;
+    --accent: #19a88b;
+    --warning: #f3aa2a;
+    --danger: #e85d5d;
+    --ink: #182233;
+    --muted: #69788f;
+    --line: #dfe7f3;
+    --surface: rgba(255, 255, 255, 0.92);
+    --shadow: 0 18px 45px rgba(25, 54, 96, 0.10);
+}
+
+.os-theme-zijin {
+    --os-size: 10px;
+    --os-padding-perpendicular: 2px;
+    --os-padding-axis: 4px;
+    --os-track-border-radius: 999px;
+    --os-track-bg: rgba(232, 241, 255, 0.76);
+    --os-track-bg-hover: rgba(215, 230, 251, 0.92);
+    --os-track-bg-active: rgba(198, 219, 244, 1);
+    --os-handle-border-radius: 999px;
+    --os-handle-bg: rgba(47, 116, 232, 0.64);
+    --os-handle-bg-hover: rgba(25, 168, 139, 0.78);
+    --os-handle-bg-active: var(--accent);
+    --os-handle-min-size: 44px;
+    --os-handle-interactive-area-offset: 4px;
+}
+
+.os-scrollbar-horizontal.os-theme-zijin {
+    --os-size: 9px;
+}
+
+[data-overlayscrollbars-viewport] {
+    overscroll-behavior: contain;
+}
+
+.el-table {
+    width: 100%;
+}
+
+.el-card {
+    border: 1px solid rgba(222, 232, 246, 0.92) !important;
+    border-radius: 8px !important;
+    box-shadow: var(--shadow) !important;
+    background: var(--surface) !important;
+}
+
+.el-card__body {
+    padding: 22px !important;
+}
+
+.el-breadcrumb {
+    padding: 14px 18px 0;
+    margin: 0 !important;
+    color: var(--muted);
+}
+
+.el-button {
+    border-radius: 6px !important;
+    font-weight: 600;
+}
+
+.el-button--primary {
+    border-color: var(--brand) !important;
+    background: linear-gradient(135deg, #3a86ff, #2f74e8) !important;
+}
+
+.el-button--danger {
+    border-color: var(--danger) !important;
+    background: linear-gradient(135deg, #f37474, #e85d5d) !important;
+}
+
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+    border-radius: 6px !important;
+    box-shadow: 0 0 0 1px var(--line) inset !important;
+}
+
+.el-input__wrapper:hover,
+.el-select__wrapper:hover,
+.el-textarea__inner:hover {
+    box-shadow: 0 0 0 1px #b7c9ea inset !important;
+}
+
+.el-table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.el-table th.el-table__cell {
+    background: #f2f6fc !important;
+    color: #273851;
+    font-weight: 700;
+}
+
+.el-table .el-table__row:hover > td.el-table__cell {
+    background: #f7fbff !important;
+}
+
+.el-dialog {
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.el-dialog__header {
+    padding: 18px 22px !important;
+    border-bottom: 1px solid var(--line);
+    margin: 0 !important;
+}
+
+.el-dialog__body {
+    padding: 22px !important;
+}
+
+.el-pagination {
+    margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+    body {
+        min-width: 0;
+    }
+
+    .el-card {
+        margin: 10px !important;
+        min-height: auto !important;
+    }
+
+    .el-card__body {
+        overflow-x: auto;
+        padding: 14px !important;
+    }
+
+    .el-form-item {
+        display: block;
+    }
+
+    .el-input,
+    .el-select,
+    .el-date-editor,
+    .el-input-number {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .el-dialog {
+        width: 92% !important;
+    }
+
+    .el-pagination {
+        white-space: normal;
+        justify-content: flex-start;
+    }
+
+    .el-table {
+        font-size: 13px;
+    }
+}

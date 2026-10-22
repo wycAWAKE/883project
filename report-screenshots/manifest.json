@@ -1,0 +1,194 @@
+[
+  {
+    "name": "01-login",
+    "title": "登录界面",
+    "role": null,
+    "path": "/Login",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/01-login.png"
+  },
+  {
+    "name": "02-admin-home",
+    "title": "管理员-首页看板",
+    "role": "admin",
+    "path": "/home",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/02-admin-home.png"
+  },
+  {
+    "name": "03-admin-students",
+    "title": "管理员-学生信息管理",
+    "role": "admin",
+    "path": "/stuInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/03-admin-students.png"
+  },
+  {
+    "name": "04-admin-dorm-managers",
+    "title": "管理员-宿管信息管理",
+    "role": "admin",
+    "path": "/dormManagerInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/04-admin-dorm-managers.png"
+  },
+  {
+    "name": "05-admin-buildings",
+    "title": "管理员-楼宇信息管理",
+    "role": "admin",
+    "path": "/buildingInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/05-admin-buildings.png"
+  },
+  {
+    "name": "06-admin-rooms",
+    "title": "管理员-房间床位管理",
+    "role": "admin",
+    "path": "/roomInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/06-admin-rooms.png"
+  },
+  {
+    "name": "07-admin-notices",
+    "title": "管理员-公告信息管理",
+    "role": "admin",
+    "path": "/noticeInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/07-admin-notices.png"
+  },
+  {
+    "name": "08-admin-permissions",
+    "title": "管理员-权限说明",
+    "role": "admin",
+    "path": "/permissionInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/08-admin-permissions.png"
+  },
+  {
+    "name": "09-dorm-repair",
+    "title": "宿舍管理员-报修信息处理",
+    "role": "dormManager",
+    "path": "/repairInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/09-dorm-repair.png"
+  },
+  {
+    "name": "10-dorm-adjust",
+    "title": "宿舍管理员-调宿申请审核",
+    "role": "dormManager",
+    "path": "/adjustRoomInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/10-dorm-adjust.png"
+  },
+  {
+    "name": "11-dorm-visitor",
+    "title": "宿舍管理员-访客登记管理",
+    "role": "dormManager",
+    "path": "/visitorInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/11-dorm-visitor.png"
+  },
+  {
+    "name": "12-student-room",
+    "title": "学生-我的宿舍",
+    "role": "stu",
+    "path": "/myRoomInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/12-student-room.png"
+  },
+  {
+    "name": "13-student-repair",
+    "title": "学生-报修申请",
+    "role": "stu",
+    "path": "/applyRepairInfo",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/13-student-repair.png"
+  },
+  {
+    "name": "14-student-change-room",
+    "title": "学生-申请调宿",
+    "role": "stu",
+    "path": "/applyChangeRoom",
+    "viewport": {
+      "width": 1366,
+      "height": 768,
+      "scale": 1
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/14-student-change-room.png"
+  },
+  {
+    "name": "15-mobile-home",
+    "title": "手机端-首页适配",
+    "role": "stu",
+    "path": "/home",
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 2
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/15-mobile-home.png"
+  },
+  {
+    "name": "16-mobile-repair",
+    "title": "手机端-报修申请适配",
+    "role": "stu",
+    "path": "/applyRepairInfo",
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 2
+    },
+    "file": "/Users/cuing/javascript/dormitory-coursework/dormitory-manager/report-screenshots/16-mobile-repair.png"
+  }
+]

@@ -1,0 +1,92 @@
+.wv-lt-refresh {
+    display: none;
+}
+
+.topInfo {
+    margin: 0 auto;
+}
+
+.el-colDiv {
+    margin: 20px auto;
+    max-width: 340px;
+    min-width: 200px;
+    overflow: hidden;
+    min-height: 128px;
+    border-radius: 8px;
+    color: white;
+    padding: 18px;
+    position: relative;
+    box-shadow: 0 18px 36px rgba(24, 34, 51, 0.14);
+}
+
+.el-colDiv::after {
+    content: "";
+    position: absolute;
+    right: -28px;
+    bottom: -34px;
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.nowDiv {
+    min-width: 44px;
+    height: 22px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.20) !important;
+    z-index: 1;
+}
+
+.digital {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: normal;
+    margin-left: 2px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.last-span {
+    font-size: 13px;
+    opacity: 0.82;
+}
+
+#stuNumDiv {
+    background: linear-gradient(135deg, #2f74e8, #22519d);
+}
+
+#haveRoomDiv {
+    background: linear-gradient(135deg, #19a88b, #0e7569);
+}
+
+#repairNum {
+    background: linear-gradient(135deg, #f3aa2a, #e47f31);
+}
+
+#emptyRoom {
+    background: linear-gradient(135deg, #7a66e8, #4e77d9);
+}
+
+@media (max-width: 768px) {
+    .topInfo :deep(.el-col) {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .el-colDiv {
+        margin: 10px 0;
+        max-width: none;
+        min-height: 110px;
+    }
+}
