@@ -1,0 +1,78 @@
+/out/
+!.mvn/wrapper/maven-wrapper.jar
+*.zip
+*.docs
+.DS_Store
+/springboot/target/
+/vue/dist/
+/vue/node_modules/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Dependencies and generated build output
+node_modules/
+target/
+dist/
+coverage/
+.vite/
+.cache/
+*.class
+
+# Local editor settings
+.vscode/
+*.suo
+*.swp
+*.swo
+*~
+
+# Runtime logs and temporary files
+logs/
+*.log
+*.pid
+*.pid.lock
+*.hprof
+*.tmp
+*.temp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local environment and private overrides; keep shareable examples
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+!.env.template
+application-local.properties
+application-local.yml
+application-local.yaml
+application-*.local.properties
+application-*.local.yml
+application-*.local.yaml
+
+# Operating system metadata
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
