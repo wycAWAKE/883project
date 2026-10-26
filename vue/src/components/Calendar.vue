@@ -1,7 +1,7 @@
 <template>
   <div class="calendar">
     <section class="header">
-      {{ selectData.year }}年{{ selectData.month }}月{{ selectData.day }}日
+      {{ monthNames[selectData.month - 1] }} {{ selectData.day }}, {{ selectData.year }}
     </section>
     <ul class="week-area">
       <li v-for="(item, index) in weekArr" :key="index" class="week-item">
@@ -73,7 +73,8 @@ export default {
   name: "calender",
   data() {
     return {
-      weekArr: ["日", "一", "二", "三", "四", "五", "六"], // 星期数组
+      monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      weekArr: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], // 星期数组
       dataArr: [], // 当前可视区域数据
       allDataArr: [], // 轮播数组
       selectData: {}, // 选中日期信息 -> year, month, day
@@ -470,10 +471,11 @@ export default {
 
 .calendar-item {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  max-width: 100%;
+  height: 32px;
   text-align: center;
-  line-height: 40px;
+  line-height: 32px;
 }
 
 .selected .calendar-item {
@@ -488,6 +490,7 @@ export default {
 }
 
 .week-item {
+  min-width: 0;
   height: 45px;
   flex: 0 0 14.285%;
   display: flex;

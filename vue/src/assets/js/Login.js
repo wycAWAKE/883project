@@ -1,3 +1,4 @@
+import { displayMessage } from "@/utils/english";
 import request from "@/utils/request";
 
 import { ElMessage } from 'element-plus';
@@ -13,10 +14,10 @@ export default {
             },
             rules: {
                 username: [
-                    {required: true, message: "请输入用户名", trigger: "blur"},
+                    {required: true, message: "Enter a username", trigger: "blur"},
                 ],
-                password: [{required: true, message: "请输入密码", trigger: "blur"}],
-                identity: [{required: true, message: "请选择身份", trigger: "blur"}],
+                password: [{required: true, message: "Enter a password", trigger: "blur"}],
+                identity: [{required: true, message: "Select a role", trigger: "blur"}],
             },
         };
     },
@@ -35,7 +36,7 @@ export default {
                     request.post("/" + this.identity + "/login", this.form).then((res) => {
                         if (res.code === "0") {
                             ElMessage({
-                                message: "登陆成功",
+                                message: "Signed in successfully.",
                                 type: "success",
                             });
                             // 登陆成功跳转主页
@@ -45,7 +46,7 @@ export default {
                             this.$router.replace({path: "/home"});
                         } else {
                             ElMessage({
-                                message: res.msg,
+                                message: displayMessage(res.msg),
                                 type: "error",
                             });
                         }

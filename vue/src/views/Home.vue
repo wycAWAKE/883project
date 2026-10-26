@@ -5,34 +5,34 @@
       <el-row :gutter="20" class="topInfo">
         <el-col :span="6">
           <div id="stuNumDiv" class="el-colDiv">
-            <div id="ssv1-main-text" class="nowDiv">实时</div>
-            <span class="title">学生统计</span><br/>
+            <div id="ssv1-main-text" class="nowDiv">Live</div>
+            <span class="title">Students</span><br/>
             <span class="digital">{{ this.studentNum }}</span><br/>
-            <span class="last-span">当前分类总记录数</span>
+            <span class="last-span">Total records</span>
           </div>
         </el-col>
         <el-col :span="6">
           <div id="haveRoomDiv" class="el-colDiv">
-            <div id="ssv2-main-text" class="nowDiv">实时</div>
-            <span class="title">住宿人数</span><br/>
+            <div id="ssv2-main-text" class="nowDiv">Live</div>
+            <span class="title">Residents</span><br/>
             <span class="digital">{{ this.haveRoomStudentNum }}</span><br/>
-            <span class="last-span">当前分类总记录数</span>
+            <span class="last-span">Total records</span>
           </div>
         </el-col>
         <el-col :span="6">
           <div id="repairNum" class="el-colDiv">
-            <div id="ssv3-main-text" class="nowDiv">实时</div>
-            <span class="title">报修统计</span><br/>
+            <div id="ssv3-main-text" class="nowDiv">Live</div>
+            <span class="title">Maintenance Requests</span><br/>
             <span class="digital">{{ this.repairOrderNum }}</span><br/>
-            <span class="last-span">当前分类总记录数</span>
+            <span class="last-span">Total records</span>
           </div>
         </el-col>
         <el-col :span="6">
           <div id="emptyRoom" class="el-colDiv">
-            <div id="ssv4-main-text" class="nowDiv">实时</div>
-            <span class="title">空宿舍统计</span><br/>
+            <div id="ssv4-main-text" class="nowDiv">Live</div>
+            <span class="title">Rooms with Vacancies</span><br/>
             <span class="digital">{{ this.noFullRoomNum }}</span><br/>
-            <span class="last-span">当前分类总记录数</span>
+            <span class="last-span">Total records</span>
           </div>
         </el-col>
       </el-row>
@@ -41,7 +41,7 @@
     <div class="home-grid">
       <!--   左侧 宿舍通告-->
       <div class="home-panel">
-        <span class="section-title">宿舍通告</span>
+        <span class="section-title">Announcements</span>
         <el-timeline>
           <el-timeline-item v-for="(activity, index) in activities.slice(0, 8)" :key="index"
                             :timestamp="activity.releaseTime">
@@ -51,13 +51,12 @@
       </div>
       <!--   中部-->
       <div class="home-panel chart-panel">
-        <span class="section-title">宿舍学生人数分布图</span>
+        <span class="section-title">Residents by Building</span>
         <home_echarts/>
       </div>
       <!--  右侧-->
       <div class="home-side">
         <!--   天气组件-->
-        <weather/>
         <!--    日历组件-->
         <el-card class="calendar-card">
           <Calender/>

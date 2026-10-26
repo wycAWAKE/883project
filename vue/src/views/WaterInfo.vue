@@ -1,9 +1,9 @@
 <template>
   <div>
     <el-breadcrumb separator-icon="ArrowRight" style="margin: 16px">
-      <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>水电费管理</el-breadcrumb-item>
-      <el-breadcrumb-item>水费管理</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/home' }">Home</el-breadcrumb-item>
+      <el-breadcrumb-item>Utilities</el-breadcrumb-item>
+      <el-breadcrumb-item>Water Charges</el-breadcrumb-item>
     </el-breadcrumb>
     <el-card style="margin: 15px; min-height: calc(100vh - 111px)">
       <div>
@@ -14,9 +14,9 @@
             <el-date-picker
               v-model="date"
               type="datetimerange"
-              range-separator="至"
-              start-placeholder="开始日期"
-              end-placeholder="结束日期"
+              range-separator="to"
+              start-placeholder="Start date"
+              end-placeholder="End date"
             >
             </el-date-picker>
             <el-button
@@ -32,7 +32,7 @@
               @click="reset"
             ></el-button>
             <div style="float: right">
-              <el-tooltip content="添加" placement="top">
+              <el-tooltip content="Add" placement="top">
                 <el-button
                   icon="plus"
                   style="width: 50px"
@@ -52,12 +52,12 @@
           style="width: 100%"
         >
           <el-table-column label="#" type="index" />
-          <el-table-column label="操作类型" prop="type" />
-          <el-table-column label="金额" prop="money" />
-          <el-table-column label="操作人" prop="operatorName" sortable />
-          <el-table-column label="日期" prop="date" sortable />
+          <el-table-column min-width="140" label="Transaction Type" prop="type" :formatter="$enCell" />
+          <el-table-column min-width="140" label="Amount" prop="money" />
+          <el-table-column min-width="140" label="Operator" prop="operatorName" sortable />
+          <el-table-column min-width="140" label="Date" prop="date" sortable />
           <!--      操作栏-->
-          <el-table-column label="操作">
+          <el-table-column min-width="140" label="Actions">
             <template #default="scope">
               <el-button
                 icon="more-filled"
@@ -88,10 +88,10 @@
             width="30%"
             @close="cancel"
           >
-            <el-form ref="form" :model="form" label-width="120px">
-              <el-form-item label="类型" prop="type">
+            <el-form ref="form" :model="form" label-width="auto">
+              <el-form-item label="Type" prop="type">
                 <el-input
-                  v-model="form.type"
+                  :model-value="$en(form.type)"
                   disabled
                   clearable
                   style="width: 80%"
@@ -99,7 +99,7 @@
               </el-form-item>
 
               <el-form-item
-                label="宿舍号"
+                label="Room No."
                 v-if="role != 'stu' || disabled"
                 prop="roomid"
               >
@@ -110,7 +110,7 @@
                   style="width: 80%"
                 ></el-input>
               </el-form-item>
-              <el-form-item label="金额" prop="money">
+              <el-form-item label="Amount" prop="money">
                 <el-input-number
                   :disabled="disabled"
                   v-model="form.money"
@@ -122,7 +122,7 @@
                 ></el-input-number>
               </el-form-item>
 
-              <el-form-item label="操作人" v-if="disabled" prop="operatorName">
+              <el-form-item label="Operator" v-if="disabled" prop="operatorName">
                 <el-input
                   v-model="form.operatorName"
                   disabled
@@ -130,25 +130,25 @@
                   style="width: 80%"
                 ></el-input>
               </el-form-item>
-              <el-form-item v-if="disabled" label="操作时间">
+              <el-form-item v-if="disabled" label="Recorded At">
                 <el-date-picker
                   disabled
                   v-model="form.date"
                   type="date"
-                  placeholder="选择日期"
+                  placeholder="Select a date"
                   style="width: 80%"
                 >
                 </el-date-picker>
               </el-form-item>
             </el-form>
             <span v-if="!disabled" style="color: red"
-              >**注意：请按照线下缴费，线上办理的方式进行</span
+              >Record payments here after completing payment in person.</span
             >
             <template #footer>
               <span class="dialog-footer">
-                <el-button @click="cancel">取 消</el-button>
+                <el-button @click="cancel">Cancel</el-button>
                 <el-button v-if="!disabled" type="primary" @click="save"
-                  >确 定</el-button
+                  >Confirm</el-button
                 >
               </span>
             </template>

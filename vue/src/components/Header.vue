@@ -2,7 +2,7 @@
   <div class="header-bar">
     <div class="system-title">
       <span class="title-mark">DM</span>
-      <span>高校宿舍管理系统</span>
+      <span>Dormitory Management System</span>
     </div>
     <!-- <Clock style="font-size: 20px;position: absolute;left: 50%;overflow: hidden;"/> -->
     <div style="flex: 1"></div>
@@ -11,16 +11,14 @@
         <span class="el-dropdown-link">
           <span class="avatar-dot">
             <el-icon :size="18"><avatar /></el-icon>
-          </span>
-          个人中心
-          <el-icon class="el-icon--right"><arrow-down /></el-icon>
+          </span>Account<el-icon class="el-icon--right"><arrow-down /></el-icon>
         </span>
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item @click="selfInfoManage"
-              >个人信息</el-dropdown-item
+              >My Profile</el-dropdown-item
             >
-            <el-dropdown-item @click="SignOut">退出登录</el-dropdown-item>
+            <el-dropdown-item @click="SignOut">Sign Out</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -50,7 +48,7 @@ export default {
       sessionStorage.clear()
       request.get('/main/signOut')
       ElMessage({
-        message: '用户退出登录',
+        message: "Signed out successfully.",
         type: 'success',
       })
       this.$router.replace({ path: '/Login' })
@@ -83,9 +81,9 @@ export default {
 }
 
 .system-title {
-  width: 260px;
+  width: auto;
   margin-left: 18px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   color: #182233;
   display: flex;
@@ -94,6 +92,7 @@ export default {
 }
 
 .title-mark {
+  flex-shrink: 0;
   width: 36px;
   height: 36px;
   display: inline-flex;

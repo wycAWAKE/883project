@@ -1,5 +1,7 @@
+import { displayMessage } from "@/utils/english";
 import request from "@/utils/request";
 import E from "wangeditor";
+import i18next from "i18next";
 
 import { ElMessage } from 'element-plus';
 let editor;
@@ -30,10 +32,10 @@ export default {
                 releaseTime: "",
             },
             rules: {
-                title: [{required: true, message: "请输入标题", trigger: "blur"}],
-                content: [{required: true, message: "请输入内容", trigger: "blur"}],
+                title: [{required: true, message: "Enter a title", trigger: "blur"}],
+                content: [{required: true, message: "Enter details", trigger: "blur"}],
                 releaseTime: [
-                    {required: true, message: "请选择时间", trigger: "blur"},
+                    {required: true, message: "Select a date and time", trigger: "blur"},
                 ],
             },
         };
@@ -100,6 +102,11 @@ export default {
                 this.$refs.form.resetFields();
                 //加载wangEdit
                 editor = new E("#div1");
+                editor.config.lang = "en";
+                editor.config.height = 240;
+                editor.config.fontNames = ["Arial", "Verdana", "Georgia", "Times New Roman"];
+                editor.config.placeholder = "Enter announcement details";
+                editor.i18next = i18next.createInstance();
                 editor.create();
                 this.disabled = false;
                 this.form = {};
@@ -118,7 +125,7 @@ export default {
                             console.log(res);
                             if (res.code === "0") {
                                 ElMessage({
-                                    message: "新增成功",
+                                    message: "Added successfully.",
                                     type: "success",
                                 });
                                 this.search = "";
@@ -126,7 +133,7 @@ export default {
                                 this.dialogVisible = false;
                             } else {
                                 ElMessage({
-                                    message: res.msg,
+                                    message: displayMessage(res.msg),
                                     type: "error",
                                 });
                             }
@@ -137,7 +144,7 @@ export default {
                             console.log(res);
                             if (res.code === "0") {
                                 ElMessage({
-                                    message: "修改成功",
+                                    message: "Updated successfully.",
                                     type: "success",
                                 });
                                 this.search = "";
@@ -145,7 +152,7 @@ export default {
                                 this.dialogVisible = false;
                             } else {
                                 ElMessage({
-                                    message: res.msg,
+                                    message: displayMessage(res.msg),
                                     type: "error",
                                 });
                             }
@@ -168,6 +175,11 @@ export default {
                 this.$refs.form.resetFields();
                 //加载wangEdit
                 editor = new E("#div1");
+                editor.config.lang = "en";
+                editor.config.height = 240;
+                editor.config.fontNames = ["Arial", "Verdana", "Georgia", "Times New Roman"];
+                editor.config.placeholder = "Enter announcement details";
+                editor.i18next = i18next.createInstance();
                 editor.create();
                 // 生拷贝
                 this.form = JSON.parse(JSON.stringify(row));
@@ -180,14 +192,14 @@ export default {
             request.delete("/notice/delete/" + id).then((res) => {
                 if (res.code === "0") {
                     ElMessage({
-                        message: "删除成功",
+                        message: "Deleted successfully.",
                         type: "success",
                     });
                     this.search = "";
                     this.load();
                 } else {
                     ElMessage({
-                        message: res.msg,
+                        message: displayMessage(res.msg),
                         type: "error",
                     });
                 }

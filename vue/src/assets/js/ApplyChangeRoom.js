@@ -1,3 +1,4 @@
+import { displayMessage, namePattern } from "@/utils/english";
 import request from '@/utils/request'
 
 import { ElMessage } from 'element-plus'
@@ -10,16 +11,16 @@ export default {
         request.get('/room/checkRoomState/' + value).then((res) => {
           request.get('/room/checkRoomExist/' + value).then((result) => {
             if (result.code === '-1') {
-              callback(new Error(result.msg))
+              callback(new Error(displayMessage(result.msg)))
             }
             if (res.code === '-1') {
-              callback(new Error(res.msg))
+              callback(new Error(displayMessage(res.msg)))
             }
             callback()
           })
         })
       } else {
-        callback(new Error('请输入正确的数据'))
+        callback(new Error("Enter a valid value"))
       }
     }
     const checkBedState = (rule, value, callback) => {
@@ -29,7 +30,7 @@ export default {
           if (res.code === '0') {
             callback()
           } else {
-            callback(new Error(res.msg))
+            callback(new Error(displayMessage(res.msg)))
           }
         })
     }
@@ -48,26 +49,26 @@ export default {
       judgeOption: false,
       rules: {
         username: [
-          { required: true, message: '请输入学号', trigger: 'blur' },
+          { required: true, message: "Enter a student ID", trigger: 'blur' },
           {
             pattern: /^[a-zA-Z0-9]{4,9}$/,
-            message: '必须由 2 到 5 个字母或数字组成',
+            message: "Use 4 to 9 letters or digits",
             trigger: 'blur',
           },
         ],
         name: [
-          { required: true, message: '请输入姓名', trigger: 'blur' },
+          { required: true, message: "Enter a name", trigger: 'blur' },
           {
-            pattern: /^(?:[\u4E00-\u9FA5·]{2,10})$/,
-            message: '必须由 2 到 10 个汉字组成',
+            pattern: namePattern,
+            message: "Use 1 to 50 letters, spaces, hyphens, apostrophes or Chinese characters",
             trigger: 'blur',
           },
         ],
         currentRoomId: [
-          { required: true, message: '请输入当前房间号', trigger: 'blur' },
+          { required: true, message: "Enter the current room number", trigger: 'blur' },
         ],
         currentBedId: [
-          { required: true, message: '请输入当前床位号', trigger: 'blur' },
+          { required: true, message: "Enter the current bed number", trigger: 'blur' },
         ],
         towardsRoomId: [{ validator: checkRoomState, trigger: 'blur' }],
         towardsBedId: [{ validator: checkBedState, trigger: 'blur' }],
@@ -145,7 +146,7 @@ export default {
               .then((res) => {
                 if (res.code === '0') {
                   ElMessage({
-                    message: '修改成功',
+                    message: "Updated successfully.",
                     type: 'success',
                   })
                   this.search = ''
@@ -153,7 +154,7 @@ export default {
                   this.dialogVisible = false
                 } else if (res.msg === '重复操作') {
                   ElMessage({
-                    message: res.msg,
+                    message: displayMessage(res.msg),
                     type: 'error',
                   })
                   this.search = ''
@@ -161,7 +162,7 @@ export default {
                   this.dialogVisible = false
                 } else {
                   ElMessage({
-                    message: res.msg,
+                    message: displayMessage(res.msg),
                     type: 'error',
                   })
                 }
@@ -171,7 +172,7 @@ export default {
             request.post('/adjustRoom/add', this.form).then((res) => {
               if (res.code === '0') {
                 ElMessage({
-                  message: '添加成功',
+                  message: "Added successfully.",
                   type: 'success',
                 })
                 this.search = ''
@@ -179,7 +180,7 @@ export default {
                 this.dialogVisible = false
               } else {
                 ElMessage({
-                  message: res.msg,
+                  message: displayMessage(res.msg),
                   type: 'error',
                 })
               }

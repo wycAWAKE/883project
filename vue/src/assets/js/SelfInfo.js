@@ -1,3 +1,4 @@
+import { displayMessage, namePattern } from "@/utils/english";
 import request from "@/utils/request";
 
 import { ElMessage } from 'element-plus';
@@ -8,32 +9,32 @@ export default {
         const checkPhone = (rule, value, callback) => {
             const phoneReg = /^1[3|4|5|6|7|8][0-9]{9}$/;
             if (!value) {
-                return callback(new Error("电话号码不能为空"));
+                return callback(new Error("Enter a phone number"));
             }
             setTimeout(() => {
                 if (!Number.isInteger(+value)) {
-                    callback(new Error("请输入数字值"));
+                    callback(new Error("Enter a number"));
                 } else {
                     if (phoneReg.test(value)) {
                         callback();
                     } else {
-                        callback(new Error("电话号码格式不正确"));
+                        callback(new Error("Enter a valid phone number"));
                     }
                 }
             }, 100);
         };
         const checkPass = (rule, value, callback) => {
             if (!this.editJudge) {
-                console.log("验证");
+                console.log("Validate");
                 if (value == "") {
-                    callback(new Error("请再次输入密码"));
+                    callback(new Error("Enter the password again"));
                 } else if (value !== this.form.password) {
-                    callback(new Error("两次输入密码不一致!"));
+                    callback(new Error("Passwords do not match."));
                 } else {
                     callback();
                 }
             } else {
-                console.log("不验证");
+                console.log("Skip Validation");
                 callback();
             }
         };
@@ -62,41 +63,41 @@ export default {
             },
             rules: {
                 username: [
-                    {required: true, message: "请输入账号", trigger: "blur"},
+                    {required: true, message: "Enter a username", trigger: "blur"},
                     {
                         pattern: /^[a-zA-Z0-9]{4,9}$/,
-                        message: "必须由 4 到 9 个字母或数字组成",
+                        message: "Use 4 to 9 letters or digits",
                         trigger: "blur",
                     },
                 ],
                 name: [
-                    {required: true, message: "请输入姓名", trigger: "blur"},
+                    {required: true, message: "Enter a name", trigger: "blur"},
                     {
-                        pattern: /^(?:[\u4E00-\u9FA5·]{2,10})$/,
-                        message: "必须由 2 到 10 个汉字组成",
+                        pattern: namePattern,
+                        message: "Use 1 to 50 letters, spaces, hyphens, apostrophes or Chinese characters",
                         trigger: "blur",
                     },
                 ],
-                gender: [{required: true, message: "请选择性别", trigger: "change"}],
+                gender: [{required: true, message: "Select a gender", trigger: "change"}],
                 age: [
-                    {required: true, message: "请输入年龄", trigger: "blur"},
-                    {type: "number", message: "年龄必须为数字值", trigger: "blur"},
+                    {required: true, message: "Enter an age", trigger: "blur"},
+                    {type: "number", message: "Age must be a number", trigger: "blur"},
                     {
                         pattern: /^(1|[1-9]\d?|100)$/,
-                        message: "范围：1-100",
+                        message: "Range: 1–100",
                         trigger: "blur",
                     },
                 ],
                 phoneNum: [{required: true, validator: checkPhone, trigger: "blur"}],
                 email: [
-                    {type: "email", message: "请输入正确的邮箱地址", trigger: "blur"},
+                    {type: "email", message: "Enter a valid email address", trigger: "blur"},
                 ],
                 password: [
-                    {required: true, message: "请输入密码", trigger: "blur"},
+                    {required: true, message: "Enter a password", trigger: "blur"},
                     {
                         min: 6,
                         max: 32,
-                        message: "长度在 6 到 16 个字符",
+                        message: "Use 6 to 32 characters",
                         trigger: "blur",
                     },
                 ],
@@ -160,7 +161,7 @@ export default {
                     await request.put("/" + this.identity + "/update", this.form).then((res) => {
                         if (res.code === "0") {
                             ElMessage({
-                                message: "修改成功",
+                                message: "Updated successfully.",
                                 type: "success",
                             });
                             //更新sessionStorage
@@ -172,7 +173,7 @@ export default {
                             this.dialogVisible = false;
                         } else {
                             ElMessage({
-                                message: res.msg,
+                                message: displayMessage(res.msg),
                                 type: "error",
                             });
                         }
@@ -196,17 +197,17 @@ export default {
         //发送请求，获取头像
         async init(data) {
             if (data === null || data === "") {
-                console.log("用户未设置头像");
+                console.log("No avatar uploaded");
                 this.imgDisplay = {display: "none"};
             } else {
                 this.imgDisplay = {display: "block"};
-                console.log("头像名称：" + data);
+                console.log("Avatar file:" + data);
                 await request.get("/files/initAvatar/" + data).then((res) => {
                     if (res.code === "0") {
                         this.image = res.data.data;
                     } else {
                         ElMessage({
-                            message: res.msg,
+                            message: displayMessage(res.msg),
                             type: "error",
                         });
                     }
@@ -218,17 +219,17 @@ export default {
             await request.post("/files/uploadAvatar/" + this.identity, this.form).then((res) => {
                 if (res.code === "0") {
                     ElMessage({
-                        message: "设置成功",
+                        message: "Updated successfully.",
                         type: "success",
                     });
                     //获取头像文件名
                     this.avatar = res.data;
-                    console.log("上传成功：" + this.avatar);
+                    console.log("Uploaded:" + this.avatar);
                     this.find();
                     this.init(this.avatar);
                 } else {
                     ElMessage({
-                        message: res.msg,
+                        message: displayMessage(res.msg),
                         type: "error",
                     });
                 }

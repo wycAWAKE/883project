@@ -1,3 +1,4 @@
+import { displayMessage, namePattern } from "@/utils/english";
 import request from "@/utils/request";
 
 import { ElMessage } from 'element-plus';
@@ -10,16 +11,16 @@ export default {
         const checkPhone = (rule, value, callback) => {
             const phoneReg = /^1[3|4|5|6|7|8][0-9]{9}$/;
             if (!value) {
-                return callback(new Error("电话号码不能为空"));
+                return callback(new Error("Enter a phone number"));
             }
             setTimeout(() => {
                 if (!Number.isInteger(+value)) {
-                    callback(new Error("请输入数字值"));
+                    callback(new Error("Enter a number"));
                 } else {
                     if (phoneReg.test(value)) {
                         callback();
                     } else {
-                        callback(new Error("电话号码格式不正确"));
+                        callback(new Error("Enter a valid phone number"));
                     }
                 }
             }, 100);
@@ -38,20 +39,20 @@ export default {
             form: {},
             rules: {
                 visitorName: [
-                    {required: true, message: "请输入姓名", trigger: "blur"},
+                    {required: true, message: "Enter a name", trigger: "blur"},
                     {
-                        pattern: /^(?:[\u4E00-\u9FA5·]{2,10})$/,
-                        message: "必须由 2 到 10 个汉字组成",
+                        pattern: namePattern,
+                        message: "Use 1 to 50 letters, spaces, hyphens, apostrophes or Chinese characters",
                         trigger: "blur",
                     },
                 ],
-                gender: [{required: true, message: "请选择性别", trigger: "change"}],
+                gender: [{required: true, message: "Select a gender", trigger: "change"}],
                 phoneNum: [{required: true, validator: checkPhone, trigger: "blur"}],
                 visitTime: [
-                    {required: true, message: "请选择时间", trigger: "change"},
+                    {required: true, message: "Select a date and time", trigger: "change"},
                 ],
                 content: [
-                    {required: true, message: "请输入来访信息", trigger: "change"},
+                    {required: true, message: "Enter visit details", trigger: "change"},
                 ],
             },
         };
@@ -124,7 +125,7 @@ export default {
                             console.log(res);
                             if (res.code === "0") {
                                 ElMessage({
-                                    message: "新增成功",
+                                    message: "Added successfully.",
                                     type: "success",
                                 });
                                 this.search = "";
@@ -132,7 +133,7 @@ export default {
                                 this.dialogVisible = false;
                             } else {
                                 ElMessage({
-                                    message: res.msg,
+                                    message: displayMessage(res.msg),
                                     type: "error",
                                 });
                             }
@@ -143,7 +144,7 @@ export default {
                             console.log(res);
                             if (res.code === "0") {
                                 ElMessage({
-                                    message: "修改成功",
+                                    message: "Updated successfully.",
                                     type: "success",
                                 });
                                 this.search = "";
@@ -151,7 +152,7 @@ export default {
                                 this.dialogVisible = false;
                             } else {
                                 ElMessage({
-                                    message: res.msg,
+                                    message: displayMessage(res.msg),
                                     type: "error",
                                 });
                             }
@@ -180,14 +181,14 @@ export default {
             request.delete("/visitor/delete/" + id).then((res) => {
                 if (res.code === "0") {
                     ElMessage({
-                        message: "删除成功",
+                        message: "Deleted successfully.",
                         type: "success",
                     });
                     this.search = "";
                     this.load();
                 } else {
                     ElMessage({
-                        message: res.msg,
+                        message: displayMessage(res.msg),
                         type: "error",
                     });
                 }

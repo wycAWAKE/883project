@@ -1,3 +1,4 @@
+import { displayMessage } from "@/utils/english";
 import request from "@/utils/request";
 
 import { ElMessage } from 'element-plus';
@@ -12,11 +13,11 @@ export default {
                     if (res.code === "0" && result.code === "0") {
                         callback();
                     } else if (res.code === "-1" && result.code === "0") {
-                        callback(new Error(res.msg));
+                        callback(new Error(displayMessage(res.msg)));
                     } else if (res.code === "0" && result.code === "-1") {
-                        callback(new Error(result.msg));
+                        callback(new Error(displayMessage(result.msg)));
                     } else {
-                        callback(new Error("请输入正确的数据"));
+                        callback(new Error("Enter a valid value"));
                     }
                 });
             });
@@ -49,24 +50,24 @@ export default {
             },
             rules: {
                 dormRoomId: [
-                    {required: true, message: "请输入房间号", trigger: "blur"},
-                    {pattern: /^[0-9]{4}$/, message: "范围：1000-9999", trigger: "blur"},
+                    {required: true, message: "Enter a room number", trigger: "blur"},
+                    {pattern: /^[0-9]{4}$/, message: "Range: 1000–9999", trigger: "blur"},
                 ],
                 floorNum: [
-                    {required: true, message: "请输入楼层数", trigger: "blur"},
-                    {pattern: /^[1-3]$/, message: "范围：1-3", trigger: "blur"},
+                    {required: true, message: "Enter the number of floors", trigger: "blur"},
+                    {pattern: /^[1-3]$/, message: "Range: 1–3", trigger: "blur"},
                 ],
                 dormBuildId: [
-                    {required: true, message: "请输入楼宇号数", trigger: "blur"},
-                    {pattern: /^[1-4]$/, message: "范围：1-4", trigger: "blur"},
+                    {required: true, message: "Enter a building number", trigger: "blur"},
+                    {pattern: /^[1-4]$/, message: "Range: 1–4", trigger: "blur"},
                 ],
                 maxCapacity: [
-                    {required: true, message: "请输入房间可住人数", trigger: "blur"},
-                    {pattern: /^[0-4]$/, message: "范围：0-4", trigger: "blur"},
+                    {required: true, message: "Enter the room capacity", trigger: "blur"},
+                    {pattern: /^[0-4]$/, message: "Range: 0–4", trigger: "blur"},
                 ],
                 currentCapacity: [
-                    {required: true, message: "请输入当前已住人数", trigger: "blur"},
-                    {pattern: /^[0-4]$/, message: "范围：0-4", trigger: "blur"},
+                    {required: true, message: "Enter the current occupancy", trigger: "blur"},
+                    {pattern: /^[0-4]$/, message: "Range: 0–4", trigger: "blur"},
                 ],
                 firstBed: [{validator: checkStuNum, trigger: "blur"}],
                 secondBed: [{validator: checkStuNum, trigger: "blur"}],
@@ -132,7 +133,7 @@ export default {
                         request.post("/room/add", this.form).then((res) => {
                             if (res.code === "0") {
                                 ElMessage({
-                                    message: "新增成功",
+                                    message: "Added successfully.",
                                     type: "success",
                                 });
                                 this.search = "";
@@ -141,7 +142,7 @@ export default {
                                 this.dialogVisible = false;
                             } else {
                                 ElMessage({
-                                    message: res.msg,
+                                    message: displayMessage(res.msg),
                                     type: "error",
                                 });
                             }
@@ -151,7 +152,7 @@ export default {
                         request.put("/room/update", this.form).then((res) => {
                             if (res.code === "0") {
                                 ElMessage({
-                                    message: "修改成功",
+                                    message: "Updated successfully.",
                                     type: "success",
                                 });
                                 this.search = "";
@@ -159,7 +160,7 @@ export default {
                                 this.dialogVisible = false;
                             } else {
                                 ElMessage({
-                                    message: res.msg,
+                                    message: displayMessage(res.msg),
                                     type: "error",
                                 });
                             }
@@ -190,14 +191,14 @@ export default {
             request.delete("/room/delete/" + dormRoomId).then((res) => {
                 if (res.code === "0") {
                     ElMessage({
-                        message: "删除成功",
+                        message: "Deleted successfully.",
                         type: "success",
                     });
                     this.search = "";
                     this.load();
                 } else {
                     ElMessage({
-                        message: res.msg,
+                        message: displayMessage(res.msg),
                         type: "error",
                     });
                 }
@@ -280,7 +281,7 @@ export default {
                     request.put("/room/update", this.form).then((res) => {
                         if (res.code === "0") {
                             ElMessage({
-                                message: "新增成功",
+                                message: "Added successfully.",
                                 type: "success",
                             });
                             this.search = "";
@@ -289,7 +290,7 @@ export default {
                             this.bedDialog = false;
                         } else {
                             ElMessage({
-                                message: res.msg,
+                                message: displayMessage(res.msg),
                                 type: "error",
                             });
                         }
@@ -304,7 +305,7 @@ export default {
                     request.put("/room/update", this.form).then((res) => {
                         if (res.code === "0") {
                             ElMessage({
-                                message: "修改成功",
+                                message: "Updated successfully.",
                                 type: "success",
                             });
                             this.search = "";
@@ -313,7 +314,7 @@ export default {
                             this.bedDialog = false;
                         } else {
                             ElMessage({
-                                message: res.msg,
+                                message: displayMessage(res.msg),
                                 type: "error",
                             });
                         }
@@ -345,7 +346,7 @@ export default {
             ).then((res) => {
                 if (res.code === "0") {
                     ElMessage({
-                        message: "删除成功",
+                        message: "Deleted successfully.",
                         type: "success",
                     });
                     this.search = "";
@@ -354,7 +355,7 @@ export default {
                     this.bedDialog = false;
                 } else {
                     ElMessage({
-                        message: res.msg,
+                        message: displayMessage(res.msg),
                         type: "error",
                     });
                 }

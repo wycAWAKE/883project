@@ -1,9 +1,9 @@
 <template>
   <div>
     <el-breadcrumb separator-icon="ArrowRight" style="margin: 16px">
-      <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>宿舍管理</el-breadcrumb-item>
-      <el-breadcrumb-item>房间信息</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/home' }">Home</el-breadcrumb-item>
+      <el-breadcrumb-item>Dormitories</el-breadcrumb-item>
+      <el-breadcrumb-item>Rooms</el-breadcrumb-item>
     </el-breadcrumb>
     <el-card style="margin: 15px; min-height: calc(100vh - 111px)">
       <div>
@@ -11,11 +11,11 @@
         <div style="margin: 10px 0">
           <!--    搜索区-->
           <div style="margin: 10px 0">
-            <el-input v-model="search" clearable placeholder="请输入房间号" prefix-icon="Search" style="width: 20%"/>
+            <el-input v-model="search" clearable placeholder="Enter a room number" prefix-icon="Search" style="width: 20%"/>
             <el-button icon="Search" style="margin-left: 5px" type="primary" @click="load"></el-button>
             <el-button icon="refresh-left" style="margin-left: 10px" type="default" @click="reset"></el-button>
             <div style="float: right">
-              <el-tooltip content="添加" placement="top">
+              <el-tooltip content="Add" placement="top">
                 <el-button icon="plus" style="width: 50px" type="primary" @click="add"></el-button>
               </el-tooltip>
             </div>
@@ -28,7 +28,7 @@
           <el-table-column type="expand">
             <template #default="props">
               <el-form inline label-position="left">
-                <el-form-item label="一号床位" class="item">
+                <el-form-item label="Bed 1" class="item">
                   <template #default="scope">
                     <el-tag v-if="props.row.firstBed != null" disable-transitions type="primary"
                     >{{ props.row.firstBed }}
@@ -44,7 +44,7 @@
                         <el-icon @click="editIcon(1, props.row)">
                           <edit/>
                         </el-icon>
-                        <el-popconfirm title="确认删除？" @confirm="deleteStuBed(1, props.row)">
+                        <el-popconfirm title="Delete this record?" @confirm="deleteStuBed(1, props.row)">
                           <template #reference>
                             <el-icon>
                               <delete/>
@@ -55,7 +55,7 @@
                     </div>
                   </template>
                 </el-form-item>
-                <el-form-item label="二号床位" class="item">
+                <el-form-item label="Bed 2" class="item">
                   <template #default="scope">
                     <el-tag v-if="props.row.secondBed != null" disable-transitions type="primary"
                     >{{ props.row.secondBed }}
@@ -71,7 +71,7 @@
                         <el-icon @click="editIcon(2, props.row)">
                           <edit/>
                         </el-icon>
-                        <el-popconfirm title="确认删除？" @confirm="deleteStuBed(2, props.row)">
+                        <el-popconfirm title="Delete this record?" @confirm="deleteStuBed(2, props.row)">
                           <template #reference>
                             <el-icon>
                               <delete/>
@@ -82,7 +82,7 @@
                     </div>
                   </template>
                 </el-form-item>
-                <el-form-item label="三号床位" class="item">
+                <el-form-item label="Bed 3" class="item">
                   <template #default="scope">
                     <el-tag v-if="props.row.thirdBed != null" disable-transitions type="primary"
                     >{{ props.row.thirdBed }}
@@ -98,7 +98,7 @@
                         <el-icon @click="editIcon(3, props.row)">
                           <edit/>
                         </el-icon>
-                        <el-popconfirm title="确认删除？" @confirm="deleteStuBed(3, props.row)">
+                        <el-popconfirm title="Delete this record?" @confirm="deleteStuBed(3, props.row)">
                           <template #reference>
                             <el-icon>
                               <delete/>
@@ -109,7 +109,7 @@
                     </div>
                   </template>
                 </el-form-item>
-                <el-form-item label="四号床位" class="item">
+                <el-form-item label="Bed 4" class="item">
                   <template #default="scope">
                     <el-tag v-if="props.row.fourthBed != null" disable-transitions type="primary"
                     >{{ props.row.fourthBed }}
@@ -125,7 +125,7 @@
                         <el-icon @click="editIcon(4, props.row)">
                           <edit/>
                         </el-icon>
-                        <el-popconfirm title="确认删除？" @confirm="deleteStuBed(4, props.row)">
+                        <el-popconfirm title="Delete this record?" @confirm="deleteStuBed(4, props.row)">
                           <template #reference>
                             <el-icon>
                               <delete/>
@@ -139,11 +139,11 @@
               </el-form>
             </template>
           </el-table-column>
-          <el-table-column label="房间号" prop="dormRoomId" sortable/>
-          <el-table-column label="楼栋号" prop="dormBuildId" sortable/>
-          <el-table-column label="楼层" prop="floorNum" sortable/>
-          <el-table-column label="最多可住人数" prop="maxCapacity"/>
-          <el-table-column
+          <el-table-column min-width="140" label="Room No." prop="dormRoomId" sortable/>
+          <el-table-column min-width="140" label="Building No." prop="dormBuildId" sortable/>
+          <el-table-column min-width="140" label="Floor" prop="floorNum" sortable/>
+          <el-table-column min-width="140" label="Capacity" prop="maxCapacity"/>
+          <el-table-column min-width="140"
               :filter-method="filterTag"
               :filters="[
               { text: 0, value: 0 },
@@ -153,16 +153,16 @@
               { text: 4, value: 4 },
             ]"
               filter-placement="bottom-end"
-              label="已住人数"
+              label="Occupancy"
               prop="currentCapacity"
               sortable
           />
           <!--      操作栏-->
-          <el-table-column label="操作" width="130px">
+          <el-table-column label="Actions" width="130px">
             <template #default="scope">
               <el-button icon="Edit" type="primary" @click="handleEdit(scope.row)"
               ></el-button>
-              <el-popconfirm title="确认删除？" @confirm="handleDelete(scope.row.dormRoomId)">
+              <el-popconfirm title="Delete this record?" @confirm="handleDelete(scope.row.dormRoomId)">
                 <template #reference>
                   <el-button icon="Delete" type="danger"></el-button>
                 </template>
@@ -185,93 +185,93 @@
         </div>
         <!--      弹窗-->
         <div>
-          <el-dialog v-model="dialogVisible" title="操作" width="30%" @close="cancel">
-            <el-form ref="form" :model="form" :rules="rules" label-width="120px">
-              <el-form-item label="楼栋号" prop="dormBuildId">
+          <el-dialog v-model="dialogVisible" title="Actions" width="30%" @close="cancel">
+            <el-form ref="form" :model="form" :rules="rules" label-width="auto">
+              <el-form-item label="Building No." prop="dormBuildId">
                 <el-input v-model.number="form.dormBuildId" style="width: 80%"></el-input>
               </el-form-item>
-              <el-form-item label="楼层数" prop="floorNum">
+              <el-form-item label="Floors" prop="floorNum">
                 <el-input v-model.number="form.floorNum" style="width: 80%"></el-input>
               </el-form-item>
-              <el-form-item label="房间号" prop="dormRoomId">
+              <el-form-item label="Room No." prop="dormRoomId">
                 <el-input v-model.number="form.dormRoomId" :disabled="disabled" style="width: 80%"></el-input>
               </el-form-item>
-              <el-form-item label="最多可住人数" prop="maxCapacity">
+              <el-form-item label="Capacity" prop="maxCapacity">
                 <el-input v-model.number="form.maxCapacity" style="width: 80%"></el-input>
               </el-form-item>
-              <el-form-item label="已住人数" prop="currentCapacity">
+              <el-form-item label="Occupancy" prop="currentCapacity">
                 <el-input v-model.number="form.currentCapacity" style="width: 80%"></el-input>
               </el-form-item>
             </el-form>
             <template #footer>
               <span class="dialog-footer">
-                <el-button @click="cancel">取 消</el-button>
-                <el-button type="primary" @click="save">确 定</el-button>
+                <el-button @click="cancel">Cancel</el-button>
+                <el-button type="primary" @click="save">Confirm</el-button>
               </span>
             </template>
           </el-dialog>
           <!-- 床位 弹窗-->
-          <el-dialog v-model="bedDialog" title="操作" width="30%" @close="cancel">
-            <el-form ref="form" :model="form" :rules="rules" label-width="120px">
-              <el-form-item label="楼栋号" prop="dormBuildId">
+          <el-dialog v-model="bedDialog" title="Actions" width="30%" @close="cancel">
+            <el-form ref="form" :model="form" :rules="rules" label-width="auto">
+              <el-form-item label="Building No." prop="dormBuildId">
                 <el-input v-model.number="form.dormBuildId" disabled="true" style="width: 80%"></el-input>
               </el-form-item>
-              <el-form-item label="楼层数" prop="floorNum">
+              <el-form-item label="Floors" prop="floorNum">
                 <el-input v-model.number="form.floorNum" disabled="true" style="width: 80%"></el-input>
               </el-form-item>
-              <el-form-item label="房间号" prop="dormRoomId">
+              <el-form-item label="Room No." prop="dormRoomId">
                 <el-input v-model.number="form.dormRoomId" disabled="true" style="width: 80%"></el-input>
               </el-form-item>
-              <el-form-item v-if="this.bedNum === 1" label="床位(一)" prop="firstBed">
-                <el-input v-model.number="form.firstBed" placeholder="请输入学号" style="width: 80%"></el-input>
+              <el-form-item v-if="this.bedNum === 1" label="Bed 1" prop="firstBed">
+                <el-input v-model.number="form.firstBed" placeholder="Enter a student ID" style="width: 80%"></el-input>
               </el-form-item>
-              <el-form-item v-if="this.bedNum === 2" label="床位(二)" prop="secondBed">
-                <el-input v-model.number="form.secondBed" placeholder="请输入学号" style="width: 80%"></el-input>
+              <el-form-item v-if="this.bedNum === 2" label="Bed 2" prop="secondBed">
+                <el-input v-model.number="form.secondBed" placeholder="Enter a student ID" style="width: 80%"></el-input>
               </el-form-item>
-              <el-form-item v-if="this.bedNum === 3" label="床位(三)" prop="thirdBed">
-                <el-input v-model.number="form.thirdBed" placeholder="请输入学号" style="width: 80%"></el-input>
+              <el-form-item v-if="this.bedNum === 3" label="Bed 3" prop="thirdBed">
+                <el-input v-model.number="form.thirdBed" placeholder="Enter a student ID" style="width: 80%"></el-input>
               </el-form-item>
-              <el-form-item v-if="this.bedNum === 4" label="床位(四)" prop="fourthBed">
-                <el-input v-model.number="form.fourthBed" placeholder="请输入学号" style="width: 80%"></el-input>
+              <el-form-item v-if="this.bedNum === 4" label="Bed 4" prop="fourthBed">
+                <el-input v-model.number="form.fourthBed" placeholder="Enter a student ID" style="width: 80%"></el-input>
               </el-form-item>
             </el-form>
             <template #footer>
               <span class="dialog-footer">
-                <el-button @click="cancel">取 消</el-button>
-                <el-button v-if="this.judge === false" type="primary" @click="addStuBed">确 定</el-button>
-                <el-button v-if="this.judge === true" type="primary" @click="editStuBed">确 定</el-button>
+                <el-button @click="cancel">Cancel</el-button>
+                <el-button v-if="this.judge === false" type="primary" @click="addStuBed">Confirm</el-button>
+                <el-button v-if="this.judge === true" type="primary" @click="editStuBed">Confirm</el-button>
               </span>
             </template>
           </el-dialog>
           <!-- 学生信息弹窗-->
-          <el-dialog v-model="stuInfoDialog" title="学生信息" width="20%" @close="cancel">
-            <el-form ref="form" :model="form" label-width="120px">
-              <el-form-item label="学号：" prop="username">
+          <el-dialog v-model="stuInfoDialog" title="Students" width="20%" @close="cancel">
+            <el-form ref="form" :model="form" label-width="auto">
+              <el-form-item label="Student ID:" prop="username">
                 <template #default="scope">
                   <span>{{ form.username }}</span>
                 </template>
               </el-form-item>
-              <el-form-item label="姓名：" prop="name">
+              <el-form-item label="Name:" prop="name">
                 <template #default="scope">
                   <span>{{ form.name }}</span>
                 </template>
               </el-form-item>
-              <el-form-item label="年龄：" prop="age">
+              <el-form-item label="Age:" prop="age">
                 <template #default="scope">
                   <span>{{ form.age }}</span>
                 </template>
               </el-form-item>
-              <el-form-item label="性别：" prop="gender">
+              <el-form-item label="Gender:" prop="gender">
                 <template #default="scope">
-                  <span>{{ form.gender }}</span>
+                  <span>{{ $en(form.gender) }}</span>
                 </template>
               </el-form-item>
-              <el-form-item label="手机号：" prop="phoneNum">
+              <el-form-item label="Phone:" prop="phoneNum">
                 <template #default="scope">
                   <span>{{ form.phoneNum }}</span>
                 </template>
               </el-form-item>
-              <el-form-item label="邮箱地址：" prop="email">
+              <el-form-item label="Email:" prop="email">
                 <template #default="scope">
                   <span>{{ form.email }}</span>
                 </template>

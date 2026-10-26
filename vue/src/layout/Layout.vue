@@ -1,7 +1,7 @@
 <template>
   <el-container class="app-shell">
     <!--    侧边功能栏-->
-    <el-aside class="app-aside" width="200px">
+    <el-aside class="app-aside" width="248px">
       <Aside/>
     </el-aside>
     <el-container class="app-main">

@@ -1,3 +1,4 @@
+import { displayMessage } from "@/utils/english";
 import request from "@/utils/request";
 
 import { ElMessage } from 'element-plus';
@@ -75,7 +76,7 @@ export default {
             this.detailDialog = false;
         },
         add() {
-            this.title = "添加电费"
+            this.title = "Add Electricity Charge"
             this.dialogVisible = true;
             this.$nextTick(() => {
                 this.$refs.form.resetFields();
@@ -95,7 +96,7 @@ export default {
                     await request.post("/electric/add", this.form).then((res) => {
                         if (res.code === "0") {
                             ElMessage({
-                                message: "新增成功",
+                                message: "Added successfully.",
                                 type: "success",
                             });
                             this.search = "";
@@ -103,7 +104,7 @@ export default {
                             this.dialogVisible = false;
                         } else {
                             ElMessage({
-                                message: res.msg,
+                                message: displayMessage(res.msg),
                                 type: "error",
                             });
                         }
@@ -117,7 +118,7 @@ export default {
         },
         handleEdit(row) {
             this.judge = true;
-            this.title = "电费详情"
+            this.title = "Electricity Charge Details"
             this.dialogVisible = true;
             this.$nextTick(() => {
                 this.$refs.form.resetFields();

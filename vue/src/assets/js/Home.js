@@ -1,4 +1,3 @@
-import weather from "@/components/weather.vue";
 import Calender from "@/components/Calendar.vue";
 import request from "@/utils/request";
 import home_echarts from "@/components/home_echarts.vue";
@@ -6,7 +5,6 @@ import home_echarts from "@/components/home_echarts.vue";
 export default {
     name: "Home",
     components: {
-        weather,
         Calender,
         home_echarts,
     },

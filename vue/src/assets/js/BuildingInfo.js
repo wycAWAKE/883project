@@ -1,3 +1,4 @@
+import { displayMessage } from "@/utils/english";
 import request from "@/utils/request";
 
 import { ElMessage } from 'element-plus';
@@ -23,18 +24,18 @@ export default {
             },
             rules: {
                 dormBuildId: [
-                    {required: true, message: "请输入编号", trigger: "blur"},
+                    {required: true, message: "Enter an ID", trigger: "blur"},
                     {
                         pattern: /^(1|[1-9]\d?|100)$/,
-                        message: "范围：1-100",
+                        message: "Range: 1–100",
                         trigger: "blur",
                     },
                 ],
                 dormBuildName: [
-                    {required: true, message: "请输入名称", trigger: "blur"},
+                    {required: true, message: "Enter a name", trigger: "blur"},
                 ],
                 dormBuildDetail: [
-                    {required: true, message: "请输入备注", trigger: "blur"},
+                    {required: true, message: "Enter notes", trigger: "blur"},
                 ],
             },
         };
@@ -98,7 +99,7 @@ export default {
                             console.log(res);
                             if (res.code === "0") {
                                 ElMessage({
-                                    message: "新增成功",
+                                    message: "Added successfully.",
                                     type: "success",
                                 });
                                 this.search = "";
@@ -106,7 +107,7 @@ export default {
                                 this.dialogVisible = false;
                             } else {
                                 ElMessage({
-                                    message: res.msg,
+                                    message: displayMessage(res.msg),
                                     type: "error",
                                 });
                             }
@@ -117,7 +118,7 @@ export default {
                             console.log(res);
                             if (res.code === "0") {
                                 ElMessage({
-                                    message: "修改成功",
+                                    message: "Updated successfully.",
                                     type: "success",
                                 });
                                 this.search = "";
@@ -125,7 +126,7 @@ export default {
                                 this.dialogVisible = false;
                             } else {
                                 ElMessage({
-                                    message: res.msg,
+                                    message: displayMessage(res.msg),
                                     type: "error",
                                 });
                             }
@@ -154,14 +155,14 @@ export default {
             request.delete("/building/delete/" + id).then((res) => {
                 if (res.code === "0") {
                     ElMessage({
-                        message: "删除成功",
+                        message: "Deleted successfully.",
                         type: "success",
                     });
                     this.search = "";
                     this.load();
                 } else {
                     ElMessage({
-                        message: res.msg,
+                        message: displayMessage(res.msg),
                         type: "error",
                     });
                 }

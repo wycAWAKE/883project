@@ -181,3 +181,18 @@ body {
         font-size: 13px;
     }
 }
+
+/* English copy needs room to wrap in compact forms and dialogs. */
+.el-form-item__label { height: auto !important; white-space: normal; }
+.el-form-item__error { position: static; line-height: 1.35; }
+.el-form-item__content { min-width: 0; }
+.el-dialog { min-width: min(560px, 92vw); max-width: 92vw; }
+.el-dialog .el-radio, .login-panel .el-radio { margin-bottom: 4px; }
+.login-panel .el-form-item__content { gap: 4px 0; }
+.el-table .cell { overflow-wrap: break-word; }
+.side-menu .el-menu-item, .side-menu .el-sub-menu__title { white-space: normal; line-height: 1.3; }
+@media (max-width: 768px) {
+    .el-form-item__label { justify-content: flex-start; }
+    .el-pagination { flex-wrap: wrap; gap: 8px; }
+    .system-title { min-width: 0; line-height: 1.2; }
+}

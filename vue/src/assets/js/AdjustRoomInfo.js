@@ -1,3 +1,4 @@
+import { displayMessage, namePattern } from "@/utils/english";
 import request from "@/utils/request";
 
 import { ElMessage } from 'element-plus';
@@ -10,7 +11,7 @@ export default {
                 if (res.code === "0") {
                     callback();
                 } else {
-                    callback(new Error(res.msg));
+                    callback(new Error(displayMessage(res.msg)));
                 }
             });
         };
@@ -19,7 +20,7 @@ export default {
                 if (res.code === "0") {
                     callback();
                 } else {
-                    callback(new Error(res.msg));
+                    callback(new Error(displayMessage(res.msg)));
                 }
             });
         };
@@ -30,7 +31,7 @@ export default {
             } else if (value === "驳回" && this.form.finishTime !== null) {
                 callback();
             } else {
-                callback(new Error("请检查订单完成状态与选择时间是否匹配"));
+                callback(new Error("The completion status and completion time must match."));
             }
         };
         return {
@@ -47,18 +48,18 @@ export default {
             orderState: false,
             rules: {
                 username: [
-                    {required: true, message: "请输入学号", trigger: "blur"},
-                    {pattern: /^[a-zA-Z0-9]{4,9}$/, message: "必须由 2 到 5 个字母或数字组成", trigger: "blur",},
+                    {required: true, message: "Enter a student ID", trigger: "blur"},
+                    {pattern: /^[a-zA-Z0-9]{4,9}$/, message: "Use 4 to 9 letters or digits", trigger: "blur",},
                 ],
                 name: [
-                    {required: true, message: "请输入姓名", trigger: "blur"},
-                    {pattern: /^(?:[\u4E00-\u9FA5·]{2,10})$/, message: "必须由 2 到 10 个汉字组成", trigger: "blur",},
+                    {required: true, message: "Enter a name", trigger: "blur"},
+                    {pattern: namePattern, message: "Use 1 to 50 letters, spaces, hyphens, apostrophes or Chinese characters", trigger: "blur",},
                 ],
                 currentRoomId: [
-                    {required: true, message: "请输入当前房间号", trigger: "blur"},
+                    {required: true, message: "Enter the current room number", trigger: "blur"},
                 ],
                 currentBedId: [
-                    {required: true, message: "请输入当前床位号", trigger: "blur"},
+                    {required: true, message: "Enter the current bed number", trigger: "blur"},
                 ],
                 state: [{validator: checkApplyState, trigger: "blur"},],
                 towardsRoomId: [{validator: checkRoomState, trigger: "blur"}],
@@ -123,7 +124,7 @@ export default {
                         console.log(res);
                         if (res.code === "0") {
                             ElMessage({
-                                message: "修改成功",
+                                message: "Updated successfully.",
                                 type: "success",
                             });
                             this.search = "";
@@ -131,7 +132,7 @@ export default {
                             this.dialogVisible = false;
                         } else if (res.msg === "重复操作") {
                             ElMessage({
-                                message: res.msg,
+                                message: displayMessage(res.msg),
                                 type: "error",
                             });
                             this.search = "";
@@ -139,7 +140,7 @@ export default {
                             this.dialogVisible = false;
                         } else {
                             ElMessage({
-                                message: res.msg,
+                                message: displayMessage(res.msg),
                                 type: "error",
                             });
                         }
@@ -174,14 +175,14 @@ export default {
             request.delete("/adjustRoom/delete/" + id).then((res) => {
                 if (res.code === "0") {
                     ElMessage({
-                        message: "删除成功",
+                        message: "Deleted successfully.",
                         type: "success",
                     });
                     this.search = "";
                     this.load();
                 } else {
                     ElMessage({
-                        message: res.msg,
+                        message: displayMessage(res.msg),
                         type: "error",
                     });
                 }

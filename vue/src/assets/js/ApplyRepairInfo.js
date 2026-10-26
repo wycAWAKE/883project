@@ -1,3 +1,4 @@
+import { displayMessage } from "@/utils/english";
 import request from "@/utils/request";
 
 import { ElMessage } from 'element-plus';
@@ -24,9 +25,9 @@ export default {
                 dormBuildId: '',
             },
             rules: {
-                title: [{required: true, message: "请输入标题", trigger: "blur"}],
-                content: [{required: true, message: "请输入内容", trigger: "blur"}],
-                orderBuildTime: [{required: true, message: "请选择时间", trigger: "blur"},],
+                title: [{required: true, message: "Enter a title", trigger: "blur"}],
+                content: [{required: true, message: "Enter details", trigger: "blur"}],
+                orderBuildTime: [{required: true, message: "Select a date and time", trigger: "blur"},],
             },
         };
     },
@@ -67,7 +68,7 @@ export default {
                     console.log(this.room);
                 } else {
                     ElMessage({
-                        message: res.msg,
+                        message: displayMessage(res.msg),
                         type: "error",
                     });
                 }
@@ -102,7 +103,7 @@ export default {
                     await request.post("/repair/add", this.form).then((res) => {
                         if (res.code === "0") {
                             ElMessage({
-                                message: "新增成功",
+                                message: "Added successfully.",
                                 type: "success",
                             });
                             this.search = "";
@@ -110,7 +111,7 @@ export default {
                             this.dialogVisible = false;
                         } else {
                             ElMessage({
-                                message: res.msg,
+                                message: displayMessage(res.msg),
                                 type: "error",
                             });
                         }

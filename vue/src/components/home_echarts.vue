@@ -2,14 +2,14 @@
   <div class="home-chart">
     <div v-if="chartRows.length" class="bar-list">
       <div v-for="row in chartRows" :key="row.name" class="bar-row">
-        <div class="bar-label">{{ row.name }}号楼</div>
+        <div class="bar-label">Building {{ row.name }}</div>
         <div class="bar-track">
           <div class="bar-fill" :style="{ width: row.percent + '%' }"></div>
         </div>
-        <div class="bar-value">{{ row.value }}人</div>
+        <div class="bar-value">{{ row.value }} {{ row.value === 1 ? 'resident' : 'residents' }}</div>
       </div>
     </div>
-    <el-empty v-else description="暂无宿舍人数数据" :image-size="96" />
+    <el-empty v-else description="No occupancy data available" :image-size="96" />
   </div>
 </template>
 
@@ -102,7 +102,7 @@ export default {
 
 .bar-row {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr) 56px;
+  grid-template-columns: 76px minmax(0, 1fr) 76px;
   gap: 12px;
   align-items: center;
 }
@@ -137,7 +137,7 @@ export default {
 
 @media (max-width: 768px) {
   .bar-row {
-    grid-template-columns: 52px minmax(0, 1fr) 48px;
+    grid-template-columns: 76px minmax(0, 1fr) 76px;
     gap: 8px;
   }
 }

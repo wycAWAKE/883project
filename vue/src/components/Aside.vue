@@ -20,14 +20,14 @@
             <el-icon v-if="menu.icon">
               <component :is="menu.icon" />
             </el-icon>
-            <span>{{ menu.menuName }}</span>
+            <span>{{ $en(menu.menuName) }}</span>
           </template>
           <el-menu-item
             v-for="child in menu.children"
             :key="child.id"
             :index="child.menuPath"
           >
-            {{ child.menuName }}
+            {{ $en(child.menuName) }}
           </el-menu-item>
         </el-sub-menu>
 
@@ -35,7 +35,7 @@
           <el-icon v-if="menu.icon">
             <component :is="menu.icon" />
           </el-icon>
-          <span>{{ menu.menuName }}</span>
+          <span>{{ $en(menu.menuName) }}</span>
         </el-menu-item>
       </template>
     </el-menu>
@@ -49,61 +49,61 @@ import { OverlayScrollbarsComponent } from "overlayscrollbars-vue";
 
 const fallbackMenus = {
   admin: [
-    { id: 1, menuName: "首页", menuPath: "/home", icon: "House", children: [] },
-    { id: 2, menuName: "用户管理", icon: "User", children: [
-      { id: 21, menuName: "学生信息", menuPath: "/stuInfo" },
-      { id: 22, menuName: "宿管信息", menuPath: "/dormManagerInfo" },
+    { id: 1, menuName: "Home", menuPath: "/home", icon: "House", children: [] },
+    { id: 2, menuName: "Users", icon: "User", children: [
+      { id: 21, menuName: "Students", menuPath: "/stuInfo" },
+      { id: 22, menuName: "Dormitory Staff", menuPath: "/dormManagerInfo" },
     ] },
-    { id: 3, menuName: "宿舍管理", icon: "Coin", children: [
-      { id: 31, menuName: "楼宇信息", menuPath: "/buildingInfo" },
-      { id: 32, menuName: "房间信息", menuPath: "/roomInfo" },
+    { id: 3, menuName: "Dormitories", icon: "Coin", children: [
+      { id: 31, menuName: "Buildings", menuPath: "/buildingInfo" },
+      { id: 32, menuName: "Rooms", menuPath: "/roomInfo" },
     ] },
-    { id: 4, menuName: "信息管理", icon: "Message", children: [
-      { id: 41, menuName: "公告信息", menuPath: "/noticeInfo" },
-      { id: 42, menuName: "报修信息", menuPath: "/repairInfo" },
+    { id: 4, menuName: "Information", icon: "Message", children: [
+      { id: 41, menuName: "Announcements", menuPath: "/noticeInfo" },
+      { id: 42, menuName: "Maintenance Requests", menuPath: "/repairInfo" },
     ] },
-    { id: 5, menuName: "申请管理", icon: "PieChart", children: [
-      { id: 51, menuName: "调宿申请", menuPath: "/adjustRoomInfo" },
+    { id: 5, menuName: "Applications", icon: "PieChart", children: [
+      { id: 51, menuName: "Room Transfers", menuPath: "/adjustRoomInfo" },
     ] },
-    { id: 6, menuName: "访客管理", menuPath: "/visitorInfo", icon: "View", children: [] },
-    { id: 10, menuName: "水电费管理", icon: "SetUp", children: [
-      { id: 101, menuName: "水费管理", menuPath: "/WaterInfo" },
-      { id: 102, menuName: "电费管理", menuPath: "/ElectricInfo" },
+    { id: 6, menuName: "Visitors", menuPath: "/visitorInfo", icon: "View", children: [] },
+    { id: 10, menuName: "Utilities", icon: "SetUp", children: [
+      { id: 101, menuName: "Water Charges", menuPath: "/WaterInfo" },
+      { id: 102, menuName: "Electricity Charges", menuPath: "/ElectricInfo" },
     ] },
-    { id: 11, menuName: "卫生检查", menuPath: "/CheckInfo", icon: "Tickets", children: [] },
-    { id: 12, menuName: "权限说明", menuPath: "/permissionInfo", icon: "Key", children: [] },
-    { id: 13, menuName: "个人信息", menuPath: "/selfInfo", icon: "Setting", children: [] },
+    { id: 11, menuName: "Room Inspections", menuPath: "/CheckInfo", icon: "Tickets", children: [] },
+    { id: 12, menuName: "Permissions", menuPath: "/permissionInfo", icon: "Key", children: [] },
+    { id: 13, menuName: "My Profile", menuPath: "/selfInfo", icon: "Setting", children: [] },
   ],
   dormManager: [
-    { id: 1, menuName: "首页", menuPath: "/home", icon: "House", children: [] },
-    { id: 2, menuName: "用户管理", icon: "User", children: [
-      { id: 21, menuName: "学生信息", menuPath: "/stuInfo" },
+    { id: 1, menuName: "Home", menuPath: "/home", icon: "House", children: [] },
+    { id: 2, menuName: "Users", icon: "User", children: [
+      { id: 21, menuName: "Students", menuPath: "/stuInfo" },
     ] },
-    { id: 3, menuName: "宿舍管理", icon: "Coin", children: [
-      { id: 31, menuName: "楼宇信息", menuPath: "/buildingInfo" },
-      { id: 32, menuName: "房间信息", menuPath: "/roomInfo" },
+    { id: 3, menuName: "Dormitories", icon: "Coin", children: [
+      { id: 31, menuName: "Buildings", menuPath: "/buildingInfo" },
+      { id: 32, menuName: "Rooms", menuPath: "/roomInfo" },
     ] },
-    { id: 4, menuName: "信息管理", icon: "Message", children: [
-      { id: 42, menuName: "报修信息", menuPath: "/repairInfo" },
+    { id: 4, menuName: "Information", icon: "Message", children: [
+      { id: 42, menuName: "Maintenance Requests", menuPath: "/repairInfo" },
     ] },
-    { id: 5, menuName: "申请管理", icon: "PieChart", children: [
-      { id: 51, menuName: "调宿申请", menuPath: "/adjustRoomInfo" },
+    { id: 5, menuName: "Applications", icon: "PieChart", children: [
+      { id: 51, menuName: "Room Transfers", menuPath: "/adjustRoomInfo" },
     ] },
-    { id: 6, menuName: "访客管理", menuPath: "/visitorInfo", icon: "View", children: [] },
-    { id: 11, menuName: "卫生检查", menuPath: "/CheckInfo", icon: "Tickets", children: [] },
-    { id: 13, menuName: "个人信息", menuPath: "/selfInfo", icon: "Setting", children: [] },
+    { id: 6, menuName: "Visitors", menuPath: "/visitorInfo", icon: "View", children: [] },
+    { id: 11, menuName: "Room Inspections", menuPath: "/CheckInfo", icon: "Tickets", children: [] },
+    { id: 13, menuName: "My Profile", menuPath: "/selfInfo", icon: "Setting", children: [] },
   ],
   stu: [
-    { id: 1, menuName: "首页", menuPath: "/home", icon: "House", children: [] },
-    { id: 7, menuName: "我的宿舍", menuPath: "/myRoomInfo", icon: "School", children: [] },
-    { id: 8, menuName: "申请调宿", menuPath: "/applyChangeRoom", icon: "TakeawayBox", children: [] },
-    { id: 9, menuName: "报修申请", menuPath: "/applyRepairInfo", icon: "SetUp", children: [] },
-    { id: 10, menuName: "水电费管理", icon: "SetUp", children: [
-      { id: 101, menuName: "水费管理", menuPath: "/WaterInfo" },
-      { id: 102, menuName: "电费管理", menuPath: "/ElectricInfo" },
+    { id: 1, menuName: "Home", menuPath: "/home", icon: "House", children: [] },
+    { id: 7, menuName: "My Room", menuPath: "/myRoomInfo", icon: "School", children: [] },
+    { id: 8, menuName: "Request Room Transfer", menuPath: "/applyChangeRoom", icon: "TakeawayBox", children: [] },
+    { id: 9, menuName: "Request Maintenance", menuPath: "/applyRepairInfo", icon: "SetUp", children: [] },
+    { id: 10, menuName: "Utilities", icon: "SetUp", children: [
+      { id: 101, menuName: "Water Charges", menuPath: "/WaterInfo" },
+      { id: 102, menuName: "Electricity Charges", menuPath: "/ElectricInfo" },
     ] },
-    { id: 11, menuName: "卫生检查", menuPath: "/CheckInfo", icon: "Tickets", children: [] },
-    { id: 13, menuName: "个人信息", menuPath: "/selfInfo", icon: "Setting", children: [] },
+    { id: 11, menuName: "Room Inspections", menuPath: "/CheckInfo", icon: "Tickets", children: [] },
+    { id: 13, menuName: "My Profile", menuPath: "/selfInfo", icon: "Setting", children: [] },
   ],
 };
 
@@ -199,7 +199,7 @@ export default {
     },
     handleExpired() {
       ElMessage({
-        message: "用户会话过期",
+        message: "Your session has expired. Please sign in again.",
         type: "error",
       });
       sessionStorage.clear();
@@ -212,12 +212,12 @@ export default {
 
 <style scoped>
 .aside-scroll {
-  width: 200px;
+  width: 100%;
   height: 100vh;
 }
 
 .side-menu {
-  width: 200px;
+  width: 100%;
   min-height: 100%;
   border-right: 0;
   background: transparent;
@@ -266,7 +266,7 @@ export default {
   height: 42px;
   line-height: 42px;
   padding: 0 38px;
-  min-width: 199px;
+  min-width: 0;
 }
 
 @media (max-width: 768px) {
@@ -291,6 +291,7 @@ export default {
 
   .side-menu :deep(.el-menu-item),
   .side-menu :deep(.el-sub-menu__title) {
+    margin: 0 4px;
     min-width: 108px;
     height: 42px;
     line-height: 42px;

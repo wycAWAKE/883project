@@ -1,3 +1,4 @@
+import { displayMessage } from "@/utils/english";
 import request from "@/utils/request";
 
 import { ElMessage } from 'element-plus';
@@ -13,7 +14,7 @@ export default {
                 } else if (value === "完成" && this.form.orderFinishTime !== null) {
                     callback();
                 } else {
-                    callback(new Error("请检查订单完成状态与选择时间是否匹配"));
+                    callback(new Error("The completion status and completion time must match."));
                 }
             } else {
                 callback();
@@ -34,13 +35,13 @@ export default {
             detail: {},
             form: {},
             rules: {
-                title: [{required: true, message: "请输入标题", trigger: "blur"}],
-                content: [{required: true, message: "请输入内容", trigger: "blur"}],
+                title: [{required: true, message: "Enter a title", trigger: "blur"}],
+                content: [{required: true, message: "Enter details", trigger: "blur"}],
                 repairer: [
-                    {required: true, message: "请输入申请人", trigger: "blur"},
+                    {required: true, message: "Enter the applicant", trigger: "blur"},
                 ],
                 orderBuildTime: [
-                    {required: true, message: "请选择时间", trigger: "blur"},
+                    {required: true, message: "Select a date and time", trigger: "blur"},
                 ],
                 state: [{validator: checkOrderState, trigger: "blur"}],
             },
@@ -119,7 +120,7 @@ export default {
                             console.log(res);
                             if (res.code === "0") {
                                 ElMessage({
-                                    message: "新增成功",
+                                    message: "Added successfully.",
                                     type: "success",
                                 });
                                 this.search = "";
@@ -127,7 +128,7 @@ export default {
                                 this.dialogVisible = false;
                             } else {
                                 ElMessage({
-                                    message: res.msg,
+                                    message: displayMessage(res.msg),
                                     type: "error",
                                 });
                             }
@@ -138,7 +139,7 @@ export default {
                             console.log(res);
                             if (res.code === "0") {
                                 ElMessage({
-                                    message: "修改成功",
+                                    message: "Updated successfully.",
                                     type: "success",
                                 });
                                 this.search = "";
@@ -146,7 +147,7 @@ export default {
                                 this.dialogVisible = false;
                             } else {
                                 ElMessage({
-                                    message: res.msg,
+                                    message: displayMessage(res.msg),
                                     type: "error",
                                 });
                             }
@@ -177,14 +178,14 @@ export default {
             request.delete("/repair/delete/" + id).then((res) => {
                 if (res.code === "0") {
                     ElMessage({
-                        message: "删除成功",
+                        message: "Deleted successfully.",
                         type: "success",
                     });
                     this.search = "";
                     this.load();
                 } else {
                     ElMessage({
-                        message: res.msg,
+                        message: displayMessage(res.msg),
                         type: "error",
                     });
                 }

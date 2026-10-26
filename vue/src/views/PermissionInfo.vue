@@ -3,31 +3,33 @@
     <el-card class="permission-card">
       <template #header>
         <div class="card-header">
-          <span>角色权限说明</span>
-          <el-button type="primary" size="small" @click="load">刷新</el-button>
+          <span>Role Permissions</span>
+          <el-button type="primary" size="small" @click="load">Refresh</el-button>
         </div>
       </template>
 
       <el-table :data="roleRows" border stripe>
-        <el-table-column label="角色编码" prop="roleCode" width="140" />
-        <el-table-column label="角色名称" prop="roleName" width="140" />
-        <el-table-column label="角色说明" prop="description" />
+        <el-table-column label="Role Code" prop="roleCode" width="140" />
+        <el-table-column label="Role Name" prop="roleName" width="140" :formatter="$enCell" />
+        <el-table-column min-width="140" label="Description" prop="description" :formatter="$enCell" />
       </el-table>
     </el-card>
 
     <el-card class="permission-card">
-      <template #header>菜单权限矩阵</template>
+      <template #header>Menu Permissions</template>
       <el-table :data="permissionRows" border stripe>
-        <el-table-column label="角色" prop="roleName" width="130" />
-        <el-table-column label="菜单" prop="menuName" width="150" />
-        <el-table-column label="路径" prop="menuPath" width="170" />
-        <el-table-column label="权限标识" prop="permissionCode" />
+        <el-table-column label="Role" prop="roleName" width="130" :formatter="$enCell" />
+        <el-table-column label="Menu" prop="menuName" width="150" :formatter="$enCell" />
+        <el-table-column label="Route" prop="menuPath" width="170" />
+        <el-table-column min-width="140" label="Permission Code" prop="permissionCode" />
       </el-table>
     </el-card>
   </div>
 </template>
 
 <script>
+import { displayMessage } from "@/utils/english";
+
 import request from "@/utils/request";
 import { ElMessage } from "element-plus";
 
@@ -48,14 +50,14 @@ export default {
         if (res.code === "0") {
           this.roleRows = res.data;
         } else {
-          ElMessage.error(res.msg || "角色信息加载失败");
+          ElMessage.error(displayMessage(res.msg || "Unable to load roles."));
         }
       });
       request.get("/permission/roleMenus").then((res) => {
         if (res.code === "0") {
           this.permissionRows = res.data;
         } else {
-          ElMessage.error(res.msg || "菜单权限加载失败");
+          ElMessage.error(displayMessage(res.msg || "Unable to load menu permissions."));
         }
       });
     },
