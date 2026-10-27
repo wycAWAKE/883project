@@ -68,3 +68,6 @@
 .admin-page .notice-actions { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
 .admin-page .unread-label { color: #245d96; font-size: 12px; font-weight: 700; }
 @media (max-width: 700px) { .admin-page { padding: 24px 16px; } .admin-page .page-heading { align-items: start; flex-direction: column; } .admin-page .summary-row { grid-template-columns: repeat(2, 1fr); } .admin-page .form-columns, .application-detail .facts { grid-template-columns: 1fr; } .admin-page .pagination { justify-content: center; gap: 10px; flex-wrap: wrap; } .admin-page .notice-list > li { flex-direction: column; gap: 14px; padding: 22px 12px; } .admin-page .notice-actions { flex-wrap: wrap; } }
+
+.admin-page .file-input[hidden] { display: none; }
+.admin-page .upload-control { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
