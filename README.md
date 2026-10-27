@@ -2,7 +2,7 @@
 
 基于原 `dormitory-manager-coursework` 改造的校园服务平台，采用 Vue 3 + Vite、Spring Boot、MyBatis-Plus 和 MySQL。当前版本提供英文登录页、统一门户、六模块导航、独立模块页面和基于服务端 Session 的前端访问检查。
 
-> **当前交付范围（2026-10-26）：门户框架。M1–M6 均为 `Under development` 占位页，尚未实现六模块业务接口。** 原宿舍业务代码、账号表、权限表和数据仍保留；当前前端没有注册原宿舍业务路由。本文面向部署与开发维护，界面及后续产品提示统一使用英文。
+> **M5/M6 分支交付范围（2026-10-26）：M1–M4 保持占位；M5 申请审批与 M6 进度通知已接入统一登录和真实 MySQL。** 运行与迁移见 [M5/M6 部署说明](docs/M5_M6_SETUP.md)，接口见 [M5/M6 整合约定](docs/M5_M6_INTEGRATION.md)，验证范围见 [测试记录](docs/M5_M6_TESTS.md)。原宿舍账号表与业务代码仍保留，界面使用英文。下文标为“建议”的公共设计仍不是已冻结合同。
 
 ## 目录
 
@@ -28,7 +28,7 @@
 - 前端缓存用户时排除 `password` 和 `token`；退出登录需等待服务端确认。
 - 桌面及移动端布局；原宿舍页面与后端保留，便于后续按需迁移。
 
-当前侧边栏直接读取本地模块配置，**不再调用 `/permission/menus` 生成菜单**。三种已登录角色都能访问六个占位页。前端路由检查并不代表旧后端已实现完整的接口权限和数据归属保护。
+当前侧边栏直接读取本地模块配置，**不再调用 `/permission/menus` 生成菜单**。三种已登录角色都能进入模块路由；M5/M6 业务只授权 Student 和 Staff，Administrator 不默认获得审批权限。前端路由检查并不代表旧后端已实现完整的接口权限和数据归属保护。
 
 ### 1.2 模块列表
 
@@ -38,10 +38,10 @@
 | M2 | Course Recommendations | Learning | `/courses` | `CourseModule.vue` | 占位，未实现推荐 |
 | M3 | Room Booking | Facilities | `/bookings` | `BookingModule.vue` | 占位，未实现预约 |
 | M4 | Fault Reporting | Facilities | `/repairs` | `RepairModule.vue` | 占位，未迁移报修业务 |
-| M5 | Document Applications | Administration | `/applications` | `ApplicationModule.vue` | 占位，未实现申请审批 |
-| M6 | Progress Notifications | Administration | `/notifications` | `NotificationModule.vue` | 占位，未实现历史与通知 |
+| M5 | Document Applications | Administration | `/applications` | `ApplicationModule.vue` | 已实现表单、材料、审核与退回补交 |
+| M6 | Progress Notifications | Administration | `/notifications` | `NotificationModule.vue` | 已实现进度、历史、通知与已读状态 |
 
-Redis、统一用户表、共享附件、审批历史、业务通知，以及 Java TF-IDF / 余弦相似度检索均属于后续工作，当前启动不需要 Redis 或外部 AI 服务密钥。
+M5/M6 已增加受控材料上传、审批历史和申请通知。Redis、统一用户表、跨模块附件合同及 Java TF-IDF / 余弦相似度检索仍属于后续工作；当前启动不需要 Redis 或外部 AI 服务密钥。
 
 ## 2. 项目结构与请求链路
 
@@ -231,7 +231,7 @@ npm run dev -- --port 8081 --strictPort
 
 脚本中的上述演示账号密码均为 `123456`，仅供本地合成数据演示。选择与账号匹配的角色；Staff 目前仍对应旧 `dorm_manager` 账号体系，并非已经完成用户模型迁移。
 
-成功登录后应看到 `/home` 的六个服务卡片。点开模块出现 `Under development` 是当前预期行为。不要按旧文档查找宿舍、床位、水电费或权限管理菜单。
+成功登录后应看到 `/home` 的六个服务卡片。M1–M4 出现 `Under development` 是当前预期行为；M5/M6 已提供真实业务页面。不要按旧文档查找宿舍、床位、水电费或权限管理菜单。
 
 ### 4.7 停止与下次启动
 
@@ -272,7 +272,7 @@ mvn -DskipTests package org.springframework.boot:spring-boot-maven-plugin:2.6.3:
 springboot/target/springboot-0.0.1-SNAPSHOT.jar
 ```
 
-打包命令中的 `-DskipTests` 避免重复运行前一步测试；不能把跳过测试的打包结果记为测试通过。现有后端仅有一个 Spring 上下文测试，通过它不代表六模块业务或真实数据库交互已验证。
+打包命令中的 `-DskipTests` 避免重复运行前一步测试；不能把跳过测试的打包结果记为测试通过。默认后端测试包含 Spring 上下文测试；M5/M6 的真实 MySQL 测试需要按专用说明显式启用。仅通过上下文测试不能代表业务已验证。
 
 ### 5.2 部署文件与进程
 
@@ -364,7 +364,7 @@ mysqldump -h 127.0.0.1 -P 3306 -u root -p --single-transaction --result-file=sma
 7. 检查桌面与约 390px 手机视口、滚动、按钮焦点和长账号名。
 8. 服务器部署还需验证 `/faq` 等深链接刷新，以及 `/api/main/loadIdentity` 确实返回 JSON 而非 `index.html`。
 
-浏览器 Network 应能看到登录请求，以及 `/api/main/loadIdentity`、`/api/main/loadUserInfo` 等 Session 请求。当前没有实时业务轮询；停留在占位页期间的会话过期通常在下一次导航或刷新时发现。
+浏览器 Network 应能看到登录请求，以及 `/api/main/loadIdentity`、`/api/main/loadUserInfo` 等 Session 请求。当前没有实时业务轮询。M5/M6 的业务请求也会验证 Session，并显示会话失效或连接失败的提示。
 
 ### 6.2 验证命令与含义
 
@@ -402,7 +402,7 @@ mysqldump -h 127.0.0.1 -P 3306 -u root -p --single-transaction --result-file=sma
 | 服务器刷新模块返回 404 | 检查 history 路由的 `try_files ... /index.html` 回退 |
 | 普通 JAR 提示无主清单属性 | 按 5.1 显式执行 Spring Boot `repackage` |
 | 找不到原宿舍功能 | 当前路由已切换为六模块门户；旧页面仅保留在源码中 |
-| 模块始终显示开发中 | 属于当前范围；需真实完成对应业务后才能更新状态 |
+| 模块始终显示开发中 | M1–M4 仍为占位；M5/M6 应显示业务页面，检查是否运行了最新构建 |
 
 ## 7. 公共开发约定
 
@@ -495,7 +495,7 @@ export const listAvailability = params =>
 
 ### 8.5 M5 — Document Applications
 
-**入口：** `ApplicationModule.vue`，路由 `/applications`。目标是提交材料、校验附件、工作人员退回 / 批准 / 拒绝。
+**入口：** `ApplicationModule.vue`，路由 `/applications`。本分支已实现，见 M5/M6 部署和测试文档。以下保留原开发建议作为设计依据。
 
 - **优先实现：** 先选一个明确的申请类型，约定字段、材料清单与审批流程；完成提交 → 审核 → 查看结果，再扩展更多类型。
 - **后端建议：** 统一申请编号、申请人、类型、当前状态与处理意见；例如 Submitted → Returned / Approved / Rejected 可作为讨论起点，重新提交和终态规则需团队确认后实施。
@@ -505,7 +505,7 @@ export const listAvailability = params =>
 
 ### 8.6 M6 — Progress Notifications
 
-**入口：** `NotificationModule.vue`，路由 `/notifications`。目标是查看申请进度、退回原因、处理历史及本人的站内通知。
+**入口：** `NotificationModule.vue`，路由 `/notifications`。本分支已实现申请进度、处理历史和本人通知；跨模块通知仍待团队约定。以下保留原开发建议作为设计依据。
 
 - **优先实现：** 与 M5 同步设计申请详情时间线、通知列表、未读数与标记已读；先用普通接口查询，按实际需要增加轻量轮询。
 - **后端建议：** 申请 / 工单模块拥有业务状态；M6 读取真实状态和历史，维护收件人、通知类型、业务引用、内容、创建时间和已读时间。不要允许通知接口直接改审批状态。

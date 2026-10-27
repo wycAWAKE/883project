@@ -76,3 +76,8 @@ application-*.local.yaml
 Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+# M5/M6 local credentials and runtime
+.local/
+runtime/
+backups/

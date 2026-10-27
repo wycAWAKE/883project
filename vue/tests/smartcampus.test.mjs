@@ -28,7 +28,8 @@ test('the rendered portal, sidebar and all six real routes share one module regi
       assert.equal(matched.meta.moduleId, module.id)
       html = await renderPage()
       assert.match(html, new RegExp(`<h1[^>]*>${module.name}</h1>`))
-      assert.match(html, /Under development/)
+      if (['M5', 'M6'].includes(module.id)) assert.doesNotMatch(html, /Under development/)
+      else assert.match(html, /Under development/)
       assert.match(html, /Back to home/)
     }
     // Obsolete bookmarks and unknown URLs recover to the portal.

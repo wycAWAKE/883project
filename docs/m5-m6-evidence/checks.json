@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-26",
+  "baseCommit": "1d03329",
+  "backend": [
+    {
+      "name": "com.example.springboot.administration.AdministrationIntegrationTest",
+      "tests": "16",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "5.148"
+    },
+    {
+      "name": "com.example.springboot.SpringbootApplicationTests",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.725"
+    }
+  ],
+  "frontend": {
+    "tests": 20,
+    "passed": 20,
+    "failed": 0,
+    "build": "passed"
+  },
+  "mysqlVersion": "8.4.13",
+  "sqlInstallation": {
+    "isolatedEnglishDemo": "passed",
+    "optionalEnglishDataRepeated": "passed"
+  },
+  "backupRestore": {
+    "passed": true,
+    "tables": {
+      "student": {
+        "rows": 2,
+        "sha256": "eb3b61fdaf64af29dc86d5800378a3f60192adce17f0ca4427493598dc5297ac"
+      },
+      "dorm_manager": {
+        "rows": 1,
+        "sha256": "1b8b458aac472e404be058816c0ceb2c8413bac39681ed7a538af360a89dc89c"
+      },
+      "sc_application": {
+        "rows": 1,
+        "sha256": "8a46ab36336d5d9389febc4138719ae724828c240c70597be37f55575c41dabf"
+      },
+      "sc_attachment": {
+        "rows": 1,
+        "sha256": "a51f5421875ea179b18bf5af6357ee14fd4f414ac6402ce638f5e9a10498532f"
+      },
+      "sc_history": {
+        "rows": 4,
+        "sha256": "6fd8e3ab9d60e67a08895097565c9149b3fd4acc0e72fbb0dd59e0a900a5b3e2"
+      },
+      "sc_notification": {
+        "rows": 4,
+        "sha256": "d00d563c62509cd45035edc42ebbdad75eef7036245f8b25f048a47d0384be21"
+      }
+    }
+  },
+  "browser": {
+    "workflow": "submit-return-resubmit-approve",
+    "historyEvents": 4,
+    "otherStudentIsolation": "passed",
+    "downloadMatchesOriginal": "passed",
+    "applicationRestartPreservation": "passed",
+    "notificationReadFilter": "passed",
+    "viewportCheck": "390x844"
+  }
+}
