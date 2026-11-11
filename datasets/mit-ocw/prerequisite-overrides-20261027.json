@@ -1,0 +1,18 @@
+{
+  "reviewedOn": "2026-10-27",
+  "purpose": "Prevent unsupported inference from beginner descriptions; the historical snapshots are preserved.",
+  "decisions": {
+    "6.0001": {
+      "status": "review_required",
+      "sourceUrl": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/",
+      "syllabusUrl": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/pages/syllabus/",
+      "rationale": "The description says little or no programming experience is needed; the syllabus has no explicit formal prerequisite statement. This does not establish that no other course prerequisite exists."
+    },
+    "6.189": {
+      "status": "review_required",
+      "sourceUrl": "https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/",
+      "syllabusUrl": "https://ocw.mit.edu/courses/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/pages/syllabus/",
+      "rationale": "The description says little or no programming experience is needed; the syllabus has no explicit formal prerequisite statement. This does not establish that no other course prerequisite exists."
+    }
+  }
+}
