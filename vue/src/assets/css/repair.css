@@ -1,0 +1,86 @@
+.repair-page { max-width: 1200px; margin: 0 auto; padding: 32px; color: #182233; }
+.repair-back { color: #526c88; font-size: 13px; text-decoration: none; }
+.repair-back:hover { text-decoration: underline; }
+.repair-page-heading { display: flex; align-items: center; gap: 16px; margin-top: 28px; }
+.repair-page-icon { display: grid; place-items: center; width: 56px; height: 56px; flex-shrink: 0; background: #eaf2ff; color: #346bb9; border-radius: 15px; }
+.repair-page-icon svg { width: 28px; height: 28px; }
+.repair-eyebrow { color: #61738a; font-size: 12px; margin-bottom: 6px; }
+.repair-page h1 { font-size: clamp(24px,3vw,32px); line-height: 1.25; letter-spacing: -.5px; }
+.repair-page h2 { font-size: 20px; line-height: 1.4; }
+.repair-page h3 { font-size: 16px; line-height: 1.5; }
+.repair-page-description { margin: 18px 0 32px; color: #61738a; line-height: 1.7; }
+.repair-muted { color: #61738a; font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; }
+.repair-section-heading,.repair-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.repair-section-heading .repair-muted { margin-top: 5px; }
+.repair-button { display: inline-flex; justify-content: center; align-items: center; padding: 10px 15px; border: 1px solid #d3dfed; border-radius: 8px; background: white; color: #34516f; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; min-height: 40px; }
+.repair-button:hover { background: #eff5fc; }
+.repair-button:disabled { opacity: .55; cursor: not-allowed; }
+.repair-primary { background: #2e68b3; border-color: #2e68b3; color: white; }
+.repair-primary:hover { background: #245997; }
+.repair-page :is(button,input,select,textarea,a):focus-visible { outline: 3px solid #4d8bd8; outline-offset: 3px; }
+.repair-page :is(input,select,textarea) { width: 100%; padding: 10px 12px; border: 1px solid #cbd9e8; border-radius: 8px; background: white; color: #182233; font: inherit; font-size: 14px; min-height: 42px; }
+.repair-page label { display: block; font-size: 13px; font-weight: 600; color: #405773; margin-bottom: 7px; }
+.repair-filters { display: grid; grid-template-columns: minmax(140px,1fr) minmax(140px,210px) auto; gap: 14px; align-items: end; margin: 22px 0 16px; }
+.repair-list-panel { border: 1px solid #dfe7ef; background: white; border-radius: 12px; overflow: hidden; }
+.repair-loading { padding: 38px 20px; color: #61738a; text-align: center; font-size: 14px; }
+.repair-empty { padding: 40px 24px; text-align: center; }
+.repair-empty p { color: #61738a; font-size: 14px; line-height: 1.7; margin: 10px 0 18px; }
+.repair-report-list { list-style: none; }
+.repair-report-list > li { display: grid; grid-template-columns: minmax(0,1fr) 105px 150px auto; gap: 20px; align-items: center; padding: 20px; border-bottom: 1px solid #e6edf4; }
+.repair-report-list > li:last-child { border-bottom: 0; }
+.repair-report-main { min-width: 0; }
+.repair-report-id { display: block; font-size: 11px; color: #64778c; margin-bottom: 5px; }
+.repair-title-link { display: block; color: #245e9d; background: none; border: 0; cursor: pointer; text-align: left; font-size: 15px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+.repair-title-link:hover { text-decoration: underline; }
+.repair-report-main p { margin-top: 5px; }
+.repair-badge { display: inline-block; justify-self: start; padding: 5px 10px; background: #edf3fb; color: #305b91; border: 1px solid #d8e5f4; border-radius: 20px; font-size: 12px; white-space: nowrap; }
+.repair-badge[data-status="IN_PROGRESS"] { background: #fff7e7; color: #815a13; border-color: #f2e1b9; }
+.repair-badge[data-status="RESOLVED"],.repair-badge[data-status="CLOSED"] { background: #edf8f3; color: #286a50; border-color: #d0e9dd; }
+.repair-pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; color: #61738a; font-size: 12px; }
+.repair-pagination > div { display: flex; align-items: center; gap: 8px; }
+.repair-pagination label { margin: 0; white-space: nowrap; font-size: 12px; }
+.repair-pagination select { width: 68px; }
+.repair-alert { padding: 14px 16px; border-radius: 8px; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.repair-alert .repair-button { margin-top: 10px; }
+.repair-alert-error { background: #fff2f1; color: #993c37; border: 1px solid #efcecb; }
+.repair-alert-success { background: #edf8f3; color: #286a50; border: 1px solid #d0e9dd; margin-bottom: 12px; }
+.repair-dialog { box-sizing: border-box; width: min(650px,calc(100vw - 32px)); max-height: calc(100dvh - 40px); margin: auto; padding: 26px; border: 1px solid #dfe7ef; border-radius: 14px; background: white; color: #182233; box-shadow: 0 24px 80px #102c5033; overflow-y: auto; }
+.repair-dialog::backdrop { background: #10223966; }
+.repair-dialog h2 { font-size: 22px; line-height: 1.4; }
+.repair-form { margin-top: 18px; }
+.repair-form fieldset { border: 0; min-width: 0; }
+.repair-form label:not(:first-child) { margin-top: 17px; }
+.repair-form textarea { resize: vertical; min-height: 110px; }
+.repair-dialog-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 22px; }
+.repair-form .repair-alert { margin-top: 16px; }
+.repair-field-error { color: #a03e37; font-size: 12px; margin-top: 5px; line-height: 1.5; }
+.repair-page [aria-invalid="true"] { border-color: #bf514a; }
+.repair-detail { width: min(760px,calc(100vw - 32px)); }
+.repair-detail-heading { display: flex; align-items: center; gap: 12px; margin: 20px 0 12px; }
+.repair-ticket-title { overflow-wrap: anywhere; font-size: 20px !important; margin-bottom: 12px; }
+.repair-description { font-size: 14px; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
+.repair-facts { display: grid; gap: 16px; margin: 22px 0 28px; background: #f6f8fb; padding: 18px; border-radius: 10px; }
+.repair-facts > div { display: grid; grid-template-columns: 110px minmax(0,1fr); gap: 14px; }
+.repair-facts dt { color: #61738a; font-size: 13px; }
+.repair-facts dd { font-size: 14px; overflow-wrap: anywhere; }
+.repair-timeline { margin: 20px 0 0 7px; padding-left: 23px; border-left: 2px solid #dbe6f3; list-style: none; }
+.repair-timeline > li { position: relative; padding-bottom: 26px; }
+.repair-timeline > li::before { content: ''; position: absolute; left: -30px; top: 4px; height: 10px; width: 10px; border: 2px solid white; background: #3c73ba; border-radius: 50%; }
+.repair-timeline-title { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 14px; }
+.repair-timeline-title time,.repair-timezone { font-size: 12px; color: #61738a; }
+.repair-timeline .repair-description { margin-top: 8px; }
+@media(max-width:1100px) { .repair-report-list > li { grid-template-columns: minmax(0,1fr) 100px auto; gap: 12px; } .repair-report-list > li > time { grid-column: 1; grid-row: 2; } .repair-report-list > li > button { grid-column: 3; grid-row: 1 / 3; } }
+@media(max-width:600px) { .repair-page { padding: 22px 16px; } .repair-page-heading { gap: 12px; } .repair-page-description { margin-bottom: 24px; } .repair-section-heading { align-items: flex-start; } .repair-filters { grid-template-columns: minmax(0,1fr) auto; } .repair-filters > div:first-child { grid-column: 1 / -1; } .repair-report-list > li { padding: 16px; grid-template-columns: minmax(0,1fr) auto; } .repair-report-list > li > button { grid-column: 2; grid-row: 2; } .repair-report-list > li > time { grid-column: 1; } .repair-badge { font-size: 11px; } .repair-pagination { align-items: flex-start; } .repair-pagination > div { flex-wrap: wrap; } .repair-dialog { padding: 20px 16px; } .repair-facts > div { grid-template-columns: 85px minmax(0,1fr); gap: 8px; } }
+
+
+.repair-mine-filter { display: inline-flex !important; align-items: center; gap: 9px; margin: 0 0 16px !important; font-weight: 400 !important; }
+.repair-mine-filter input { width: 18px; min-height: 18px; height: 18px; accent-color: #2e68b3; }
+.repair-staff-actions { margin: 20px 0 28px; padding: 20px; border: 1px solid #dce7f4; border-radius: 10px; background: #f8fafd; }
+.repair-staff-actions h3 { margin-bottom: 12px; }
+.repair-action-toolbar { display: flex; flex-wrap: wrap; gap: 9px; margin: 12px 0; }
+.repair-action-form { border-top: 1px solid #dce7f4; padding-top: 18px; }
+.repair-action-form h4 { margin-bottom: 14px; font-size: 15px; }
+.repair-staff-actions .repair-alert { margin: 12px 0; }
+.repair-conflict { padding: 14px; border-radius: 8px; background: #fff7e7; border: 1px solid #eddcb6; color: #795a22; font-size: 13px; line-height: 1.7; }
+.repair-conflict .repair-button { margin: 10px 8px 0 0; }
+@media(max-width:600px) { .repair-staff-actions { padding: 16px 12px; } .repair-action-toolbar .repair-button { flex: 1; } }

@@ -4,6 +4,8 @@
 
 > **当前交付范围（2026-10-26）：门户框架。M1–M6 均为 `Under development` 占位页，尚未实现六模块业务接口。** 原宿舍业务代码、账号表、权限表和数据仍保留；当前前端没有注册原宿舍业务路由。本文面向部署与开发维护，界面及后续产品提示统一使用英文。
 
+> **M4 四阶段完成（2026-11-08）：** 报修后端、学生和员工/管理员界面均已完成，入口标为 Available。后端及真实浏览器联合验收 29 项通过，M4 前端定向检查 26 项通过，构建成功；全量前端仍有两个既有英文宿舍演示 SQL 缺失问题。运行与演示见 [M4 运行说明](docs/M4_RUNBOOK.md)，证据见 [验收记录](docs/M4_ACCEPTANCE.md)，续接见 [交接记录](docs/M4_HANDOFF.md)。M6 通知未接入，GitHub 推送未执行。
+
 ## 目录
 
 - [1. 当前能力与模块入口](#1-当前能力与模块入口)
@@ -37,7 +39,7 @@
 | M1 | FAQ Assistance | Learning | `/faq` | `FaqModule.vue` | 占位，未接入 FAQ |
 | M2 | Course Recommendations | Learning | `/courses` | `CourseModule.vue` | 占位，未实现推荐 |
 | M3 | Room Booking | Facilities | `/bookings` | `BookingModule.vue` | 占位，未实现预约 |
-| M4 | Fault Reporting | Facilities | `/repairs` | `RepairModule.vue` | 占位，未迁移报修业务 |
+| M4 | Fault Reporting | Facilities | `/repairs` | `RepairModule.vue` | 学生、员工界面和后端均已实现 |
 | M5 | Document Applications | Administration | `/applications` | `ApplicationModule.vue` | 占位，未实现申请审批 |
 | M6 | Progress Notifications | Administration | `/notifications` | `NotificationModule.vue` | 占位，未实现历史与通知 |
 

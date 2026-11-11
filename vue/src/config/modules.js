@@ -22,7 +22,7 @@ export const campusModules = [
   {
     id: 'M4', name: 'Fault Reporting', group: 'Facilities', path: '/repairs', icon: Tools,
     description: 'Report a facilities issue and follow its progress through to resolution.',
-    status: 'Under development', component: () => import('../views/modules/RepairModule.vue'),
+    status: 'Available', component: () => import('../views/modules/RepairModule.vue'),
   },
   {
     id: 'M5', name: 'Document Applications', group: 'Administration', path: '/applications', icon: Document,
