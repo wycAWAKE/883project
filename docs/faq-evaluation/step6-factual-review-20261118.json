@@ -1,0 +1,169 @@
+{
+  "date": "2026-11-18",
+  "reviewer": "implementing assistant; author review, not an independent blind assessment",
+  "scope": "All14 returned generated answers reviewed against their frozen source answers. This does not establish current external policy correctness or all-user accuracy. Refused/error cases are not scored as factually correct answers.",
+  "responsesSha256": "9aec0e07202180b649b75ddc6df00d1adc1486ffaf90b96cc47a70a6aaa3655d",
+  "automaticReportSha256": "b13cd4f4ef5ee10151c66fab37394202afb4e9cc61194e47bd1b1ca92eeeeb1c",
+  "corpusSha256": "55808b345d4c61fe2aedd4ba5ae89454818f3ebe5498912bbc8e0244c7f1cc8a",
+  "reviewedAnswers": 14,
+  "supportedAnswers": 14,
+  "unsupportedAnswers": 0,
+  "readyForProduction": false,
+  "reason": "Automatic coverage gate failed; positive expected-source responses14/28 versus required24/28, with2 provider/validation failures.",
+  "cases": [
+    {
+      "id": "H02",
+      "sourceKeys": [
+        "CCNU-FAQ-002"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Template attachment and not an issued transcript are explicitly supported.",
+      "reviewedSourceAnswers": [
+        "The Undergraduate School page for undergraduate transcript templates provides an English transcript template as an attachment. This is a template, not an issued transcript."
+      ]
+    },
+    {
+      "id": "H03",
+      "sourceKeys": [
+        "CCNU-FAQ-003"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Registration-information change form and its list location are supported.",
+      "reviewedSourceAnswers": [
+        "The Undergraduate School Student Status Management page lists the student registration information change application form. Open the form entry on that page."
+      ]
+    },
+    {
+      "id": "H04",
+      "sourceKeys": [
+        "CCNU-FAQ-004"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Course-selection telephone027-67863133 exactly matches the stored answer.",
+      "reviewedSourceAnswers": [
+        "For undergraduate course-selection enquiries, the Undergraduate School lists 027-67863133. Check the source page for current contact details."
+      ]
+    },
+    {
+      "id": "H05",
+      "sourceKeys": [
+        "CCNU-FAQ-005"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Service Hall telephone027-67865223 exactly matches the stored answer.",
+      "reviewedSourceAnswers": [
+        "The Undergraduate School contact page lists 027-67865223 for the Student Affairs Service Hall. Use that number for enquiries about its services."
+      ]
+    },
+    {
+      "id": "H06",
+      "sourceKeys": [
+        "CCNU-FAQ-006"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Student-status/qualification telephone027-67862851 exactly matches the stored answer.",
+      "reviewedSourceAnswers": [
+        "The Undergraduate School lists 027-67862851 for student-status and academic-qualification enquiries."
+      ]
+    },
+    {
+      "id": "H07",
+      "sourceKeys": [
+        "CCNU-FAQ-007"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Teaching-evaluation telephone027-67868058 exactly matches the stored answer.",
+      "reviewedSourceAnswers": [
+        "The Undergraduate School lists 027-67868058 for student teaching-evaluation enquiries."
+      ]
+    },
+    {
+      "id": "H08",
+      "sourceKeys": [
+        "CCNU-FAQ-009"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Replacement degree-certification form and2September2026 list date are supported.",
+      "reviewedSourceAnswers": [
+        "The Student Status Management list includes the replacement degree-certification application form, dated 2 September 2026."
+      ]
+    },
+    {
+      "id": "H09",
+      "sourceKeys": [
+        "CCNU-FAQ-010"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Replacement graduation-certification form and2September2026 list date are supported.",
+      "reviewedSourceAnswers": [
+        "The Student Status Management list includes the replacement graduation-certification application form, dated 2 September 2026."
+      ]
+    },
+    {
+      "id": "H10",
+      "sourceKeys": [
+        "CCNU-FAQ-011"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Graduate qualification-correction approval form and2September2026 date are supported.",
+      "reviewedSourceAnswers": [
+        "The Student Status Management list includes the graduate academic-qualification information correction approval form, dated 2 September 2026."
+      ]
+    },
+    {
+      "id": "H12",
+      "sourceKeys": [
+        "CCNU-FAQ-013"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Modify account information in one-stop portal for registered contacts is supported.",
+      "reviewedSourceAnswers": [
+        "The published identity guide uses Modify account information in the one-stop portal to update registered contact information."
+      ]
+    },
+    {
+      "id": "H18",
+      "sourceKeys": [
+        "CCNU-FAQ-023"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Network self-service linked from authentication page exposes IP/MAC/usage/devices as stored.",
+      "reviewedSourceAnswers": [
+        "The guide links network self-service from the authentication page and lists IP, MAC, usage and connected-device information."
+      ]
+    },
+    {
+      "id": "H23",
+      "sourceKeys": [
+        "CCNU-FAQ-028"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Check account status and registered mobile is supported; no invented PIN or code.",
+      "reviewedSourceAnswers": [
+        "The guide says to check account status and the registered mobile number; unresolved problems can use support number 67866000."
+      ]
+    },
+    {
+      "id": "H24",
+      "sourceKeys": [
+        "CCNU-FAQ-030"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Published in-person replacement guide and confirm-current-requirements caveat are supported.",
+      "reviewedSourceAnswers": [
+        "The Information Office card-replacement page links a published in-person service guide; confirm current requirements with the card centre."
+      ]
+    },
+    {
+      "id": "H27",
+      "sourceKeys": [
+        "CCNU-FAQ-036"
+      ],
+      "verdict": "supported_by_frozen_evidence",
+      "note": "Routine last admission16:30 and afternoon14:00-17:00 exactly match stored hours.",
+      "reviewedSourceAnswers": [
+        "Routine hours are 09:00-11:30 and 14:00-17:00 daily; last admission is 16:30. Check special notices."
+      ]
+    }
+  ]
+}

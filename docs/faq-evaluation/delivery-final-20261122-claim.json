@@ -1,0 +1,34 @@
+{
+  "version" : "delivery-final-20261122",
+  "startedAt" : "2026-11-22T15:03:18.918385800Z",
+  "deepSeekAttempts" : 0,
+  "embeddingAttempts" : 0,
+  "maxDeepSeekCalls" : 40,
+  "maxEmbeddingCalls" : 43,
+  "policy" : {
+    "candidateThreshold" : 0.6,
+    "semanticThreshold" : 0.73,
+    "topK" : 3,
+    "maxDeepSeekCalls" : 40,
+    "maxEmbeddingCalls" : 43,
+    "providerRetries" : 0,
+    "queryRewrites" : 0,
+    "calibrationCount" : 40,
+    "diagnosticCount" : 0,
+    "isIndependentAcceptance" : false,
+    "requiresFactualReview" : true,
+    "minimumPositiveExpectedSourceAnswers" : 24,
+    "maximumNegativeAnswered" : 0,
+    "maximumWrongSourceAnswers" : 0,
+    "maximumUnavailableCases" : 0,
+    "requiresAllGeneratedFactsSupported" : true,
+    "previouslyExposedRegressionSet" : true,
+    "regressionCount" : 40,
+    "productionSourceSha256" : {
+      "llm/LlmClient.java" : "a276654264858055b09a9f8650ce028bd827a6e647b03787e1733bd6e0ab999c",
+      "retrieval/SemanticFaqRetriever.java" : "90e9f0ff8084278825991b8276c2c7456cb3b81574baa95f40c5f14ee803684b",
+      "service/FaqService.java" : "18ac7290b61fe70ba5ea4d0b7989b84008b330b9479075582c3a8fb2f24f486b"
+    },
+    "priorDiagnosticReportSha256" : "b13cd4f4ef5ee10151c66fab37394202afb4e9cc61194e47bd1b1ca92eeeeb1c"
+  }
+}

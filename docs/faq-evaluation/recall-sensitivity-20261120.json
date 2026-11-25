@@ -1,0 +1,62 @@
+{
+  "version": "2026-11-20-recall-sensitivity",
+  "method": "Offline replay of saved calibration scores only. Candidates are not answers.",
+  "calibrationSha256": "3fcf509d3235eb69df47d6f9709b51b254437c78654218f8262c8e21e09ba3ae",
+  "scoresSha256": "27f2b45678677ed51130d2e02217d57dd50ef2b584652c55c0162c8e63bc2bc4",
+  "newSamplesSha256": "94a294511555a97fd9681bc781beaeff7db6406c7519ab854d5af845a440ee3f",
+  "corpusSha256": "55808b345d4c61fe2aedd4ba5ae89454818f3ebe5498912bbc8e0244c7f1cc8a",
+  "embeddingModel": "BAAI/bge-m3",
+  "representation": "question + space + keywords",
+  "positiveCases": 28,
+  "negativeCases": 24,
+  "excludedClarifications": 8,
+  "scoredQueries": 52,
+  "scoresPerQuery": 40,
+  "providerCalls": 0,
+  "holdoutRescored": false,
+  "newSamplesMeasured": false,
+  "finalAnswerAccuracy": null,
+  "readyForProduction": false,
+  "experimentalCandidateThreshold": 0.6,
+  "defaultCandidateThreshold": 0.73,
+  "semanticModeDefaultEnabled": false,
+  "rows": [
+    {
+      "candidateThreshold": 0.5,
+      "positiveExpectedEvidenceTop3": 28,
+      "positiveWrongTop1": 1,
+      "negativeWithCandidates": 20
+    },
+    {
+      "candidateThreshold": 0.55,
+      "positiveExpectedEvidenceTop3": 28,
+      "positiveWrongTop1": 1,
+      "negativeWithCandidates": 18
+    },
+    {
+      "candidateThreshold": 0.6,
+      "positiveExpectedEvidenceTop3": 28,
+      "positiveWrongTop1": 1,
+      "negativeWithCandidates": 13
+    },
+    {
+      "candidateThreshold": 0.65,
+      "positiveExpectedEvidenceTop3": 25,
+      "positiveWrongTop1": 1,
+      "negativeWithCandidates": 9
+    },
+    {
+      "candidateThreshold": 0.7,
+      "positiveExpectedEvidenceTop3": 21,
+      "positiveWrongTop1": 0,
+      "negativeWithCandidates": 4
+    },
+    {
+      "candidateThreshold": 0.73,
+      "positiveExpectedEvidenceTop3": 14,
+      "positiveWrongTop1": 0,
+      "negativeWithCandidates": 0
+    }
+  ],
+  "limitation": "0.60 preserves 28/28 calibration Top3 but forwards 13/24 unsupported questions and has one wrong positive Top1. Only validated grounded generation may answer candidates. No live quality conclusion."
+}

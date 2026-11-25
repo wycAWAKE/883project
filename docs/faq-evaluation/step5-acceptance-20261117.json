@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-17",
+  "step": 5,
+  "status": "implemented-and-live-verified",
+  "preflight": {
+    "date": "2026-11-17",
+    "documents": 40,
+    "allOutboundTextsEqualFrozenPublicCorpus": true,
+    "officialSourcesMatched": true,
+    "accountTablesRead": false,
+    "providerCalls": 0,
+    "databaseWrites": 0,
+    "databaseUnchanged": true,
+    "payloadFields": "public question + space + public keywords",
+    "inputTextBytes": 5317,
+    "inputJsonSha256": "Xy9pGALLwD6WDVu8f+9p3soxmEi9JW5FF47oNnRCHx0="
+  },
+  "live": {
+    "date": "2026-11-17",
+    "model": "BAAI/bge-m3",
+    "dimensions": 1024,
+    "generationCalls": 0,
+    "databaseWrites": 0,
+    "acceptancePolicy": "existing TF-IDF >= 0.35; BGE ranking; step6 uncalibrated",
+    "faqId": 1,
+    "score": 0.9099663934750338,
+    "indexReused": true,
+    "databaseUnchanged": true,
+    "noMatchPassed": true,
+    "requests": 5,
+    "passed": true
+  },
+  "controlled": {
+    "runtime": "JDK17",
+    "sourceTarget": "Java8",
+    "tests": 279,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "frontendChanged": false,
+    "frontendRerun": false
+  },
+  "limitations": [
+    "lexical admission retained until step6 calibration",
+    "cooperative network budget; DNS/write/slow headers may delay worker release",
+    "same model alias server changes require index rebuild/restart",
+    "real Java8 and end-to-end generated-answer quality not verified"
+  ]
+}

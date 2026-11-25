@@ -1,0 +1,27 @@
+{
+  "version" : "2026-11-22-recall-live",
+  "startedAt" : "2026-11-22T14:51:16.393137300Z",
+  "deepSeekAttempts" : 0,
+  "embeddingAttempts" : 0,
+  "maxDeepSeekCalls" : 34,
+  "maxEmbeddingCalls" : 37,
+  "policy" : {
+    "candidateThreshold" : 0.6,
+    "semanticThreshold" : 0.73,
+    "topK" : 3,
+    "maxDeepSeekCalls" : 34,
+    "maxEmbeddingCalls" : 37,
+    "providerRetries" : 0,
+    "queryRewrites" : 0,
+    "calibrationCount" : 32,
+    "diagnosticCount" : 2,
+    "isIndependentAcceptance" : false,
+    "requiresFactualReview" : true,
+    "productionSourceSha256" : {
+      "llm/LlmClient.java" : "2f6ff6e3346fd23b858aa75461cdec4d9d384061609daa4c155acad54c25784e",
+      "retrieval/SemanticFaqRetriever.java" : "90e9f0ff8084278825991b8276c2c7456cb3b81574baa95f40c5f14ee803684b",
+      "service/FaqService.java" : "18ac7290b61fe70ba5ea4d0b7989b84008b330b9479075582c3a8fb2f24f486b"
+    },
+    "priorDiagnosticReportSha256" : "b13cd4f4ef5ee10151c66fab37394202afb4e9cc61194e47bd1b1ca92eeeeb1c"
+  }
+}

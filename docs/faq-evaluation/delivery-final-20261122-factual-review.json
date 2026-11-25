@@ -1,0 +1,234 @@
+{
+  "version": "2026-11-22-delivery-factual-review",
+  "reviewer": "independent_agent_delivery_factual_review",
+  "reviewScope": "Frozen corpus support; previously exposed regression set, not a new independent blind test or current-policy audit",
+  "rawSha256": "f8efdc9192e7591e75b8e92302c97be8de0845d17ff25171e5217763b00e5944",
+  "reportSha256": "f1ba44408efef832498dcd725fd6dd42b00bd92e326a47c9a4aa5d78174ef0a4",
+  "corpusSha256": "55808b345d4c61fe2aedd4ba5ae89454818f3ebe5498912bbc8e0244c7f1cc8a",
+  "supportedGeneratedAnswers": 27,
+  "generatedAnswers": 27,
+  "frozenRegressionGatePassed": true,
+  "readyForProduction": false,
+  "knownMiss": {
+    "id": "H21",
+    "reason": "Correct VPN evidence026 not retrieved; model correctly refused supplied software-only evidence032"
+  },
+  "reviews": [
+    {
+      "id": "H01",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-001"
+      ],
+      "reason": "2026-2027 calendar location, no invented image dates"
+    },
+    {
+      "id": "H02",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-002"
+      ],
+      "reason": "English transcript template rather than issued record"
+    },
+    {
+      "id": "H03",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-003"
+      ],
+      "reason": "Student Status Management information-change form"
+    },
+    {
+      "id": "H04",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-004"
+      ],
+      "reason": "Public course-selection line027-67863133"
+    },
+    {
+      "id": "H05",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-005"
+      ],
+      "reason": "Student Affairs Service Hall027-67865223"
+    },
+    {
+      "id": "H06",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-006"
+      ],
+      "reason": "Student-status/qualification line027-67862851"
+    },
+    {
+      "id": "H07",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-007"
+      ],
+      "reason": "Teaching evaluation line027-67868058"
+    },
+    {
+      "id": "H08",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-009"
+      ],
+      "reason": "Degree-certification form and2 September2026"
+    },
+    {
+      "id": "H09",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-010"
+      ],
+      "reason": "Graduation-certification form location"
+    },
+    {
+      "id": "H10",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-011"
+      ],
+      "reason": "Qualification correction form and2 September2026"
+    },
+    {
+      "id": "H11",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-012"
+      ],
+      "reason": "Forgot password and registered WeCom/SMS/email"
+    },
+    {
+      "id": "H12",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-013"
+      ],
+      "reason": "Modify account information for registered mobile"
+    },
+    {
+      "id": "H13",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-015"
+      ],
+      "reason": "ID and Tianjiabing B2Campus Service Centre beside ICBC"
+    },
+    {
+      "id": "H14",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-016"
+      ],
+      "reason": "Official one-stop portal launch notice via Sources"
+    },
+    {
+      "id": "H15",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-017"
+      ],
+      "reason": "WeCom Workbench one-stop entry"
+    },
+    {
+      "id": "H16",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-019"
+      ],
+      "reason": "February2026 ccnu-auto forget/reconnect"
+    },
+    {
+      "id": "H17",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-022"
+      ],
+      "reason": "Automatic wired IP followed by browser authentication"
+    },
+    {
+      "id": "H18",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-023"
+      ],
+      "reason": "Network self-service IP/MAC/usage/connected devices"
+    },
+    {
+      "id": "H19",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-024"
+      ],
+      "reason": "Network fault line027-67866000 and Tianjiabing B2"
+    },
+    {
+      "id": "H20",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-025"
+      ],
+      "reason": "Current students/staff free access with no separate activation"
+    },
+    {
+      "id": "H22",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-027"
+      ],
+      "reason": "Reinstall current aTrust and navigate through official VPN guide"
+    },
+    {
+      "id": "H23",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-028"
+      ],
+      "reason": "Check account status/registered mobile and67866000 support"
+    },
+    {
+      "id": "H24",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-030"
+      ],
+      "reason": "Published replacement guide with current requirements confirmation"
+    },
+    {
+      "id": "H25",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-031"
+      ],
+      "reason": "Card and identification at Tianjiabing B2; confirm current requirements"
+    },
+    {
+      "id": "H26",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-032"
+      ],
+      "reason": "Windows/Office software platform download/help navigation, no product-key promise"
+    },
+    {
+      "id": "H27",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-036"
+      ],
+      "reason": "Museum16:30 last entry, routine sessions and special-notice qualification"
+    },
+    {
+      "id": "H28",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-038"
+      ],
+      "reason": "Twelve satisfies ten-or-more group rule: two days advance booking through WeChat"
+    }
+  ]
+}
