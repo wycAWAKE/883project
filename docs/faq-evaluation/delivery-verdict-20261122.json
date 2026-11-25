@@ -1,0 +1,32 @@
+{
+  "version": "2026-11-22-local-preview-verdict",
+  "localPreviewReady": true,
+  "frozenRegressionGatePassed": true,
+  "independentFrozenFactualReviewPassed": true,
+  "browserIntegrationPassed": true,
+  "backendTests": 383,
+  "backendFailures": 0,
+  "backendSkipped": 0,
+  "frontendTests": 48,
+  "frontendFailures": 0,
+  "compilePassed": true,
+  "executableJarBuilt": true,
+  "frontendBuildPassed": true,
+  "corpusCount": 40,
+  "reportSha256": "f1ba44408efef832498dcd725fd6dd42b00bd92e326a47c9a4aa5d78174ef0a4",
+  "factualReviewSha256": "850f29b9211efe503c0860029dae9217e6a6aff24de390e26e764b2adad081b9",
+  "independentUnseenAcceptanceComplete": false,
+  "currentUniversityPolicyRechecked": false,
+  "productionReady": false,
+  "knownMisses": [
+    "H21: correct VPN evidence not retrieved"
+  ],
+  "realJava8RuntimeTested": false,
+  "productionLoadTested": false,
+  "totalDeepSeekCalls": 70,
+  "totalBgeMeasuredBeforeBrowser": 80,
+  "totalBgeIncludingBrowserUpperBound": 85,
+  "secondApprovedBatchDeepSeekCalls": 41,
+  "secondApprovedBatchBgeUpperBound": 48,
+  "exactProviderBillingChecked": false
+}

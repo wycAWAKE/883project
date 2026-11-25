@@ -1,0 +1,16 @@
+{
+  "approvedMaximumDeepSeek": 2,
+  "approvedMaximumBGE": 5,
+  "maximumQuestionRequests": 2,
+  "retries": 0,
+  "generationModel": "deepseek-flash",
+  "embeddingModel": "BAAI/bge-m3",
+  "reservedMaximumDeepSeek": 2,
+  "reservedMaximumBGE": 5,
+  "reason": "First complete standalone question:40document vectors in3batches plus1query; second question cache reuse adds1query",
+  "sourceSha256": {
+    "llm/LlmClient.java": "a276654264858055b09a9f8650ce028bd827a6e647b03787e1733bd6e0ab999c",
+    "retrieval/SemanticFaqRetriever.java": "90e9f0ff8084278825991b8276c2c7456cb3b81574baa95f40c5f14ee803684b",
+    "service/FaqService.java": "18ac7290b61fe70ba5ea4d0b7989b84008b330b9479075582c3a8fb2f24f486b"
+  }
+}

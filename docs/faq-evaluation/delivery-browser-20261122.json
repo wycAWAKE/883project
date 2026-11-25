@@ -1,0 +1,37 @@
+{
+  "version": "2026-11-22-browser",
+  "verification": "Actual browser UI with local production JAR and MySQL; standalone complete questions, no rewrite/retry",
+  "role": "authorized synthetic Student fixture",
+  "backendAddress": "127.0.0.1:9090",
+  "frontendAddress": "127.0.0.1:8080",
+  "semanticAcceptanceEnabled": true,
+  "candidateThreshold": 0.6,
+  "semanticThreshold": 0.73,
+  "generationQuestionsSent": 2,
+  "generationCalls": 2,
+  "embeddingCallUpperBound": 5,
+  "embeddingCountBasis": "40documents in3batches+2queries; bound from code path, not independently metered provider usage",
+  "screenshots": [
+    {
+      "path": "report-screenshots/faq-delivery-20261122.png",
+      "sha256": "8a989767bc40c59bfd0ece6058045083819d706889ec432ba16739c22391a69f"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Where is the university licensed-software service platform?",
+      "observedMode": "generated",
+      "answer": "The university licensed-software service platform is provided at the official address shown in Sources, with download and help sections. [FAQ:32]",
+      "sourceKey": "CCNU-FAQ-032",
+      "sourceUrl": "https://ms.ccnu.edu.cn/"
+    },
+    {
+      "question": "How far ahead must a group of twelve book a CCNU Museum visit?",
+      "observedMode": "generated",
+      "answer": "A group of twelve must book two days in advance. [FAQ:38]",
+      "sourceKey": "CCNU-FAQ-038",
+      "sourceUrl": "https://mus.ccnu.edu.cn/index.htm"
+    }
+  ],
+  "credentialsRecorded": false
+}

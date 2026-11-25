@@ -1,0 +1,1804 @@
+{
+  "version" : "2026-11-11",
+  "threshold" : 0.35,
+  "topK" : 3,
+  "providerCalls" : 0,
+  "scope" : "Offline retrieval candidates and C5 gate only; no live rewrite or generation quality measured.",
+  "corpusSha256" : "55808b345d4c61fe2aedd4ba5ae89454818f3ebe5498912bbc8e0244c7f1cc8a",
+  "snapshots" : {
+    "calibration" : {
+      "initial5" : {
+        "caseCount" : 12,
+        "corpusSize" : 5,
+        "cases" : [ {
+          "id" : "C01",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-014" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "C02",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-029" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "C03",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-033" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.20713765852139226,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C04",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-034" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.18655451774366566,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.1671173586503041,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C05",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-035" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "C06",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-037" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "C07",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-039" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "C08",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-040" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.2149125917843783,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C09",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.2149125917843783,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C10",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ ]
+        }, {
+          "id" : "C11",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.3342347173006082,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.17480506849851066,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C12",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ ]
+        } ],
+        "metrics" : {
+          "answerable" : 8,
+          "coveredAnswerable" : 0,
+          "correctTop1" : 0,
+          "correctTop3" : 0,
+          "rawTop3" : 0,
+          "unanswerable" : 4,
+          "unsupportedCandidateMatches" : 0,
+          "top1Rate" : 0.0,
+          "recallAt3" : 0.0,
+          "noCandidateRate" : 1.0
+        }
+      },
+      "expanded40" : {
+        "caseCount" : 12,
+        "corpusSize" : 40,
+        "cases" : [ {
+          "id" : "C01",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-014" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-012",
+            "score" : 0.4511394781508246,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-014",
+            "score" : 0.4245220591399176,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-033",
+            "score" : 0.21047118484151647,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C02",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-029" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-031",
+            "score" : 0.26305741656831616,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.20197617340775567,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-029",
+            "score" : 0.19228256811820524,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C03",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-033" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-033",
+            "score" : 0.39674827652854866,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-025",
+            "score" : 0.11652894591754746,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-026",
+            "score" : 0.09510464315103714,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C04",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-034" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-034",
+            "score" : 0.3117922530108737,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-035",
+            "score" : 0.2247702571183401,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-013",
+            "score" : 0.15659519909115635,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C05",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-035" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-035",
+            "score" : 0.5091166799146432,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-034",
+            "score" : 0.2133011049266068,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-031",
+            "score" : 0.1518337711645018,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C06",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-037" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-040",
+            "score" : 0.3631652970219261,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-037",
+            "score" : 0.30530923231776896,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-039",
+            "score" : 0.3000856385768932,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C07",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-039" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-039",
+            "score" : 0.3867746752519992,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.31674242334274333,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-038",
+            "score" : 0.21491566852426242,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C08",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-040" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-040",
+            "score" : 0.4509646371566241,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-039",
+            "score" : 0.3821551388169014,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-038",
+            "score" : 0.3481011873626494,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C09",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.23590481844445604,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C10",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.23080997474326176,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-009",
+            "score" : 0.15626014262252114,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-010",
+            "score" : 0.15232529083294172,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C11",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.3863734452422304,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-006",
+            "score" : 0.3857799416727428,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.3384098269456177,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "C12",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ ]
+        } ],
+        "metrics" : {
+          "answerable" : 8,
+          "coveredAnswerable" : 8,
+          "correctTop1" : 4,
+          "correctTop3" : 5,
+          "rawTop3" : 8,
+          "unanswerable" : 4,
+          "unsupportedCandidateMatches" : 1,
+          "top1Rate" : 0.5,
+          "recallAt3" : 0.625,
+          "noCandidateRate" : 0.75
+        }
+      }
+    },
+    "holdout" : {
+      "initial5" : {
+        "caseCount" : 40,
+        "corpusSize" : 5,
+        "cases" : [ {
+          "id" : "H01",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-001" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.6447377753531349,
+            "aboveThreshold" : true
+          } ]
+        }, {
+          "id" : "H02",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-002" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-002",
+            "score" : 0.6963820622027351,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.05584740604780243,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.05002865167277172,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H03",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-003" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.5929872633842903,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.11711191190590772,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.06075385976694116,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H04",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-004" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.4293972397595913,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-002",
+            "score" : 0.10593028462982422,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.05002865167277172,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H05",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-005" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.5589119464439148,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-002",
+            "score" : 0.11173653930115811,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.08010795040942906,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H06",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-006" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.2140496926266606,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.13846507700878471,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-002",
+            "score" : 0.12571434816198251,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H07",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-007" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.3048806285223284,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.16157184789089019,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-002",
+            "score" : 0.10593028462982422,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H08",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-009" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.2166663767240388,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H09",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-010" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.4333327534480776,
+            "aboveThreshold" : true
+          } ]
+        }, {
+          "id" : "H10",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-011" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.35276826611561196,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.16562125413277784,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-002",
+            "score" : 0.1346890898317451,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H11",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-012" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H12",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-013" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.23428029797882413,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.20987057861458122,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.16862774095027144,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H13",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-015" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.20713765852139226,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H14",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-016" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H15",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-017" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H16",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-019" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.4558984530393306,
+            "aboveThreshold" : true
+          } ]
+        }, {
+          "id" : "H17",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-022" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H18",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-023" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H19",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-024", "CCNU-FAQ-018" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.20713765852139226,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H20",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-025" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.20987057861458122,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.16726280008146177,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.1097625081165594,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H21",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-026" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H22",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-027" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.2639938852041371,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.13307409796134595,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.0924422018226568,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H23",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-028" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.2166663767240388,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H24",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-030" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.5322939832084495,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.1097625081165594,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H25",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-031" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H26",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-032" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.41427531704278453,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-002",
+            "score" : 0.21929584739007182,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H27",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-036" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H28",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-038" ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H29",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H30",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.7521940712453241,
+            "aboveThreshold" : true
+          } ]
+        }, {
+          "id" : "H31",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.2149125917843783,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H32",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H33",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.6407807454506816,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.14112798262484516,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H34",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H35",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.4298251835687566,
+            "aboveThreshold" : true
+          } ]
+        }, {
+          "id" : "H36",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.4470179900171023,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.20987057861458122,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H37",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H38",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.5680744702105414,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.16562125413277784,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.08662007019292006,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H39",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H40",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ ]
+        } ],
+        "metrics" : {
+          "answerable" : 28,
+          "coveredAnswerable" : 5,
+          "correctTop1" : 5,
+          "correctTop3" : 5,
+          "rawTop3" : 5,
+          "unanswerable" : 12,
+          "unsupportedCandidateMatches" : 5,
+          "top1Rate" : 0.17857142857142858,
+          "recallAt3" : 0.17857142857142858,
+          "noCandidateRate" : 0.5833333333333334
+        }
+      },
+      "expanded40" : {
+        "caseCount" : 40,
+        "corpusSize" : 40,
+        "cases" : [ {
+          "id" : "H01",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-001" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.526878948169042,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-007",
+            "score" : 0.23106013586704516,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-020",
+            "score" : 0.11493262306931548,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H02",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-002" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-002",
+            "score" : 0.622957730175323,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-015",
+            "score" : 0.11534685313155599,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-011",
+            "score" : 0.09412283218723318,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H03",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-003" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.47591995271404125,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-011",
+            "score" : 0.2755826171239154,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-023",
+            "score" : 0.20474034045093864,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H04",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-004" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.36281363414343987,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-006",
+            "score" : 0.16720434904737108,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-026",
+            "score" : 0.09796801341680049,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H05",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-005" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.6087533665596743,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-006",
+            "score" : 0.23440644905139718,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.16206109260728083,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H06",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-006" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-006",
+            "score" : 0.5062978013122132,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-011",
+            "score" : 0.15784413148608664,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.14592960116834205,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H07",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-007" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-007",
+            "score" : 0.4853972761920317,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-006",
+            "score" : 0.3155971305184894,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.1959080382757476,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H08",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-009" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-009",
+            "score" : 0.7109772517403009,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-010",
+            "score" : 0.4607584963733,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.17737904592155912,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H09",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-010" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-010",
+            "score" : 0.44885292916663677,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-009",
+            "score" : 0.35171300324715976,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-011",
+            "score" : 0.3061262737190186,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H10",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-011" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-011",
+            "score" : 0.5443599395882351,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-006",
+            "score" : 0.30304692600044875,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-008",
+            "score" : 0.27118978256944615,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H11",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-012" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-012",
+            "score" : 0.37137993309393674,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-034",
+            "score" : 0.2743511031456858,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-014",
+            "score" : 0.2020022912637212,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H12",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-013" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-013",
+            "score" : 0.42568861303581096,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-015",
+            "score" : 0.2015497242209116,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-012",
+            "score" : 0.16406107935845174,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H13",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-015" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-015",
+            "score" : 0.26678689397841204,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-012",
+            "score" : 0.20276066033160042,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-039",
+            "score" : 0.16598649359960516,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H14",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-016" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-016",
+            "score" : 0.3959160995791012,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-018",
+            "score" : 0.1342895056814529,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-026",
+            "score" : 0.10921433432585262,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H15",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-017" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-035",
+            "score" : 0.28298044583954046,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-034",
+            "score" : 0.20534095152950693,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-017",
+            "score" : 0.13505693260787108,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H16",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-019" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-019",
+            "score" : 0.6967783692082015,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-020",
+            "score" : 0.6290658865835639,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-027",
+            "score" : 0.29519771655558175,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H17",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-022" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-022",
+            "score" : 0.42593248380410176,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-023",
+            "score" : 0.15650856033744204,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-025",
+            "score" : 0.1206187210953697,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H18",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-023" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-023",
+            "score" : 0.3791178216662679,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-022",
+            "score" : 0.16999448629101452,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-016",
+            "score" : 0.15289434049673434,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H19",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-024", "CCNU-FAQ-018" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-033",
+            "score" : 0.31672958443365995,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-023",
+            "score" : 0.27710118065913514,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-022",
+            "score" : 0.19827038015755252,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H20",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-025" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-025",
+            "score" : 0.416734105744414,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.20880658274198458,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-039",
+            "score" : 0.15407715212217057,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H21",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-026" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-026",
+            "score" : 0.25395210361890463,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-025",
+            "score" : 0.22158704749229538,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-034",
+            "score" : 0.18191800799282204,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H22",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-027" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-027",
+            "score" : 0.5794175112329913,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-013",
+            "score" : 0.231470031136746,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-025",
+            "score" : 0.16282553143532383,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H23",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-028" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-028",
+            "score" : 0.5522618772004009,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-034",
+            "score" : 0.1819478126973775,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-023",
+            "score" : 0.14378344983028238,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H24",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-030" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.5878432724078761,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-029",
+            "score" : 0.3064320824959853,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-031",
+            "score" : 0.2558731175544216,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H25",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-031" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-031",
+            "score" : 0.6818539964683299,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.24324919887269816,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-039",
+            "score" : 0.23635347034869794,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H26",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-032" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-032",
+            "score" : 0.4264317108304921,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-005",
+            "score" : 0.2360288163058375,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-002",
+            "score" : 0.1775068616351326,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H27",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-036" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-036",
+            "score" : 0.3754263477499864,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-039",
+            "score" : 0.3240166147572082,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-037",
+            "score" : 0.1458168425902153,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H28",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : true,
+          "recallAt3" : true,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ "CCNU-FAQ-038" ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-038",
+            "score" : 0.5029126580155963,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-040",
+            "score" : 0.44668951475596563,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-037",
+            "score" : 0.14811179045644102,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H29",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.33522159932006873,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-029",
+            "score" : 0.3191330389046757,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-031",
+            "score" : 0.2790932279466058,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H30",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.7827996325410936,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-006",
+            "score" : 0.09469998957814607,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-011",
+            "score" : 0.08595960312184342,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H31",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.23590481844445604,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H32",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-035",
+            "score" : 0.22926557875129425,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-032",
+            "score" : 0.21937309764073312,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H33",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.6570195233903345,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-011",
+            "score" : 0.3805109168589416,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.16589842719539089,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H34",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-025",
+            "score" : 0.48732777287217616,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-028",
+            "score" : 0.22466694482654076,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-026",
+            "score" : 0.21630481717713848,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H35",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-036",
+            "score" : 0.39268044744089264,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-001",
+            "score" : 0.25118460776388174,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-037",
+            "score" : 0.1525183923182601,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H36",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-003",
+            "score" : 0.40250479989411014,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-013",
+            "score" : 0.2925955587120741,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-030",
+            "score" : 0.17659804356781,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H37",
+          "actualModeWithoutModel" : "no_match",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : false,
+          "expectedKeys" : [ ],
+          "candidates" : [ ]
+        }, {
+          "id" : "H38",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-004",
+            "score" : 0.4590682761001102,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-012",
+            "score" : 0.1874162892068093,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-007",
+            "score" : 0.18646897108267932,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H39",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-033",
+            "score" : 0.7519803691543556,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-015",
+            "score" : 0.14383647848860134,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-012",
+            "score" : 0.07936215445775874,
+            "aboveThreshold" : false
+          } ]
+        }, {
+          "id" : "H40",
+          "actualModeWithoutModel" : "extractive",
+          "top1Correct" : false,
+          "recallAt3" : false,
+          "unsupportedCandidateMatch" : true,
+          "expectedKeys" : [ ],
+          "candidates" : [ {
+            "key" : "CCNU-FAQ-038",
+            "score" : 0.6292481776222286,
+            "aboveThreshold" : true
+          }, {
+            "key" : "CCNU-FAQ-037",
+            "score" : 0.13462800031011685,
+            "aboveThreshold" : false
+          }, {
+            "key" : "CCNU-FAQ-039",
+            "score" : 0.13232462423980332,
+            "aboveThreshold" : false
+          } ]
+        } ],
+        "metrics" : {
+          "answerable" : 28,
+          "coveredAnswerable" : 28,
+          "correctTop1" : 24,
+          "correctTop3" : 24,
+          "rawTop3" : 27,
+          "unanswerable" : 12,
+          "unsupportedCandidateMatches" : 8,
+          "top1Rate" : 0.8571428571428571,
+          "recallAt3" : 0.8571428571428571,
+          "noCandidateRate" : 0.3333333333333333
+        }
+      }
+    }
+  },
+  "calibrationSha256" : "85545a5a3523b102115d70de7b17ba41ec85a0118ae8adf19ca70ca2904cee47",
+  "holdoutSha256" : "c9578fde00c928885aa56171aaec89d94b5d3e0025575e0a6217c780d16e0b77",
+  "dialogueSha256" : "22ef4353a539dcf65afd1295c09ad7e1625deb64331e941f720a20cd442afebb",
+  "dialogueRouting" : [ {
+    "id" : "D01",
+    "expectedRoute" : "clarify",
+    "actualNeedsContext" : true,
+    "gateCorrect" : true,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D02",
+    "expectedRoute" : "rewrite",
+    "actualNeedsContext" : true,
+    "gateCorrect" : true,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D03",
+    "expectedRoute" : "rewrite",
+    "actualNeedsContext" : true,
+    "gateCorrect" : true,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D04",
+    "expectedRoute" : "rewrite",
+    "actualNeedsContext" : true,
+    "gateCorrect" : true,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D05",
+    "expectedRoute" : "direct",
+    "actualNeedsContext" : false,
+    "gateCorrect" : true,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D06",
+    "expectedRoute" : "direct",
+    "actualNeedsContext" : false,
+    "gateCorrect" : true,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D07",
+    "expectedRoute" : "direct",
+    "actualNeedsContext" : true,
+    "gateCorrect" : false,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D08",
+    "expectedRoute" : "rewrite",
+    "actualNeedsContext" : false,
+    "gateCorrect" : false,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D09",
+    "expectedRoute" : "rewrite",
+    "actualNeedsContext" : true,
+    "gateCorrect" : true,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D10",
+    "expectedRoute" : "clarify",
+    "actualNeedsContext" : true,
+    "gateCorrect" : true,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D11",
+    "expectedRoute" : "direct",
+    "actualNeedsContext" : false,
+    "gateCorrect" : true,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  }, {
+    "id" : "D12",
+    "expectedRoute" : "rewrite",
+    "actualNeedsContext" : true,
+    "gateCorrect" : true,
+    "semanticResolution" : "not_measured_no_provider_calls"
+  } ],
+  "dialogueGateCorrect" : 10,
+  "dialogueCases" : 12
+}

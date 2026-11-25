@@ -1,0 +1,118 @@
+{
+  "version": "2026-11-22-recall-factual-review",
+  "reviewer": "independent_agent_delivery_factual_review",
+  "reviewType": "independent review of author-written tuning responses against frozen corpus, not a blind test or current-policy audit",
+  "rawSha256": "fe0ab5f3e0ac812bb60c0569b63b6946e860336bee8982b50cf8b306fefe21c9",
+  "reportSha256": "75c75eb9823f109b28464eb83b205f005874d45482be5e3bad5275046ce15ae5",
+  "corpusSha256": "55808b345d4c61fe2aedd4ba5ae89454818f3ebe5498912bbc8e0244c7f1cc8a",
+  "generatedAnswers": 12,
+  "supportedGeneratedAnswers": 12,
+  "negativeHealthyRefusals": 16,
+  "readyForProduction": false,
+  "reviews": [
+    {
+      "id": "R01P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-014"
+      ],
+      "reason": "Signed-in Modify account password procedure; FAQ-014."
+    },
+    {
+      "id": "R02P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-012"
+      ],
+      "reason": "Registered WeCom, SMS and email recovery channels; FAQ-012."
+    },
+    {
+      "id": "R04P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-011"
+      ],
+      "reason": "Student Status Management list and 2 September 2026 form entry; FAQ-011."
+    },
+    {
+      "id": "R05P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-002"
+      ],
+      "reason": "Template explicitly distinguished from an issued transcript; FAQ-002."
+    },
+    {
+      "id": "R06P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-001"
+      ],
+      "reason": "Undergraduate School and 2026-2027 year preserved; FAQ-001."
+    },
+    {
+      "id": "R07P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-025"
+      ],
+      "reason": "Current students/staff and no separate activation; FAQ-025."
+    },
+    {
+      "id": "R09P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-016"
+      ],
+      "reason": "One-stop launch notice supported by FAQ-016 and its source metadata."
+    },
+    {
+      "id": "R11P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-019"
+      ],
+      "reason": "February 2026 ccnu-auto forget/reconnect procedure; FAQ-019."
+    },
+    {
+      "id": "R12P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-036"
+      ],
+      "reason": "09:00-11:30, 14:00-17:00, last entry16:30 and special notices preserved; FAQ-036."
+    },
+    {
+      "id": "R14P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-006"
+      ],
+      "reason": "Public qualification/student-status line027-67862851; FAQ-006."
+    },
+    {
+      "id": "R15P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-031"
+      ],
+      "reason": "Campus card, identification, TianjiabingB2 and confirm current requirements; FAQ-031."
+    },
+    {
+      "id": "R16P",
+      "verdict": "supported_by_frozen_evidence",
+      "sourceKeys": [
+        "CCNU-FAQ-035"
+      ],
+      "reason": "Reset removes prior chat/file history; FAQ-035."
+    }
+  ],
+  "knownFailures": {
+    "R03P": "candidate recall miss",
+    "R13P": "supported rule explicitly refused",
+    "R08P": "INVALID_RESPONSE; exact original reason unavailable",
+    "R10P": "INVALID_RESPONSE; exact original reason unavailable",
+    "H22": "separate diagnostic INVALID_RESPONSE",
+    "H26": "separate diagnostic INVALID_RESPONSE"
+  }
+}

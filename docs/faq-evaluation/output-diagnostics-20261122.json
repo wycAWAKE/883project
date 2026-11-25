@@ -1,0 +1,40 @@
+{
+  "startedAt" : "2026-11-22T14:58:42.122220Z",
+  "maximumDeepSeekAttempts" : 4,
+  "deepSeekAttempts" : 4,
+  "embeddingAttempts" : 0,
+  "databaseAccess" : false,
+  "retries" : 0,
+  "syntheticCitationIds" : true,
+  "sourceSha256" : "43e0ff336be1f938be7476273f27dc140b7708d80ee708cc4ec983bf5f2d0bb0",
+  "cases" : [ {
+    "id" : "R08P",
+    "question" : "Name the desktop VPN program and the authentication option stated in the published instructions.",
+    "contextKeys" : [ "CCNU-FAQ-026" ],
+    "outcome" : "generated",
+    "answer" : "The published instructions use the aTrust desktop client and the Unified identity authentication option. [FAQ:26]",
+    "citedFaqIds" : [ 26 ]
+  }, {
+    "id" : "R10P",
+    "question" : "Which CCNU service platform offers licensed-software downloads and help pages?",
+    "contextKeys" : [ "CCNU-FAQ-032", "CCNU-FAQ-016" ],
+    "outcome" : "generated",
+    "answer" : "The CCNU licensed-software service platform provides download and help sections. For its official link, see Sources. [FAQ:32]",
+    "citedFaqIds" : [ 32 ]
+  }, {
+    "id" : "H22",
+    "question" : "The old phone VPN application did not update after May 2026. What does the guide require?",
+    "contextKeys" : [ "CCNU-FAQ-027" ],
+    "outcome" : "failed",
+    "failureType" : "INVALID_RESPONSE",
+    "validationReason" : "ANSWER_LINK"
+  }, {
+    "id" : "H26",
+    "question" : "Where does the university provide its authorized Windows and Office download/help service?",
+    "contextKeys" : [ "CCNU-FAQ-032", "CCNU-FAQ-029" ],
+    "outcome" : "failed",
+    "failureType" : "INVALID_RESPONSE",
+    "validationReason" : "ANSWER_LINK"
+  } ],
+  "finishedAt" : "2026-11-22T14:58:45.672448500Z"
+}

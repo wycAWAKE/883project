@@ -1,0 +1,545 @@
+{
+  "version": "2026-11-11",
+  "language": "en",
+  "reviewStatus": "project_source_checked_not_university_approved",
+  "sources": {
+    "calendar": {
+      "url": "https://jwc.ccnu.edu.cn/info/1132/28511.htm",
+      "title": "CCNU Undergraduate School - Academic calendar for 2026-2027",
+      "publishedAt": "2026-05-21",
+      "checkedAt": "2026-11-11",
+      "locator": "Page title and calendar entry",
+      "scope": "Locates the 2026-2027 calendar; image dates are not transcribed."
+    },
+    "transcript": {
+      "url": "https://jwc.ccnu.edu.cn/info/1115/3640.htm",
+      "title": "CCNU Undergraduate School - Undergraduate transcript templates",
+      "publishedAt": "2015-12-09",
+      "checkedAt": "2026-11-11",
+      "locator": "English template attachment listing",
+      "scope": "Template location only, not issuance, certification or current processing conditions."
+    },
+    "forms": {
+      "url": "https://jwc.ccnu.edu.cn/xjxw/xjgl.htm",
+      "title": "CCNU Undergraduate School - Student status management",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "locator": "Five form entries dated 2026-09-02 and 2026-10-19",
+      "scope": "Listing checked; form attachments and approval conditions not checked."
+    },
+    "contacts": {
+      "url": "https://jwc.ccnu.edu.cn/ywgl/lxwm.htm",
+      "title": "CCNU Undergraduate School - Contact us",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "locator": "Contact body and named enquiry numbers in footer",
+      "scope": "Public departmental enquiry contacts only; no promises about office hours."
+    },
+    "identity": {
+      "url": "https://nisc.ccnu.edu.cn/info/1115/3204.htm",
+      "title": "CCNU Information Office - Unified identity guide",
+      "publishedAt": "2023-08-01",
+      "checkedAt": "2026-11-11",
+      "locator": "Sections 2, 3, 4 and final in-person support paragraph",
+      "scope": "Published account guide, not a guarantee of current screen labels; no initial-password patterns collected."
+    },
+    "portal": {
+      "url": "https://nisc.ccnu.edu.cn/info/1013/4616.htm",
+      "title": "CCNU Information Office - One-stop portal launch notice",
+      "publishedAt": "2024-12-19",
+      "checkedAt": "2026-11-11",
+      "locator": "Platform address, mobile entry and support paragraphs",
+      "scope": "New portal replaces older portals; use this newer entry over 2021 screen descriptions."
+    },
+    "wifi2026": {
+      "url": "https://nisc.ccnu.edu.cn/info/1013/5829.htm",
+      "title": "CCNU Information Office - Wireless upgrade reauthentication notice",
+      "publishedAt": "2026-02-02",
+      "checkedAt": "2026-11-11",
+      "locator": "Numbered instructions 1 and 2",
+      "scope": "Reauthentication after the stated upgrade; supersedes older auto-Wi-Fi setup assumptions."
+    },
+    "network": {
+      "url": "https://nisc.ccnu.edu.cn/info/1071/3616.htm",
+      "title": "CCNU Information Office - Campus network guide",
+      "publishedAt": "2022-09-30",
+      "checkedAt": "2026-11-11",
+      "locator": "Sections 2, 3, 4.2 and 5",
+      "scope": "Published wired/self-service/support instructions; omit old quota, fees and obsolete wireless certificate settings."
+    },
+    "vpn": {
+      "url": "https://nisc.ccnu.edu.cn/info/1095/2500.htm",
+      "title": "CCNU Information Office - VPN operation guide",
+      "publishedAt": "2020-02-01",
+      "checkedAt": "2026-11-11",
+      "locator": "Eligibility, desktop/mobile steps and troubleshooting; body explicitly describes May 2026 upgrade",
+      "scope": "Header date is 2020 but current body mentions 2026 upgrade; use body version, omit service-hour promises."
+    },
+    "cardloss": {
+      "url": "https://nisc.ccnu.edu.cn/info/1057/1081.htm",
+      "title": "CCNU Information Office - Campus-card loss/restoration guide",
+      "publishedAt": "2018-10-22",
+      "checkedAt": "2026-11-11",
+      "locator": "Linked one-page PDF, service description and location",
+      "scope": "Guide location only; do not treat old form as a current online procedure."
+    },
+    "cardreplace": {
+      "url": "https://nisc.ccnu.edu.cn/info/1057/1054.htm",
+      "title": "CCNU Information Office - Student/staff card replacement guide",
+      "publishedAt": "2018-10-19",
+      "checkedAt": "2026-11-11",
+      "locator": "Linked one-page PDF, service flow",
+      "scope": "Published in-person guide; omit old replacement price and processing guarantees."
+    },
+    "cardpin": {
+      "url": "https://nisc.ccnu.edu.cn/info/1057/1055.htm",
+      "title": "CCNU Information Office - Card payment PIN reset guide",
+      "publishedAt": "2018-10-19",
+      "checkedAt": "2026-11-11",
+      "locator": "Linked one-page PDF, service flow steps 1-2",
+      "scope": "Describe the published guide and ask users to confirm current requirements; never perform credential reset."
+    },
+    "software": {
+      "url": "https://ms.ccnu.edu.cn/",
+      "title": "CCNU Licensed Software Management and Service Platform",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "locator": "Home page software/download/help navigation and activation notice",
+      "scope": "Official software portal location only, not eligibility for every product or a bypass of licensing."
+    },
+    "temporary": {
+      "url": "https://nisc.ccnu.edu.cn/info/1055/1082.htm",
+      "title": "CCNU Information Office - Temporary internet account application guide",
+      "publishedAt": "2018-10-22",
+      "checkedAt": "2026-11-11",
+      "locator": "Linked one-page PDF, requesting unit and approval flow",
+      "scope": "Published unit-sponsored application, not a student self-registration promise; omit old turnaround time."
+    },
+    "wecom": {
+      "url": "https://nisc.ccnu.edu.cn/info/1115/3208.htm",
+      "title": "CCNU Information Office - WeCom usage guide",
+      "publishedAt": "2021-09-16",
+      "checkedAt": "2026-11-11",
+      "locator": "Mobile-number sign-in steps and account-reset link",
+      "scope": "Versioned guide; current one-stop mobile entry comes from the newer portal notice."
+    },
+    "wecomreset": {
+      "url": "https://nisc.ccnu.edu.cn/info/1115/3198.htm",
+      "title": "CCNU Information Office - WeCom account reset service",
+      "publishedAt": "2021-09-07",
+      "checkedAt": "2026-11-11",
+      "locator": "Service scope and warning about old account history/files",
+      "scope": "Link to published guide; no reset is carried out by this FAQ."
+    },
+    "museum": {
+      "url": "https://mus.ccnu.edu.cn/index.htm",
+      "title": "CCNU Museum - Visitor information",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "locator": "Visitor-guide block: opening, admission, booking and identification",
+      "scope": "Current published routine guidance; special holiday notices may override opening hours."
+    }
+  },
+  "entries": [
+    {
+      "key": "CCNU-FAQ-001",
+      "question": "Where can I find the CCNU academic calendar for 2026-2027?",
+      "answer": "The CCNU Undergraduate School website publishes the academic calendar for 2026-2027. Open the linked official calendar page to view it.",
+      "category": "Academic calendar",
+      "keywords": "calendar term semester academic year timetable 2026 2027",
+      "sourceKey": "calendar",
+      "sourceTitle": "CCNU Undergraduate School - Academic calendar for 2026-2027",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-002",
+      "question": "Where can I download an English undergraduate transcript template?",
+      "answer": "The Undergraduate School page for undergraduate transcript templates provides an English transcript template as an attachment. This is a template, not an issued transcript.",
+      "category": "Academic records",
+      "keywords": "transcript transcripts english template download grades record undergraduate",
+      "sourceKey": "transcript",
+      "sourceTitle": "CCNU Undergraduate School - Undergraduate transcript templates",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-003",
+      "question": "Where can I find the student registration information change form?",
+      "answer": "The Undergraduate School Student Status Management page lists the student registration information change application form. Open the form entry on that page.",
+      "category": "Student registration",
+      "keywords": "registration information change correction status details application form",
+      "sourceKey": "forms",
+      "sourceTitle": "CCNU Undergraduate School - Student status management",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-004",
+      "question": "Who can I contact about undergraduate course selection?",
+      "answer": "For undergraduate course-selection enquiries, the Undergraduate School lists 027-67863133. Check the source page for current contact details.",
+      "category": "Course selection",
+      "keywords": "course selection enrolment enrollment choosing classes consultation phone contact",
+      "sourceKey": "contacts",
+      "sourceTitle": "CCNU Undergraduate School - Contact us (course-selection enquiries)",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-005",
+      "question": "How can I contact the Undergraduate School Student Affairs Service Hall?",
+      "answer": "The Undergraduate School contact page lists 027-67865223 for the Student Affairs Service Hall. Use that number for enquiries about its services.",
+      "category": "Student services",
+      "keywords": "student affairs service hall desk support help office phone contact",
+      "sourceKey": "contacts",
+      "sourceTitle": "CCNU Undergraduate School - Contact us (Student Affairs Service Hall)",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-006",
+      "question": "Who handles undergraduate student-status and qualification enquiries?",
+      "answer": "The Undergraduate School lists 027-67862851 for student-status and academic-qualification enquiries.",
+      "category": "Academic records",
+      "keywords": "student status qualification academic records contact phone",
+      "sourceKey": "contacts",
+      "sourceTitle": "CCNU Undergraduate School - Contact us",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-007",
+      "question": "Who can help with undergraduate teaching evaluation?",
+      "answer": "The Undergraduate School lists 027-67868058 for student teaching-evaluation enquiries.",
+      "category": "Teaching evaluation",
+      "keywords": "teaching evaluation course feedback student survey contact phone",
+      "sourceKey": "contacts",
+      "sourceTitle": "CCNU Undergraduate School - Contact us",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-008",
+      "question": "Where is the undergraduate graduate identity-review approval form?",
+      "answer": "The Student Status Management list includes the undergraduate graduate identity-review approval form, dated 19 October 2026.",
+      "category": "Academic records",
+      "keywords": "graduate identity review identity verification approval form",
+      "sourceKey": "forms",
+      "sourceTitle": "CCNU Undergraduate School - Student status management",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-009",
+      "question": "Where is the application form for a replacement degree certificate statement?",
+      "answer": "The Student Status Management list includes the replacement degree-certification application form, dated 2 September 2026.",
+      "category": "Academic records",
+      "keywords": "degree certificate replacement certification statement lost application form",
+      "sourceKey": "forms",
+      "sourceTitle": "CCNU Undergraduate School - Student status management",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-010",
+      "question": "Where is the application form for a replacement graduation certificate statement?",
+      "answer": "The Student Status Management list includes the replacement graduation-certification application form, dated 2 September 2026.",
+      "category": "Academic records",
+      "keywords": "graduation diploma certificate replacement certification statement lost application form",
+      "sourceKey": "forms",
+      "sourceTitle": "CCNU Undergraduate School - Student status management",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-011",
+      "question": "Where is the graduate academic-qualification information correction form?",
+      "answer": "The Student Status Management list includes the graduate academic-qualification information correction approval form, dated 2 September 2026.",
+      "category": "Academic records",
+      "keywords": "graduate qualification education record information correction approval form",
+      "sourceKey": "forms",
+      "sourceTitle": "CCNU Undergraduate School - Student status management",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-012",
+      "question": "How can I recover a forgotten unified identity password?",
+      "answer": "The identity guide directs users to Forgot password and verification through registered WeCom, SMS or email channels.",
+      "category": "Account access",
+      "keywords": "unified identity account forgotten password recovery reset authentication",
+      "sourceKey": "identity",
+      "sourceTitle": "CCNU Information Office - Unified identity guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-013",
+      "question": "How can I update the phone number or email registered with unified identity?",
+      "answer": "The published identity guide uses Modify account information in the one-stop portal to update registered contact information.",
+      "category": "Account access",
+      "keywords": "unified identity registered phone mobile email contact information update",
+      "sourceKey": "identity",
+      "sourceTitle": "CCNU Information Office - Unified identity guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-014",
+      "question": "How can I change my unified identity password while signed in?",
+      "answer": "The published identity guide uses Modify account password in the one-stop portal account menu.",
+      "category": "Account access",
+      "keywords": "unified identity password change signed in account menu",
+      "sourceKey": "identity",
+      "sourceTitle": "CCNU Information Office - Unified identity guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-015",
+      "question": "Where can I get in-person help with an unresolved unified identity account problem?",
+      "answer": "The identity guide directs unresolved account issues to the Campus Service Centre in Tianjiabing Building B2, beside ICBC, with identification.",
+      "category": "Account access",
+      "keywords": "unified identity account support in person identification Tianjiabing B2 service centre",
+      "sourceKey": "identity",
+      "sourceTitle": "CCNU Information Office - Unified identity guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-016",
+      "question": "Where is the CCNU one-stop service portal?",
+      "answer": "The one-stop platform launch notice gives one.ccnu.edu.cn as the portal address.",
+      "category": "Digital services",
+      "keywords": "one stop service portal digital campus online services website",
+      "sourceKey": "portal",
+      "sourceTitle": "CCNU Information Office - One-stop portal launch notice",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-017",
+      "question": "How can I open the one-stop platform on a phone?",
+      "answer": "The platform launch notice directs mobile users to WeCom, Workbench, then the one-stop platform.",
+      "category": "Digital services",
+      "keywords": "one stop mobile phone WeCom workbench service portal",
+      "sourceKey": "portal",
+      "sourceTitle": "CCNU Information Office - One-stop portal launch notice",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-018",
+      "question": "What is the information-service support hotline for portal problems?",
+      "answer": "The platform launch notice lists 027-67866000 for information-service enquiries and fault reporting.",
+      "category": "IT support",
+      "keywords": "information service IT helpdesk hotline support portal problems phone",
+      "sourceKey": "portal",
+      "sourceTitle": "CCNU Information Office - One-stop portal launch notice",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-019",
+      "question": "How should ccnu-auto users sign in again after the February 2026 wireless upgrade?",
+      "answer": "The 2026 notice says to reconnect and authenticate; if no page appears, forget ccnu-auto and reconnect.",
+      "category": "Campus network",
+      "keywords": "ccnu auto wireless wifi upgrade reauthenticate February 2026 reconnect",
+      "sourceKey": "wifi2026",
+      "sourceTitle": "CCNU Information Office - Wireless upgrade reauthentication notice",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-020",
+      "question": "How should ccnu Wi-Fi users reauthenticate after the February 2026 upgrade?",
+      "answer": "The 2026 notice says to open a webpage after connecting to ccnu, then sign in on the authentication page.",
+      "category": "Campus network",
+      "keywords": "ccnu wireless wifi upgrade reauthenticate February 2026 browser login",
+      "sourceKey": "wifi2026",
+      "sourceTitle": "CCNU Information Office - Wireless upgrade reauthentication notice",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-021",
+      "question": "What can I do if the campus-network authentication page does not appear?",
+      "answer": "The published network guide directs users to portal.ccnu.edu.cn when the authentication page does not open automatically.",
+      "category": "Campus network",
+      "keywords": "campus network authentication login page missing portal browser",
+      "sourceKey": "network",
+      "sourceTitle": "CCNU Information Office - Campus network guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-022",
+      "question": "What IP setting does the published wired-campus-network guide specify?",
+      "answer": "The wired-network guide specifies automatic IP address acquisition before browser authentication.",
+      "category": "Campus network",
+      "keywords": "wired ethernet campus network automatic IP address DHCP settings",
+      "sourceKey": "network",
+      "sourceTitle": "CCNU Information Office - Campus network guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-023",
+      "question": "Where can I find campus-network self-service connection details?",
+      "answer": "The guide links network self-service from the authentication page and lists IP, MAC, usage and connected-device information.",
+      "category": "Campus network",
+      "keywords": "campus network self service IP MAC usage devices sessions information",
+      "sourceKey": "network",
+      "sourceTitle": "CCNU Information Office - Campus network guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-024",
+      "question": "Where can I report a campus-network fault?",
+      "answer": "The network guide lists 027-67866000 and the Campus Service Centre in Tianjiabing Building B2 for faults.",
+      "category": "Campus network",
+      "keywords": "campus network fault outage repair report Tianjiabing service centre phone",
+      "sourceKey": "network",
+      "sourceTitle": "CCNU Information Office - Campus network guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-025",
+      "question": "Who is eligible for the CCNU VPN according to the published guide?",
+      "answer": "The VPN guide covers current students and staff, with free access and no separate activation application.",
+      "category": "Remote access",
+      "keywords": "VPN remote access eligibility current students staff activation",
+      "sourceKey": "vpn",
+      "sourceTitle": "CCNU Information Office - VPN operation guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-026",
+      "question": "Which desktop client and authentication method does the CCNU VPN guide use?",
+      "answer": "The guide directs desktop users to vpn.ccnu.edu.cn for aTrust and requires the Unified identity authentication option.",
+      "category": "Remote access",
+      "keywords": "VPN desktop Windows Mac aTrust client unified identity authentication",
+      "sourceKey": "vpn",
+      "sourceTitle": "CCNU Information Office - VPN operation guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-027",
+      "question": "How does the VPN guide handle an old mobile client after the May 2026 upgrade?",
+      "answer": "The guide says old mobile clients cannot upgrade automatically: reinstall the current aTrust app and use vpn.ccnu.edu.cn.",
+      "category": "Remote access",
+      "keywords": "VPN mobile old client upgrade May 2026 reinstall aTrust phone",
+      "sourceKey": "vpn",
+      "sourceTitle": "CCNU Information Office - VPN operation guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-028",
+      "question": "What should I check if CCNU VPN SMS verification fails?",
+      "answer": "The guide says to check account status and the registered mobile number; unresolved problems can use support number 67866000.",
+      "category": "Remote access",
+      "keywords": "VPN SMS verification code missing registered mobile account troubleshooting",
+      "sourceKey": "vpn",
+      "sourceTitle": "CCNU Information Office - VPN operation guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-029",
+      "question": "Where is the official campus-card loss and restoration guide?",
+      "answer": "The Information Office campus-card loss/restoration page links its published service-guide PDF.",
+      "category": "Campus card",
+      "keywords": "campus card lost loss restoration unblock service guide",
+      "sourceKey": "cardloss",
+      "sourceTitle": "CCNU Information Office - Campus-card loss/restoration guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-030",
+      "question": "Where is the official guide for replacing a student or staff campus card?",
+      "answer": "The Information Office card-replacement page links a published in-person service guide; confirm current requirements with the card centre.",
+      "category": "Campus card",
+      "keywords": "student staff campus card replacement lost damaged service guide",
+      "sourceKey": "cardreplace",
+      "sourceTitle": "CCNU Information Office - Student/staff card replacement guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-031",
+      "question": "What does the published campus-card payment PIN reset guide ask me to bring?",
+      "answer": "The guide lists a campus card and identification for the Tianjiabing B2 card centre; confirm current requirements before visiting.",
+      "category": "Campus card",
+      "keywords": "campus card payment consumption PIN password reset identification materials",
+      "sourceKey": "cardpin",
+      "sourceTitle": "CCNU Information Office - Card payment PIN reset guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-032",
+      "question": "Where is the university licensed-software service platform?",
+      "answer": "CCNU provides the licensed-software service platform at ms.ccnu.edu.cn, with download and help sections.",
+      "category": "Software services",
+      "keywords": "licensed software genuine Microsoft Office Windows download platform",
+      "sourceKey": "software",
+      "sourceTitle": "CCNU Licensed Software Management and Service Platform",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-033",
+      "question": "Where is the temporary campus internet account application guide?",
+      "answer": "The Information Office publishes a temporary-account guide describing an application by the requesting unit and departmental approval.",
+      "category": "Guest access",
+      "keywords": "temporary guest visitor internet network account application requesting unit",
+      "sourceKey": "temporary",
+      "sourceTitle": "CCNU Information Office - Temporary internet account application guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-034",
+      "question": "How does the published CCNU WeCom guide begin sign-in?",
+      "answer": "The guide begins with mobile-number sign-in using the phone number registered with the university.",
+      "category": "Digital services",
+      "keywords": "WeCom enterprise WeChat sign in registered mobile phone guide",
+      "sourceKey": "wecom",
+      "sourceTitle": "CCNU Information Office - WeCom usage guide",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-035",
+      "question": "Where can I find help when CCNU membership is missing from WeCom?",
+      "answer": "Use the published WeCom account-reset guide; it warns that resetting removes the old account chat and file history.",
+      "category": "Digital services",
+      "keywords": "WeCom enterprise WeChat missing university organization membership account reset",
+      "sourceKey": "wecomreset",
+      "sourceTitle": "CCNU Information Office - WeCom account reset service",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-036",
+      "question": "What are the routine CCNU Museum opening hours?",
+      "answer": "Routine hours are 09:00-11:30 and 14:00-17:00 daily; last admission is 16:30. Check special notices.",
+      "category": "Museum visits",
+      "keywords": "museum opening hours visiting time afternoon morning last admission",
+      "sourceKey": "museum",
+      "sourceTitle": "CCNU Museum - Visitor information",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-037",
+      "question": "Is admission to the CCNU Museum free?",
+      "answer": "The museum visitor guide states that admission is free.",
+      "category": "Museum visits",
+      "keywords": "museum admission entrance ticket free cost fee",
+      "sourceKey": "museum",
+      "sourceTitle": "CCNU Museum - Visitor information",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-038",
+      "question": "How should visitors reserve a CCNU Museum visit?",
+      "answer": "Book through the museum WeChat account; groups of ten or more need two days advance booking.",
+      "category": "Museum visits",
+      "keywords": "museum visit reservation booking group WeChat advance appointment",
+      "sourceKey": "museum",
+      "sourceTitle": "CCNU Museum - Visitor information",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-039",
+      "question": "What identification do CCNU students and staff use to enter the museum?",
+      "answer": "The visitor guide tells university students and staff to use their campus card for entry.",
+      "category": "Museum visits",
+      "keywords": "museum campus students staff entry identification card",
+      "sourceKey": "museum",
+      "sourceTitle": "CCNU Museum - Visitor information",
+      "enabled": true
+    },
+    {
+      "key": "CCNU-FAQ-040",
+      "question": "What identification do external visitors use to enter the CCNU Museum?",
+      "answer": "The visitor guide tells external individuals and groups to use an identity card for entry.",
+      "category": "Museum visits",
+      "keywords": "museum external public visitors group identity identification card",
+      "sourceKey": "museum",
+      "sourceTitle": "CCNU Museum - Visitor information",
+      "enabled": true
+    }
+  ]
+}
