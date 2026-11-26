@@ -2,9 +2,7 @@
 
 基于原 `dormitory-manager-coursework` 改造的校园服务平台，采用 Vue 3 + Vite、Spring Boot、MyBatis-Plus 和 MySQL。当前版本提供英文登录页、统一门户、六模块导航、独立模块页面和基于服务端 Session 的前端访问检查。
 
-> **当前交付范围（2026-10-26）：门户框架。M1–M6 均为 `Under development` 占位页，尚未实现六模块业务接口。** 原宿舍业务代码、账号表、权限表和数据仍保留；当前前端没有注册原宿舍业务路由。本文面向部署与开发维护，界面及后续产品提示统一使用英文。
-
-> **M4 四阶段完成（2026-11-08）：** 报修后端、学生和员工/管理员界面均已完成，入口标为 Available。后端及真实浏览器联合验收 29 项通过，M4 前端定向检查 26 项通过，构建成功；全量前端仍有两个既有英文宿舍演示 SQL 缺失问题。运行与演示见 [M4 运行说明](docs/M4_RUNBOOK.md)，证据见 [验收记录](docs/M4_ACCEPTANCE.md)，续接见 [交接记录](docs/M4_HANDOFF.md)。M6 通知未接入，GitHub 推送未执行。
+> **当前交付范围：** M3 Room Booking 已接入预约、取消与可用时段查询；M1、M2、M4、M5、M6 仍为 `Under development`。原宿舍业务代码、账号表、权限表和数据仍保留；本文面向部署与开发维护，界面及产品提示统一使用英文。
 
 ## 目录
 
@@ -38,12 +36,14 @@
 | --- | --- | --- | --- | --- | --- |
 | M1 | FAQ Assistance | Learning | `/faq` | `FaqModule.vue` | 占位，未接入 FAQ |
 | M2 | Course Recommendations | Learning | `/courses` | `CourseModule.vue` | 占位，未实现推荐 |
-| M3 | Room Booking | Facilities | `/bookings` | `BookingModule.vue` | 占位，未实现预约 |
-| M4 | Fault Reporting | Facilities | `/repairs` | `RepairModule.vue` | 学生、员工界面和后端均已实现 |
+| M3 | Room Booking | Facilities | `/bookings` | `BookingModule.vue` | 可用：查询、预约、取消及冲突保护 |
+| M4 | Fault Reporting | Facilities | `/repairs` | `RepairModule.vue` | 占位，未迁移报修业务 |
 | M5 | Document Applications | Administration | `/applications` | `ApplicationModule.vue` | 占位，未实现申请审批 |
 | M6 | Progress Notifications | Administration | `/notifications` | `NotificationModule.vue` | 占位，未实现历史与通知 |
 
 Redis、统一用户表、共享附件、审批历史、业务通知，以及 Java TF-IDF / 余弦相似度检索均属于后续工作，当前启动不需要 Redis 或外部 AI 服务密钥。
+
+M3 使用 `campus_room` 和 `room_booking` 两张新增表，与旧宿舍房间表分开。首次部署 M3 时，在确认目标是本地演示库后运行 `mysql -h 127.0.0.1 -P 3306 -u root -p -D dormitory -e "source database/smartcampus_m3.sql"`；脚本只添加表和三间合成教室，可重复执行，不重建或删除旧表。预约日期使用校园时区 `Asia/Shanghai`，只允许今天至未来 30 天，时段固定为连续一小时的 08:00–09:00 至 21:00–22:00。页面默认显示 4 个时段和 5 条历史，展开后分别在面板内滚动；活动预约占用键由 MySQL 唯一约束保护，取消保留历史记录并释放该时段。
 
 ## 2. 项目结构与请求链路
 
@@ -134,7 +134,7 @@ mysql -h 127.0.0.1 -P 3306 -u root -p -e "SELECT VERSION();"
 
 ### 4.2 选择数据库路径
 
-**已有可用数据库：** 当前门户改造不要求数据库迁移。保留现有库与账号，直接进入 4.3；不要为了启动新门户重新导入初始化脚本。
+**已有可用数据库：** 门户本身不要求迁移。若启用 M3 Room Booking，在后端连接的数据库上执行新增表脚本；旧表和账号会保留。
 
 **首次部署 / 独立演示：** 建议新建隔离的 `dormitory_en_demo`，避免影响已有 `dormitory`。在仓库根目录依次执行：
 
@@ -160,8 +160,15 @@ SQL 文件的用途与影响：
 | `database/dormitory_mysql8.sql` | `dormitory` | 原宿舍初始化，包含 DROP TABLE，会重建业务表及权限表 |
 | `database/test_data.sql` | `dormitory` | 原中文测试数据；会删除并重建指定测试记录 |
 | `database/permission_tables.sql` | `dormitory` | DROP / 重建原权限表；当前门户无需为导航单独执行此脚本 |
+| `database/smartcampus_m3.sql` | 当前 `-D` 指定库 | 新增 M3 教室和预约表及三间合成教室；可重复执行，不清除旧记录 |
 
-各脚本内部写有 `USE`，仅在命令行添加 `-D` 不能把它们自动改为另一个数据库。原脚本包含业务数据覆盖操作，保留用于明确需要重建的旧演示环境；不要与隔离演示脚本混用。
+旧初始化脚本内部写有 `USE`，仅在命令行添加 `-D` 不能把它们自动改为另一个数据库。原脚本包含业务数据覆盖操作，保留用于明确需要重建的旧演示环境；不要与隔离演示脚本混用。M3 增量脚本没有内置目标库，按后端实际连接库通过 `-D` 显式选择。
+
+M3 对已有库使用独立的增量脚本，不要重跑旧宿舍初始化脚本。以下命令将 `campus_room`、`room_booking` 和三间合成教室添加到 `dormitory`；切换隔离库时将 `-D` 参数改为实际目标库名。脚本可以重复执行，不删除旧表或预约记录。
+
+```powershell
+mysql --abort-source-on-error --default-character-set=utf8mb4 -h 127.0.0.1 -P 3306 -u root -p -D dormitory -e "source database/smartcampus_m3.sql"
+```
 
 ### 4.3 配置后端连接
 
@@ -233,7 +240,7 @@ npm run dev -- --port 8081 --strictPort
 
 脚本中的上述演示账号密码均为 `123456`，仅供本地合成数据演示。选择与账号匹配的角色；Staff 目前仍对应旧 `dorm_manager` 账号体系，并非已经完成用户模型迁移。
 
-成功登录后应看到 `/home` 的六个服务卡片。点开模块出现 `Under development` 是当前预期行为。不要按旧文档查找宿舍、床位、水电费或权限管理菜单。
+成功登录后应看到 `/home` 的六个服务卡片。M3 Room Booking 可查询教室时段、创建及取消本人预约；M1、M2、M4、M5、M6 仍显示 `Under development`。不要按旧文档查找宿舍、床位、水电费或权限管理菜单。
 
 ### 4.7 停止与下次启动
 
@@ -274,7 +281,7 @@ mvn -DskipTests package org.springframework.boot:spring-boot-maven-plugin:2.6.3:
 springboot/target/springboot-0.0.1-SNAPSHOT.jar
 ```
 
-打包命令中的 `-DskipTests` 避免重复运行前一步测试；不能把跳过测试的打包结果记为测试通过。现有后端仅有一个 Spring 上下文测试，通过它不代表六模块业务或真实数据库交互已验证。
+打包命令中的 `-DskipTests` 避免重复运行前一步测试；不能把跳过测试的打包结果记为测试通过。后端测试包括 Spring 上下文、M3 预约规则单元测试和依赖本地 MySQL M3 schema 的双线程冲突集成测试。它们验证 M3 的冲突与取消后重约，不代表其余模块业务已完成。
 
 ### 5.2 部署文件与进程
 
@@ -430,8 +437,13 @@ mysqldump -h 127.0.0.1 -P 3306 -u root -p --single-transaction --result-file=sma
 | GET | `/main/loadIdentity` | Session 身份 |
 | GET | `/main/loadUserInfo` | Session 用户 |
 | GET | `/main/signOut` | 退出；当前旧合同仍为 GET |
+| GET | `/bookings/rooms` | 列出可用教室；需要登录 Session |
+| GET | `/bookings/availability?roomId=1&date=YYYY-MM-DD` | 返回固定时段、已预约和当天已过时段 |
+| GET | `/bookings/mine` | 列出当前用户预约与取消历史 |
+| POST | `/bookings` | JSON: `{"roomId":1,"date":"YYYY-MM-DD","timeSlot":"09:00-10:00"}` |
+| POST | `/bookings/{bookingId}/cancel` | 取消当前用户的一项有效预约 |
 
-新增前端调用继续使用 `utils/request.js`，其 `baseURL` 为 `/api`、默认超时为 5 秒且携带 Cookie。示例仅展示未来调用方式，**不是已有预约接口**：
+新增前端调用继续使用 `utils/request.js`，其 `baseURL` 为 `/api`、默认超时为 5 秒且携带 Cookie。M3 页面已接入上述预约接口：
 
 ```js
 import request from '../utils/request.js'
@@ -442,7 +454,7 @@ export const listAvailability = params =>
 
 不要写成 `/api/bookings/availability` 再叠加 `baseURL`。`vue/src/api/` 尚未建立，应在真实接入时按需创建；后端候选业务前缀为 `/faq`、`/courses`、`/bookings`、`/repairs`、`/applications`、`/notifications`。
 
-现有返回结构是 `{ code, msg, data }`，成功码为字符串 `"0"`，不是数字 `0`。公共错误码、HTTP 状态、分页、日期格式与时区需统一。当前请求封装尚未统一处理所有业务请求的会话失效，新模块不能只依赖导航守卫。
+现有返回结构是 `{ code, msg, data }`，成功码为字符串 `"0"`，不是数字 `0`。M3 页面检查业务码，因为旧接口会以 HTTP 200 返回 `code: "-1"` 的业务错误。日期格式为 `YYYY-MM-DD`，校园日期边界与当前时段判断使用 `Asia/Shanghai`；创建预约和取消都以 Session 用户名校验归属。其他模块的公共错误码和 HTTP 状态仍需统一。
 
 所有业务页面应覆盖加载、空数据、失败重试、未登录、无权限、提交中与成功后的真实结果。英文用于产品文案、错误、通知、FAQ 答案与推荐理由；用户姓名、原始输入和正式来源保持原文。旧后端仍存在中文消息，不能把前端英文外壳视为接口语言改造已完成。
 
@@ -479,11 +491,11 @@ export const listAvailability = params =>
 
 **入口：** `BookingModule.vue`，路由 `/bookings`。目标是查询教学空间的固定时段、预约、取消，并拒绝冲突。
 
-- **优先实现：** 教室 / 日期 / 固定时段查询 → 创建预约 → 我的预约 → 取消并释放时段。先统一时区、可预约日期和时段边界。
-- **后端建议：** 让 MySQL 事务、约束或加锁操作保证同一教室 / 日期 / 时段最多一个有效占用；不能仅用“先查空闲再插入”，前端禁用按钮也不能替代并发控制。
-- **数据建议：** 明确历史预约与当前占用如何分开或关联。若保留取消记录，简单的三字段永久唯一键可能阻止重新预约，应先设计有效占用及释放规则。
+- **已实现：** 按教室和日期查询 14 个连续一小时固定时段（08:00–22:00），创建预约、查看本人预约历史、取消并释放时段。页面初始折叠为 4 个时段和 5 条历史，展开后列表内部滚动。可预约日期为校园今天至未来 30 天；当天已开始的时段仍展示但不可预订。
+- **并发保护：** `room_booking.occupied_slot` 仅为 `BOOKED` 记录生成占用键，并由 MySQL 唯一约束保护；冲突插入返回业务错误。取消保留 `CANCELLED` 历史行并释放该键。
+- **权限与数据：** 所有预约接口需要登录 Session；预约人从 Session 获取，取消仅能作用于本人仍有效的预约。`campus_room` 和 `room_booking` 与旧宿舍床位表分开，见 `database/smartcampus_m3.sql`。
 - **复用建议：** 可参考旧 `DormBuild` / `DormRoom` 的地点查询结构，但床位列、入住人数、宿管楼栋绑定不等于教室预约模型，不应直接套用。
-- **验收重点：** 两个独立会话并发预约同一时段仅一个成功；覆盖重复提交、取消后重约、越权取消、过期日期和边界时段，并用真实 MySQL 验证。
+- **测试范围：** `BookingServiceTest` 覆盖日期窗口、固定时段、房间有效性、唯一键冲突映射和取消归属；`BookingServiceMySqlIntegrationTest` 使用两个并发写入验证真实 MySQL 冲突及取消后重约。`database/m3_test_cases.md` 还列出登录态、双浏览器会话和无效输入的手工验收步骤。
 
 ### 8.4 M4 — Fault Reporting
 
