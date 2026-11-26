@@ -1,0 +1,102 @@
+import assert from 'node:assert/strict'
+import { resolve } from 'node:path'
+
+export async function runStaffWorkflow({ browser,base,output,student,checks,errors }) {
+  const contexts=[]
+  const visible=async locator=>locator.waitFor({ state:'visible',timeout:15000 })
+  async function login(username,role,viewport={ width:1366,height:1000 }) {
+    const context=await browser.newContext({ viewport }); contexts.push(context)
+    const page=await context.newPage(); page.on('pageerror',error=>errors.push(error.message))
+    await page.goto(base+'/Login'); await page.getByPlaceholder('Username',{ exact:true }).fill(username)
+    await page.getByPlaceholder('Password',{ exact:true }).fill('m4_demo_only')
+    await page.getByText(role,{ exact:true }).click(); await page.getByRole('button',{ name:'Sign In',exact:true }).click()
+    await page.waitForURL(url=>!url.pathname.startsWith('/Login')); return { context,page }
+  }
+  async function action(page,kind,note,confirmation) {
+    await page.getByRole('button',{ name:kind,exact:true }).click()
+    if(note!=null) await page.getByLabel('Processing note',{ exact:false }).fill(note)
+    await page.getByRole('button',{ name:confirmation,exact:true }).click()
+    await visible(page.getByText('The report was updated successfully.',{ exact:true }).first())
+    await page.getByRole('heading',{ name:'Maintenance actions' }).waitFor({ state:'visible' })
+  }
+  try {
+    await student.goto(base+'/repairs'); await student.getByRole('button',{ name:'New report',exact:true }).click()
+    await student.getByLabel('Title',{ exact:true }).fill('Staff workflow report')
+    await student.getByLabel('Location type',{ exact:true }).selectOption('DORM')
+    await student.getByLabel('Location',{ exact:true }).fill('Dormitory A room 203')
+    await student.getByLabel('Description',{ exact:true }).fill('A tap needs repair')
+    await student.getByRole('button',{ name:'Submit report',exact:true }).click()
+    await visible(student.getByRole('heading',{ name:'Staff workflow report',exact:true }))
+    const id=new URL(student.url()).searchParams.get('ticketId')
+    const first=await login('m4_staff','Staff')
+    await first.page.goto(base+`/repairs?ticketId=${id}`)
+    await visible(first.page.getByRole('heading',{ name:'Maintenance queue' }))
+    await first.page.getByRole('button',{ name:'Assign staff',exact:true }).click()
+    await first.page.getByLabel('Assign to',{ exact:true }).selectOption('m4_staff')
+    await first.page.getByLabel('Processing note',{ exact:false }).fill('Initial technician')
+    await first.page.getByRole('button',{ name:'Confirm assignment',exact:true }).click()
+    await visible(first.page.getByRole('button',{ name:'Start work',exact:true }))
+    checks.push('staff queue and real assignment through the staff UI')
+
+    const admin=await login('m4_admin','Administrator')
+    await admin.page.goto(base+`/repairs?ticketId=${id}`)
+    await admin.page.getByRole('button',{ name:'Assign staff',exact:true }).click()
+    await admin.page.getByLabel('Assign to',{ exact:true }).selectOption('m4_staff_other')
+    await admin.page.getByLabel('Processing note',{ exact:false }).fill('Reassign to specialist')
+    await admin.page.getByRole('button',{ name:'Confirm assignment',exact:true }).click()
+    await visible(admin.page.getByText('Staff reassigned',{ exact:true }))
+    await first.page.getByRole('button',{ name:'Refresh progress',exact:true }).click()
+    await visible(first.page.getByText('Only the assigned staff member or an administrator can process this report.',{ exact:true }))
+    assert.equal(await first.page.getByRole('button',{ name:'Start work',exact:true }).count(),0)
+    await first.page.getByRole('button',{ name:'Close report details' }).click()
+    await first.page.getByLabel('Search reports',{ exact:true }).fill('Staff workflow report')
+    await first.page.getByRole('button',{ name:'Search',exact:true }).click()
+    await visible(first.page.getByRole('button',{ name:'Staff workflow report',exact:true }))
+    await first.page.getByLabel('Only assigned to me',{ exact:true }).check()
+    await visible(first.page.getByRole('heading',{ name:'No matching reports' }))
+    checks.push('administrator reassignment revokes the previous staff owner and updates mine filter')
+
+    const owner=await login('m4_staff_other','Staff')
+    await owner.page.goto(base+`/repairs?ticketId=${id}`)
+    await action(owner.page,'Start work','Inspection started','Confirm start')
+    await visible(owner.page.getByRole('button',{ name:'Add progress',exact:true }))
+    await owner.page.getByRole('button',{ name:'Add progress',exact:true }).click()
+    await owner.page.getByLabel('Processing note',{ exact:false }).fill('Local note retained across conflict')
+    const latest=await admin.context.request.get(base+`/api/repairs/${id}`)
+    const version=(await latest.json()).data.version
+    const external=await admin.context.request.post(base+`/api/repairs/${id}/progress`,{ data:{ version,note:'Concurrent administrator update' } })
+    assert.equal(external.status(),200)
+    let writes=0
+    owner.page.on('request',request=>{ if(request.method()==='POST' && new URL(request.url()).pathname===`/api/repairs/${id}/progress`) writes++ })
+    await owner.page.getByRole('button',{ name:'Save progress',exact:true }).click()
+    await visible(owner.page.getByText('The report may have changed. Review its current status and history before confirming again.',{ exact:true }))
+    assert.equal(await owner.page.getByLabel('Processing note',{ exact:false }).inputValue(),'Local note retained across conflict')
+    assert.equal(await owner.page.getByRole('button',{ name:'Save progress',exact:true }).isDisabled(),true)
+    assert.equal(writes,1)
+    await owner.page.screenshot({ path:resolve(output,'staff-conflict.png'),fullPage:true })
+    await owner.page.getByRole('button',{ name:'Use refreshed report',exact:true }).click()
+    await owner.page.getByRole('button',{ name:'Save progress',exact:true }).click()
+    await visible(owner.page.getByText('Local note retained across conflict',{ exact:true }))
+    assert.equal(writes,2)
+    checks.push('real HTTP 409 preserves note, refreshes data and requires manual reconfirmation without auto retry')
+
+    await action(owner.page,'Resolve issue','Tap repaired','Confirm resolution')
+    await visible(owner.page.getByRole('button',{ name:'Close ticket',exact:true }))
+    await action(owner.page,'Close ticket','Checked with the student','Confirm closure')
+    await visible(owner.page.getByText('This report is closed. No further actions are available.',{ exact:true }))
+    assert.equal(await owner.page.getByRole('button',{ name:'Close ticket',exact:true }).count(),0)
+    await owner.page.screenshot({ path:resolve(output,'staff-closed.png'),fullPage:true })
+    await student.getByRole('button',{ name:'Refresh progress',exact:true }).click()
+    await visible(student.getByText('Checked with the student',{ exact:true }))
+    await visible(student.getByText('Report closed',{ exact:true }))
+    checks.push('assigned staff completes resolve and close in UI, and student sees the final persisted timeline')
+
+    const phone=await browser.newContext({ viewport:{ width:390,height:844 },storageState:await owner.context.storageState() }); contexts.push(phone)
+    const mobile=await phone.newPage(); mobile.on('pageerror',error=>errors.push(error.message))
+    await mobile.goto(base+'/repairs')
+    await visible(mobile.getByRole('button',{ name:'Staff workflow report',exact:true }))
+    assert.equal(await mobile.locator('.repair-page').evaluate(el=>el.scrollWidth<=el.clientWidth+1),true)
+    await mobile.screenshot({ path:resolve(output,'staff-mobile-queue.png'),fullPage:true })
+    checks.push('staff mobile queue remains readable at 390px')
+  } finally { for(const context of contexts) await context.close() }
+}

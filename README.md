@@ -2,7 +2,9 @@
 
 基于原 `dormitory-manager-coursework` 改造的校园服务平台，采用 Vue 3 + Vite、Spring Boot、MyBatis-Plus 和 MySQL。当前版本提供英文登录页、统一门户、六模块导航、独立模块页面和基于服务端 Session 的前端访问检查。
 
-> **M5/M6 分支交付范围（2026-10-26）：M1–M4 保持占位；M5 申请审批与 M6 进度通知已接入统一登录和真实 MySQL。** 运行与迁移见 [M5/M6 部署说明](docs/M5_M6_SETUP.md)，接口见 [M5/M6 整合约定](docs/M5_M6_INTEGRATION.md)，验证范围见 [测试记录](docs/M5_M6_TESTS.md)。原宿舍账号表与业务代码仍保留，界面使用英文。下文标为“建议”的公共设计仍不是已冻结合同。
+> **M5/M6 分支交付范围（2026-10-26）：M1–M3 保持占位；M4 保留目标分支实现；M5 申请审批与 M6 进度通知已接入统一登录和真实 MySQL。** 运行与迁移见 [M5/M6 部署说明](docs/M5_M6_SETUP.md)，接口见 [M5/M6 整合约定](docs/M5_M6_INTEGRATION.md)，验证范围见 [测试记录](docs/M5_M6_TESTS.md)。原宿舍账号表与业务代码仍保留，界面使用英文。下文标为“建议”的公共设计仍不是已冻结合同。
+
+> **M4 四阶段完成（2026-11-08）：** 报修后端、学生和员工/管理员界面均已完成，入口标为 Available。后端及真实浏览器联合验收 29 项通过，M4 前端定向检查 26 项通过，构建成功；全量前端仍有两个既有英文宿舍演示 SQL 缺失问题。运行与演示见 [M4 运行说明](docs/M4_RUNBOOK.md)，证据见 [验收记录](docs/M4_ACCEPTANCE.md)，续接见 [交接记录](docs/M4_HANDOFF.md)。M6 通知未接入，GitHub 推送未执行。
 
 ## 目录
 
@@ -37,7 +39,7 @@
 | M1 | FAQ Assistance | Learning | `/faq` | `FaqModule.vue` | 占位，未接入 FAQ |
 | M2 | Course Recommendations | Learning | `/courses` | `CourseModule.vue` | 占位，未实现推荐 |
 | M3 | Room Booking | Facilities | `/bookings` | `BookingModule.vue` | 占位，未实现预约 |
-| M4 | Fault Reporting | Facilities | `/repairs` | `RepairModule.vue` | 占位，未迁移报修业务 |
+| M4 | Fault Reporting | Facilities | `/repairs` | `RepairModule.vue` | 学生、员工界面和后端均已实现 |
 | M5 | Document Applications | Administration | `/applications` | `ApplicationModule.vue` | 已实现表单、材料、审核与退回补交 |
 | M6 | Progress Notifications | Administration | `/notifications` | `NotificationModule.vue` | 已实现进度、历史、通知与已读状态 |
 
