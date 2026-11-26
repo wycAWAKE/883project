@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { createServer } from 'vite'
 
 test('the rendered portal, sidebar and all six real routes share one module registry', async () => {
-  const server = await createServer({ server: { middlewareMode: true, watch: null }, optimizeDeps: { noDiscovery: true, include: [] }, appType: 'custom' })
+  const server = await createServer({ server: { middlewareMode: true, watch: null, hmr: false, ws: false }, optimizeDeps: { noDiscovery: true, include: [] }, appType: 'custom' })
   try {
     const { campusModules } = await server.ssrLoadModule('/src/config/modules.js')
     const { routes } = await server.ssrLoadModule('/src/router/routes.js')
@@ -28,14 +28,34 @@ test('the rendered portal, sidebar and all six real routes share one module regi
       assert.equal(matched.meta.moduleId, module.id)
       html = await renderPage()
       assert.match(html, new RegExp(`<h1[^>]*>${module.name}</h1>`))
-      if (module.id === 'M3') {
-        // M3: The booking module renders its live availability and personal booking views.
+      if (module.id === 'M1') {
+        assert.match(html, /Follow-up questions can use the recent conversation/)
+        assert.match(html, /if evidence is insufficient, the assistant will not answer/)
+        assert.match(html, /<textarea/)
+        assert.match(html, /Ask a question/)
+        assert.match(html, /Send/)
+        assert.match(html, /New conversation/)
+        assert.doesNotMatch(html, /AI generation is not connected yet/)
+        assert.doesNotMatch(html, /This service is being prepared and is not available yet/)
+      } else if (module.id === 'M3') {
+        assert.equal(module.status, 'Available')
         assert.match(html, /Find a room/)
         assert.match(html, /My bookings/)
-      } else {
-        assert.match(html, /Under development/)
-        assert.match(html, /Back to home/)
-      }
+      } else if (module.id === 'M4') {
+        assert.equal(module.status, 'Available')
+        assert.match(html, /My fault reports/)
+        assert.match(html, /New report/)
+        assert.doesNotMatch(html, /This service is being prepared/)
+      } else assert.match(html, /Under development/)
+      assert.match(html, /Back to home/)
+    }
+    for (const role of ['dormManager', 'admin']) {
+      repairSession = { identity: role, user: { username: 'ssr-staff' } }
+      await router.push('/repairs')
+      html = await renderPage()
+      assert.match(html, /Maintenance queue/)
+      assert.doesNotMatch(html, /New report/)
+      if (role === 'admin') assert.doesNotMatch(html, /Only assigned to me/)
     }
     // Obsolete bookmarks and unknown URLs recover to the portal.
     await router.push('/stuInfo')

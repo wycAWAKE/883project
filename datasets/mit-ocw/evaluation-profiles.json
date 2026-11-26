@@ -1,0 +1,25 @@
+{
+  "notice": "Twenty synthetic, author-labelled learning cases frozen before running this implementation. Not a human user study; labels need independent lecturer/team review.",
+  "cases": [
+    {"id":"E01","query":"python programming beginner","completed":[],"relevant":["6.0001","6.189"]},
+    {"id":"E02","query":"single variable calculus differentiation integration","completed":[],"relevant":["18.01"]},
+    {"id":"E03","query":"optimization linear programming management","completed":[],"relevant":["15.053"]},
+    {"id":"E04","query":"data science computational thinking python","completed":["6.0001"],"relevant":["6.0002"]},
+    {"id":"E05","query":"algorithms data structures sorting","completed":["6.0001","6.042J"],"relevant":["6.006"]},
+    {"id":"E06","query":"design analysis algorithms complexity","completed":["6.006","6.042J"],"relevant":["6.046J"]},
+    {"id":"E07","query":"mathematics computer science proofs discrete","completed":["18.01"],"relevant":["6.042J"]},
+    {"id":"E08","query":"multivariable calculus vectors","completed":["18.01"],"relevant":["18.02"]},
+    {"id":"E09","query":"linear algebra matrices eigenvalues","completed":["18.02"],"relevant":["18.06"]},
+    {"id":"E10","query":"probability statistics inference","completed":["18.02"],"relevant":["18.05","18.440"]},
+    {"id":"E11","query":"probability random variables distributions","completed":["18.02"],"relevant":["18.440","18.05"]},
+    {"id":"E12","query":"probabilistic systems applied probability","completed":["18.01","18.02"],"relevant":["6.041"]},
+    {"id":"E13","query":"computer architecture computation structures digital","completed":["8.02"],"relevant":["6.004"]},
+    {"id":"E14","query":"computer system engineering distributed networks","completed":["6.004","6.005"],"relevant":["6.033"]},
+    {"id":"E15","query":"computer systems security attacks","completed":["6.033"],"relevant":["6.858"]},
+    {"id":"E16","query":"database systems transactions storage queries","completed":["6.033","6.006"],"relevant":["6.830"]},
+    {"id":"E17","query":"signals systems fourier transform","completed":["6.02"],"relevant":["6.003"]},
+    {"id":"E18","query":"machine vision image geometry","completed":["6.003"],"relevant":["6.801"]},
+    {"id":"E19","query":"practical programming C memory","completed":["1.00"],"relevant":["6.087"]},
+    {"id":"E20","query":"analytics quantitative data mining decisions","completed":["15.060"],"relevant":["15.071"]}
+  ]
+}

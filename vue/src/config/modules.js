@@ -7,7 +7,7 @@ export const campusModules = [
   {
     id: 'M1', name: 'FAQ Assistance', group: 'Learning', path: '/faq', icon: ChatDotRound,
     description: 'Find answers to campus questions, with sources and guidance on where to get help.',
-    status: 'Under development', component: () => import('../views/modules/FaqModule.vue'),
+    status: 'Available (preview)', component: () => import('../views/modules/FaqModule.vue'),
   },
   {
     id: 'M2', name: 'Course Recommendations', group: 'Learning', path: '/courses', icon: Reading,

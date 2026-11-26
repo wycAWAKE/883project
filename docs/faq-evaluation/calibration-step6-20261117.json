@@ -1,0 +1,753 @@
+{
+  "version": "2026-11-17-step6",
+  "purpose": "Calibration only; human-authored against frozen public corpus; no holdout tuning.",
+  "counts": {
+    "answerable": 28,
+    "no_match": 24,
+    "clarify": 8
+  },
+  "cases": [
+    {
+      "id": "C01",
+      "question": "I am already logged in and want a different central-account password.",
+      "expectedKeys": [
+        "CCNU-FAQ-014"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Signed-in password change, not forgotten-password recovery.",
+      "outcome": "answerable",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C02",
+      "question": "Show me the published instructions for blocking or unblocking my university card.",
+      "expectedKeys": [
+        "CCNU-FAQ-029"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Guide location only; no claim that the 2018 workflow remains current.",
+      "outcome": "answerable",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C03",
+      "question": "Which office publishes the procedure for a unit to request guest internet access?",
+      "expectedKeys": [
+        "CCNU-FAQ-033"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Requesting-unit guide; no instant self-service account is promised.",
+      "outcome": "answerable",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C04",
+      "question": "Which phone number should I use to begin logging into the university WeCom app?",
+      "expectedKeys": [
+        "CCNU-FAQ-034"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Registered mobile, not a public helpdesk number.",
+      "outcome": "answerable",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C05",
+      "question": "The university organization disappeared from enterprise WeChat. Where is reset guidance?",
+      "expectedKeys": [
+        "CCNU-FAQ-035"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Reset-guide warning must not be omitted.",
+      "outcome": "answerable",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C06",
+      "question": "Do museum visitors have to purchase an entry ticket?",
+      "expectedKeys": [
+        "CCNU-FAQ-037"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Published admission is free.",
+      "outcome": "answerable",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C07",
+      "question": "As a member of university staff, which card should I swipe at the museum?",
+      "expectedKeys": [
+        "CCNU-FAQ-039"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Campus card for internal staff/students.",
+      "outcome": "answerable",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C08",
+      "question": "We are visitors from outside CCNU; what ID is used for museum entry?",
+      "expectedKeys": [
+        "CCNU-FAQ-040"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Identity card for external visitors, not campus card.",
+      "outcome": "answerable",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C09",
+      "question": "What will the library borrowing limit be next year?",
+      "expectedKeys": [],
+      "kind": "unanswerable",
+      "expectedOutcome": "no_supported_requested_fact",
+      "mustPreserveFacts": [],
+      "reason": "Library policies were not readable/ingested.",
+      "outcome": "no_match",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C10",
+      "question": "Which university-card replacement fee applies to me today?",
+      "expectedKeys": [],
+      "kind": "missing_current_policy",
+      "expectedOutcome": "no_supported_requested_fact",
+      "mustPreserveFacts": [],
+      "reason": "Old fee deliberately excluded.",
+      "outcome": "no_match",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C11",
+      "question": "Give me the examination results of another student.",
+      "expectedKeys": [],
+      "kind": "private_data",
+      "expectedOutcome": "no_supported_requested_fact",
+      "mustPreserveFacts": [],
+      "reason": "Corpus contains no personal academic results.",
+      "outcome": "no_match",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "C12",
+      "question": "Please explain the chemical composition of a volcano.",
+      "expectedKeys": [],
+      "kind": "out_of_domain",
+      "expectedOutcome": "no_supported_requested_fact",
+      "mustPreserveFacts": [],
+      "reason": "Outside campus corpus.",
+      "outcome": "no_match",
+      "origin": "calibration-20261111"
+    },
+    {
+      "id": "S6P01",
+      "question": "The timetable of teaching weeks and breaks for 2026-2027 is what I need; where is the published calendar?",
+      "expectedKeys": [
+        "CCNU-FAQ-001"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-001"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "Published calendar location only."
+    },
+    {
+      "id": "S6P02",
+      "question": "I need a blank English marks-record template for an undergraduate, rather than an issued personal record.",
+      "expectedKeys": [
+        "CCNU-FAQ-002"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-002"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "An English template attachment is in the reviewed evidence."
+    },
+    {
+      "id": "S6P03",
+      "question": "Which published form is for applying to amend student registration details?",
+      "expectedKeys": [
+        "CCNU-FAQ-003"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-003"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The reviewed list contains the registration-information change form."
+    },
+    {
+      "id": "S6P04",
+      "question": "Whom should an undergraduate telephone for module-selection enquiries?",
+      "expectedKeys": [
+        "CCNU-FAQ-004"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-004"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The stored course-selection contact number supports this request."
+    },
+    {
+      "id": "S6P05",
+      "question": "What telephone contact is published for the Undergraduate School student-service hall?",
+      "expectedKeys": [
+        "CCNU-FAQ-005"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-005"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The service hall has its own public contact, distinct from course selection."
+    },
+    {
+      "id": "S6P06",
+      "question": "I have an undergraduate qualification and student-status enquiry; which contact is listed?",
+      "expectedKeys": [
+        "CCNU-FAQ-006"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-006"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The student-status and qualification public contact is stored."
+    },
+    {
+      "id": "S6P07",
+      "question": "Where should undergraduates direct questions about evaluating their teaching?",
+      "expectedKeys": [
+        "CCNU-FAQ-007"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-007"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The teaching-evaluation enquiry contact is stored."
+    },
+    {
+      "id": "S6P08",
+      "question": "Which listed application concerns a replacement statement for a degree certificate?",
+      "expectedKeys": [
+        "CCNU-FAQ-009"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-009"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "Only the application-form listing is requested."
+    },
+    {
+      "id": "S6P09",
+      "question": "I am looking for the application for a replacement graduation-certificate statement.",
+      "expectedKeys": [
+        "CCNU-FAQ-010"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-010"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "Graduation certification must not be confused with degree certification."
+    },
+    {
+      "id": "S6P10",
+      "question": "I cannot remember the central identity-account password; which recovery routes does the guide mention?",
+      "expectedKeys": [
+        "CCNU-FAQ-012"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-012"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "Forgot-password recovery uses the published verification channels."
+    },
+    {
+      "id": "S6P11",
+      "question": "Which portal menu changes the contact phone or email attached to central identity?",
+      "expectedKeys": [
+        "CCNU-FAQ-013"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-013"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "Modify account information changes registered contact details."
+    },
+    {
+      "id": "S6P12",
+      "question": "My central identity problem remains unresolved; where does the guide direct me for face-to-face assistance?",
+      "expectedKeys": [
+        "CCNU-FAQ-015"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-015"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The identity guide gives the service centre and identification requirement."
+    },
+    {
+      "id": "S6P13",
+      "question": "What web address is published for the university one-stop service platform?",
+      "expectedKeys": [
+        "CCNU-FAQ-016"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-016"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The launch notice gives one.ccnu.edu.cn."
+    },
+    {
+      "id": "S6P14",
+      "question": "After the February 2026 wireless change, ccnu-auto does not show a login page. What reconnection step is advised?",
+      "expectedKeys": [
+        "CCNU-FAQ-019"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-019"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The current reviewed notice says to forget ccnu-auto and reconnect."
+    },
+    {
+      "id": "S6P15",
+      "question": "Following the February 2026 upgrade, how is authentication opened on the network named ccnu?",
+      "expectedKeys": [
+        "CCNU-FAQ-020"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-020"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "Open a webpage after joining ccnu, then authenticate."
+    },
+    {
+      "id": "S6P16",
+      "question": "The campus-network sign-in page did not launch automatically. Which address does the guide provide?",
+      "expectedKeys": [
+        "CCNU-FAQ-021"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-021"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The reviewed general network guide gives the authentication portal."
+    },
+    {
+      "id": "S6P17",
+      "question": "Before signing into the wired campus network, should the machine obtain its IP automatically?",
+      "expectedKeys": [
+        "CCNU-FAQ-022"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-022"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The guide specifies automatic IP acquisition."
+    },
+    {
+      "id": "S6P18",
+      "question": "Which university groups are covered by the published VPN eligibility guidance?",
+      "expectedKeys": [
+        "CCNU-FAQ-025"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-025"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The guide explicitly covers current students and staff."
+    },
+    {
+      "id": "S6P19",
+      "question": "Does an old mobile VPN app update itself after the May 2026 change, or does the guide require reinstallation?",
+      "expectedKeys": [
+        "CCNU-FAQ-027"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-027"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "The reviewed 2026 upgrade text requires reinstallation."
+    },
+    {
+      "id": "S6P20",
+      "question": "Our museum party has exactly ten people. Which channel and advance-booking interval does the routine guide specify?",
+      "expectedKeys": [
+        "CCNU-FAQ-038"
+      ],
+      "relatedKeys": [
+        "CCNU-FAQ-038"
+      ],
+      "kind": "paraphrase_or_disambiguation",
+      "outcome": "answerable",
+      "origin": "step6-20261117",
+      "reason": "Ten or more includes exactly ten; WeChat booking two days ahead."
+    },
+    {
+      "id": "S6N01",
+      "question": "How many working days will my replacement degree-certificate statement take to be approved?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-009"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "A form listing does not supply a processing-time commitment."
+    },
+    {
+      "id": "S6N02",
+      "question": "Exactly which supporting documents must accompany a replacement graduation-certificate application today?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-010"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "The form attachment and current material requirements were not reviewed."
+    },
+    {
+      "id": "S6N03",
+      "question": "Tell me the actual current password for a university identity account.",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-012"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "Public recovery instructions do not contain account secrets."
+    },
+    {
+      "id": "S6N04",
+      "question": "Confirm the private mobile number currently registered to a university identity account.",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-013"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "The corpus has update guidance, not personal account records."
+    },
+    {
+      "id": "S6N05",
+      "question": "On what date is my tuition payment due in the 2026-2027 academic year?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-001"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "An academic-calendar location does not supply an individual tuition due date."
+    },
+    {
+      "id": "S6N06",
+      "question": "What is the actual payment PIN stored on a campus card?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-031"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "PIN-reset materials do not reveal any real PIN."
+    },
+    {
+      "id": "S6N07",
+      "question": "Confirm whether a particular museum reservation has been approved.",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-038"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "Public booking guidance has no reservation-status records."
+    },
+    {
+      "id": "S6N08",
+      "question": "What special opening timetable will the museum use during the next National Day holiday?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-036"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "Routine hours do not establish a future holiday exception."
+    },
+    {
+      "id": "S6N09",
+      "question": "How much money is currently available on a campus card?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-029"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "The reviewed guides contain no card-balance records."
+    },
+    {
+      "id": "S6N10",
+      "question": "What is the exact monthly charge for a student campus-network account today?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-021"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "Old prices were excluded and no current tariff was ingested."
+    },
+    {
+      "id": "S6N11",
+      "question": "Can the requesting unit be guaranteed a temporary internet account within one hour?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-033"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "An application guide supplies no one-hour approval guarantee."
+    },
+    {
+      "id": "S6N12",
+      "question": "How many gigabytes of free campus Wi-Fi traffic does each student receive this month?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-019"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "The wireless reauthentication notice has no current traffic allowance."
+    },
+    {
+      "id": "S6N13",
+      "question": "Does the licensed-software platform guarantee every commercial product is licensed to every student?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-032"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "A platform location does not establish universal product entitlements."
+    },
+    {
+      "id": "S6N14",
+      "question": "What are the current library loan-renewal rules?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "Library borrowing policies are outside the frozen corpus."
+    },
+    {
+      "id": "S6N15",
+      "question": "What is the cancellation deadline for a university gym booking?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "Gym booking policies are outside the frozen corpus."
+    },
+    {
+      "id": "S6N16",
+      "question": "What monthly VPN price applies specifically to alumni?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-025"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "Current-student/staff coverage does not supply an alumni tariff."
+    },
+    {
+      "id": "S6N17",
+      "question": "After resetting WeCom, what is the guaranteed procedure for recovering all deleted chat files?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-035"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "The warning about history loss does not establish guaranteed recovery."
+    },
+    {
+      "id": "S6N18",
+      "question": "Can the FAQ issue an official replacement degree certificate immediately?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-009"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "A public application-form listing cannot issue a personal certificate."
+    },
+    {
+      "id": "S6N19",
+      "question": "Which minerals are produced when a volcano erupts?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "Outside the campus knowledge domain."
+    },
+    {
+      "id": "S6N20",
+      "question": "What is the fee for a private VIP tour of the university museum?",
+      "expectedKeys": [],
+      "relatedKeys": [
+        "CCNU-FAQ-037"
+      ],
+      "kind": "hard_negative_or_out_of_domain",
+      "outcome": "no_match",
+      "origin": "step6-20261117",
+      "reason": "Routine free admission does not establish private-tour fees."
+    },
+    {
+      "id": "S6A01",
+      "question": "Who can I contact?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "missing_referent",
+      "outcome": "clarify",
+      "origin": "step6-20261117",
+      "reason": "No established topic/history is supplied; clarify before retrieval. Desired policy label only, not a claim that current C5 detects it."
+    },
+    {
+      "id": "S6A02",
+      "question": "How much does it cost?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "missing_referent",
+      "outcome": "clarify",
+      "origin": "step6-20261117",
+      "reason": "No established topic/history is supplied; clarify before retrieval. Desired policy label only, not a claim that current C5 detects it."
+    },
+    {
+      "id": "S6A03",
+      "question": "Can I do that online?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "missing_referent",
+      "outcome": "clarify",
+      "origin": "step6-20261117",
+      "reason": "No established topic/history is supplied; clarify before retrieval. Desired policy label only, not a claim that current C5 detects it."
+    },
+    {
+      "id": "S6A04",
+      "question": "Which form do I need?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "missing_referent",
+      "outcome": "clarify",
+      "origin": "step6-20261117",
+      "reason": "No established topic/history is supplied; clarify before retrieval. Desired policy label only, not a claim that current C5 detects it."
+    },
+    {
+      "id": "S6A05",
+      "question": "Is it open now?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "missing_referent",
+      "outcome": "clarify",
+      "origin": "step6-20261117",
+      "reason": "No established topic/history is supplied; clarify before retrieval. Desired policy label only, not a claim that current C5 detects it."
+    },
+    {
+      "id": "S6A06",
+      "question": "What about the other one?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "missing_referent",
+      "outcome": "clarify",
+      "origin": "step6-20261117",
+      "reason": "No established topic/history is supplied; clarify before retrieval. Desired policy label only, not a claim that current C5 detects it."
+    },
+    {
+      "id": "S6A07",
+      "question": "When is the deadline?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "missing_referent",
+      "outcome": "clarify",
+      "origin": "step6-20261117",
+      "reason": "No established topic/history is supplied; clarify before retrieval. Desired policy label only, not a claim that current C5 detects it."
+    },
+    {
+      "id": "S6A08",
+      "question": "Where should I go for that?",
+      "expectedKeys": [],
+      "relatedKeys": [],
+      "kind": "missing_referent",
+      "outcome": "clarify",
+      "origin": "step6-20261117",
+      "reason": "No established topic/history is supplied; clarify before retrieval. Desired policy label only, not a claim that current C5 detects it."
+    }
+  ]
+}
