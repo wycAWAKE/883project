@@ -28,11 +28,11 @@ export const campusModules = [
   {
     id: 'M5', name: 'Document Applications', group: 'Administration', path: '/applications', icon: Document,
     description: 'Submit campus document applications and supporting materials for review.',
-    status: 'Under development', component: () => import('../views/modules/ApplicationModule.vue'),
+    status: 'Available', component: () => import('../views/modules/ApplicationModule.vue'),
   },
   {
     id: 'M6', name: 'Progress Notifications', group: 'Administration', path: '/notifications', icon: Bell,
     description: 'Follow application updates, review processing history and read your notifications.',
-    status: 'Under development', component: () => import('../views/modules/NotificationModule.vue'),
+    status: 'Available', component: () => import('../views/modules/NotificationModule.vue'),
   },
 ]
