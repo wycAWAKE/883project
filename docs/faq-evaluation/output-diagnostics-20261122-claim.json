@@ -1,0 +1,11 @@
+{
+  "startedAt" : "2026-11-22T14:58:42.122220Z",
+  "maximumDeepSeekAttempts" : 4,
+  "deepSeekAttempts" : 0,
+  "embeddingAttempts" : 0,
+  "databaseAccess" : false,
+  "retries" : 0,
+  "syntheticCitationIds" : true,
+  "sourceSha256" : "43e0ff336be1f938be7476273f27dc140b7708d80ee708cc4ec983bf5f2d0bb0",
+  "cases" : [ ]
+}

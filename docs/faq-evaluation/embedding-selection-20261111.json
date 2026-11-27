@@ -1,0 +1,82 @@
+{
+  "version": "2026-11-11",
+  "status": "step4_complete_model_selected_live_pilot_verified",
+  "selectedService": {
+    "provider": "SiliconFlow China",
+    "model": "BAAI/bge-m3",
+    "endpoint": "https://api.siliconflow.cn/v1/embeddings",
+    "expectedDimensions": 1024,
+    "sendDimensionsParameter": false,
+    "encodingFormat": "float",
+    "credentialEnvironment": "SILICONFLOW_API_KEY",
+    "credentialFallback": "none",
+    "priceCnyPerMillionInputTokens": 0,
+    "priceCheckedOn": "2026-11-11",
+    "paidFallbackAllowed": false,
+    "documentation": "https://api-docs.siliconflow.cn/docs/api/embeddings-post",
+    "implementationStatus": "java_test_probe_adapted_live_pilot_passed_production_not_integrated"
+  },
+  "pauseReason": "User requested explanation of DeepSeek versus embeddings and explicitly paused development on 2026-11-11",
+  "resumeRequires": "User configured SiliconFlow key and resumed step4. Pilot completed with4 free model requests; no additional provider calls planned.",
+  "verification": {
+    "controlledTestsPassed": 13,
+    "backendTestsPassed": 241,
+    "backendTestsFinishedAt": "2026-11-11T15:57:37+08:00",
+    "liveEmbeddingRequests": 4,
+    "independentReviewCompleted": true,
+    "compilePassed": true,
+    "independentArtifactRecalculationPassed": true,
+    "reviewStatus": "Replacement reviewer completed the single independent review: no Critical/Important; one extreme-vector cosine overflow minor deferred; pilot vectors have near-unit norms"
+  },
+  "scope": "Step4 calibration-only selection experiment; not loaded by the running application",
+  "provisionalCandidate": {
+    "provider": "Zhipu BigModel",
+    "model": "embedding-3",
+    "endpoint": "https://open.bigmodel.cn/api/paas/v4/embeddings",
+    "dimensions": 512,
+    "credentialEnvironment": "FAQ_EMBEDDING_API_KEY",
+    "credentialFallback": "none",
+    "priceCnyPerMillionInputTokens": 0.5,
+    "documentation": "https://docs.bigmodel.cn/cn/guide/models/embedding/embedding-3",
+    "historicalOnly": true
+  },
+  "comparison": {
+    "documentRepresentation": "question + space + keywords",
+    "corpusFile": "database/faq_ccnu_corpus_20261111.json",
+    "queryFile": "docs/faq-evaluation/calibration.json",
+    "documentCount": 40,
+    "calibrationCount": 12,
+    "holdoutUsed": false,
+    "topK": 3,
+    "tfidfReferenceThreshold": 0.35,
+    "embeddingThreshold": null,
+    "metrics": [
+      "raw_top1",
+      "raw_recall_at_3",
+      "positive_and_negative_cosine_distributions",
+      "latency",
+      "reported_input_tokens"
+    ]
+  },
+  "pilotLimits": {
+    "maxRequests": 8,
+    "maxBudgetCny": 0,
+    "authorization": "User requested independent embedding service and configured its requested key; free BAAI/bge-m3 pilot only; no paid fallback",
+    "maxBatchItems": 16,
+    "maxBatchInputUtf8Bytes": 3072,
+    "maxTotalInputUtf8Bytes": 20000,
+    "responseBytes": 1048576,
+    "automaticRetry": false,
+    "redirects": false,
+    "maxReportedInputTokens": 40000
+  },
+  "unchanged": [
+    "DeepSeek chat generation",
+    "production TF-IDF",
+    "C5 rules",
+    "database",
+    "frontend",
+    "holdout and baseline fixtures"
+  ],
+  "resultFile": "docs/faq-evaluation/embedding-pilot-20261111.json"
+}

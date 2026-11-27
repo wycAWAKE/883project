@@ -1,0 +1,130 @@
+{
+  "version": "2026-11-11",
+  "purpose": "Separate calibration samples; no threshold tuning in this batch.",
+  "cases": [
+    {
+      "id": "C01",
+      "question": "I am already logged in and want a different central-account password.",
+      "expectedKeys": [
+        "CCNU-FAQ-014"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Signed-in password change, not forgotten-password recovery."
+    },
+    {
+      "id": "C02",
+      "question": "Show me the published instructions for blocking or unblocking my university card.",
+      "expectedKeys": [
+        "CCNU-FAQ-029"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Guide location only; no claim that the 2018 workflow remains current."
+    },
+    {
+      "id": "C03",
+      "question": "Which office publishes the procedure for a unit to request guest internet access?",
+      "expectedKeys": [
+        "CCNU-FAQ-033"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Requesting-unit guide; no instant self-service account is promised."
+    },
+    {
+      "id": "C04",
+      "question": "Which phone number should I use to begin logging into the university WeCom app?",
+      "expectedKeys": [
+        "CCNU-FAQ-034"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Registered mobile, not a public helpdesk number."
+    },
+    {
+      "id": "C05",
+      "question": "The university organization disappeared from enterprise WeChat. Where is reset guidance?",
+      "expectedKeys": [
+        "CCNU-FAQ-035"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Reset-guide warning must not be omitted."
+    },
+    {
+      "id": "C06",
+      "question": "Do museum visitors have to purchase an entry ticket?",
+      "expectedKeys": [
+        "CCNU-FAQ-037"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Published admission is free."
+    },
+    {
+      "id": "C07",
+      "question": "As a member of university staff, which card should I swipe at the museum?",
+      "expectedKeys": [
+        "CCNU-FAQ-039"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Campus card for internal staff/students."
+    },
+    {
+      "id": "C08",
+      "question": "We are visitors from outside CCNU; what ID is used for museum entry?",
+      "expectedKeys": [
+        "CCNU-FAQ-040"
+      ],
+      "kind": "paraphrase",
+      "expectedOutcome": "source_supported_answer",
+      "mustPreserveFacts": [],
+      "reason": "Identity card for external visitors, not campus card."
+    },
+    {
+      "id": "C09",
+      "question": "What will the library borrowing limit be next year?",
+      "expectedKeys": [],
+      "kind": "unanswerable",
+      "expectedOutcome": "no_supported_requested_fact",
+      "mustPreserveFacts": [],
+      "reason": "Library policies were not readable/ingested."
+    },
+    {
+      "id": "C10",
+      "question": "Which university-card replacement fee applies to me today?",
+      "expectedKeys": [],
+      "kind": "missing_current_policy",
+      "expectedOutcome": "no_supported_requested_fact",
+      "mustPreserveFacts": [],
+      "reason": "Old fee deliberately excluded."
+    },
+    {
+      "id": "C11",
+      "question": "Give me the examination results of another student.",
+      "expectedKeys": [],
+      "kind": "private_data",
+      "expectedOutcome": "no_supported_requested_fact",
+      "mustPreserveFacts": [],
+      "reason": "Corpus contains no personal academic results."
+    },
+    {
+      "id": "C12",
+      "question": "Please explain the chemical composition of a volcano.",
+      "expectedKeys": [],
+      "kind": "out_of_domain",
+      "expectedOutcome": "no_supported_requested_fact",
+      "mustPreserveFacts": [],
+      "reason": "Outside campus corpus."
+    }
+  ]
+}

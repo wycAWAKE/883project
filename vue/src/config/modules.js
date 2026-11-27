@@ -7,7 +7,7 @@ export const campusModules = [
   {
     id: 'M1', name: 'FAQ Assistance', group: 'Learning', path: '/faq', icon: ChatDotRound,
     description: 'Find answers to campus questions, with sources and guidance on where to get help.',
-    status: 'Under development', component: () => import('../views/modules/FaqModule.vue'),
+    status: 'Available (preview)', component: () => import('../views/modules/FaqModule.vue'),
   },
   {
     id: 'M2', name: 'Course Recommendations', group: 'Learning', path: '/courses', icon: Reading,
@@ -17,7 +17,8 @@ export const campusModules = [
   {
     id: 'M3', name: 'Room Booking', group: 'Facilities', path: '/bookings', icon: Calendar,
     description: 'Check room availability and manage your campus room bookings.',
-    status: 'Under development', component: () => import('../views/modules/BookingModule.vue'),
+    // M3: This module is connected to its booking API and is available.
+    status: 'Available', component: () => import('../views/modules/BookingModule.vue'),
   },
   {
     id: 'M4', name: 'Fault Reporting', group: 'Facilities', path: '/repairs', icon: Tools,

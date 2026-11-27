@@ -1,0 +1,1369 @@
+{
+  "version" : "2026-11-17-step6-parts1-4",
+  "model" : "BAAI/bge-m3",
+  "dimensions" : 1024,
+  "representation" : "question + space + keywords",
+  "corpusSha256" : "55808b345d4c61fe2aedd4ba5ae89454818f3ebe5498912bbc8e0244c7f1cc8a",
+  "calibrationSha256" : "3fcf509d3235eb69df47d6f9709b51b254437c78654218f8262c8e21e09ba3ae",
+  "holdoutSha256" : "c9578fde00c928885aa56171aaec89d94b5d3e0025575e0a6217c780d16e0b77",
+  "inputSha256" : "3a721a5bc0e90729a3ccad36db08b0ad7e48e9b6fea7e038c3a1c25dc1bbb7ad",
+  "holdoutScoresComputed" : false,
+  "productionChanged" : false,
+  "scoredQueries" : 52,
+  "excludedClarifications" : 8,
+  "scoresPerQuery" : 40,
+  "requestsAttempted" : 6,
+  "gridStep" : 0.01,
+  "readyForProduction" : false,
+  "selectionRule" : "zero negativeAccepted and wrongTop1Accepted; maximize correctTop1Accepted; tie lowest threshold",
+  "lexicalAt035" : {
+    "positives" : 28,
+    "negatives" : 24,
+    "clarifications" : 0,
+    "correctTop1Accepted" : 20,
+    "wrongTop1Accepted" : 3,
+    "negativeAccepted" : 15,
+    "positiveRejected" : 5,
+    "acceptedPositiveWithoutTop3Support" : 1,
+    "top3Supported" : 22
+  },
+  "step5LexicalGateBgeOrder" : {
+    "positives" : 28,
+    "negatives" : 24,
+    "clarifications" : 0,
+    "correctTop1Accepted" : 22,
+    "wrongTop1Accepted" : 1,
+    "negativeAccepted" : 15,
+    "positiveRejected" : 5,
+    "acceptedPositiveWithoutTop3Support" : 1,
+    "top3Supported" : 22
+  },
+  "unthresholdedBge" : {
+    "positives" : 28,
+    "negatives" : 24,
+    "clarifications" : 0,
+    "correctTop1Accepted" : 27,
+    "wrongTop1Accepted" : 1,
+    "negativeAccepted" : 24,
+    "positiveRejected" : 0,
+    "acceptedPositiveWithoutTop3Support" : 0,
+    "top3Supported" : 28
+  },
+  "sweep" : [ {
+    "threshold" : 0.01,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.02,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.03,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.04,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.05,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.06,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.07,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.08,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.09,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.1,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.11,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.12,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.13,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.14,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.15,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.16,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.17,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.18,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.19,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.2,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.21,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.22,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.23,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.24,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.25,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.26,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 24,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.27,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 23,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.28,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 23,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.29,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 23,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.3,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 23,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.31,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 23,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.32,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 23,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.33,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 23,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.34,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 23,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.35,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 22,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.36,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 22,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.37,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 22,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.38,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 22,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.39,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 22,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.4,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 22,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.41,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 22,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.42,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 22,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.43,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 21,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.44,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 21,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.45,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 21,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.46,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 21,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.47,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 21,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.48,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 21,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.49,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 20,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.5,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 20,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.51,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 20,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.52,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 20,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.53,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 20,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.54,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 19,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.55,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 18,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.56,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 18,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.57,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 18,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.58,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 17,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.59,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 15,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.6,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 13,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.61,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 27,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 13,
+      "positiveRejected" : 0,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 28
+    }
+  }, {
+    "threshold" : 0.62,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 26,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 12,
+      "positiveRejected" : 1,
+      "acceptedPositiveWithoutTop3Support" : 1,
+      "top3Supported" : 26
+    }
+  }, {
+    "threshold" : 0.63,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 26,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 11,
+      "positiveRejected" : 1,
+      "acceptedPositiveWithoutTop3Support" : 1,
+      "top3Supported" : 26
+    }
+  }, {
+    "threshold" : 0.64,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 26,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 10,
+      "positiveRejected" : 1,
+      "acceptedPositiveWithoutTop3Support" : 1,
+      "top3Supported" : 26
+    }
+  }, {
+    "threshold" : 0.65,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 25,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 9,
+      "positiveRejected" : 2,
+      "acceptedPositiveWithoutTop3Support" : 1,
+      "top3Supported" : 25
+    }
+  }, {
+    "threshold" : 0.66,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 24,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 9,
+      "positiveRejected" : 3,
+      "acceptedPositiveWithoutTop3Support" : 1,
+      "top3Supported" : 24
+    }
+  }, {
+    "threshold" : 0.67,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 24,
+      "wrongTop1Accepted" : 1,
+      "negativeAccepted" : 8,
+      "positiveRejected" : 3,
+      "acceptedPositiveWithoutTop3Support" : 1,
+      "top3Supported" : 24
+    }
+  }, {
+    "threshold" : 0.68,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 24,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 4,
+      "positiveRejected" : 4,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 24
+    }
+  }, {
+    "threshold" : 0.69,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 23,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 4,
+      "positiveRejected" : 5,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 23
+    }
+  }, {
+    "threshold" : 0.7,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 21,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 4,
+      "positiveRejected" : 7,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 21
+    }
+  }, {
+    "threshold" : 0.71,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 20,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 3,
+      "positiveRejected" : 8,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 20
+    }
+  }, {
+    "threshold" : 0.72,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 16,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 2,
+      "positiveRejected" : 12,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 16
+    }
+  }, {
+    "threshold" : 0.73,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 14,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 14,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 14
+    }
+  }, {
+    "threshold" : 0.74,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 11,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 17,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 11
+    }
+  }, {
+    "threshold" : 0.75,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 9,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 19,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 9
+    }
+  }, {
+    "threshold" : 0.76,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 8,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 20,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 8
+    }
+  }, {
+    "threshold" : 0.77,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 7,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 21,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 7
+    }
+  }, {
+    "threshold" : 0.78,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 6,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 22,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 6
+    }
+  }, {
+    "threshold" : 0.79,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 6,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 22,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 6
+    }
+  }, {
+    "threshold" : 0.8,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 5,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 23,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 5
+    }
+  }, {
+    "threshold" : 0.81,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 4,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 24,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 4
+    }
+  }, {
+    "threshold" : 0.82,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 4,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 24,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 4
+    }
+  }, {
+    "threshold" : 0.83,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 3,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 25,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 3
+    }
+  }, {
+    "threshold" : 0.84,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 2,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 26,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 2
+    }
+  }, {
+    "threshold" : 0.85,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 1,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 27,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 1
+    }
+  }, {
+    "threshold" : 0.86,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.87,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.88,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.89,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.9,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.91,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.92,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.93,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.94,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.95,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.96,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.97,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.98,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 0.99,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  }, {
+    "threshold" : 1.0,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 0,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 28,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 0
+    }
+  } ],
+  "selected" : {
+    "threshold" : 0.73,
+    "metrics" : {
+      "positives" : 28,
+      "negatives" : 24,
+      "clarifications" : 0,
+      "correctTop1Accepted" : 14,
+      "wrongTop1Accepted" : 0,
+      "negativeAccepted" : 0,
+      "positiveRejected" : 14,
+      "acceptedPositiveWithoutTop3Support" : 0,
+      "top3Supported" : 14
+    }
+  },
+  "selectionStatus" : "offline_candidate_only",
+  "retainsLexicalCorrectTop1" : false
+}

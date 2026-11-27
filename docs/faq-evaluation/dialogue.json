@@ -1,0 +1,109 @@
+{
+  "version": "2026-11-11",
+  "purpose": "C5 deterministic context-needed gate only; semantic rewrite, ambiguity decisions and generated answers are not measured without provider calls.",
+  "cases": [
+    {
+      "id": "D01",
+      "question": "What is its phone number?",
+      "previousTopicKeys": [],
+      "expectedRoute": "clarify",
+      "reason": "No referent exists in a new conversation."
+    },
+    {
+      "id": "D02",
+      "question": "What is its phone number?",
+      "previousTopicKeys": [
+        "CCNU-FAQ-004"
+      ],
+      "expectedRoute": "rewrite",
+      "reason": "Course-selection follow-up must retain course topic."
+    },
+    {
+      "id": "D03",
+      "question": "Who can I contact?",
+      "previousTopicKeys": [
+        "CCNU-FAQ-005"
+      ],
+      "expectedRoute": "rewrite",
+      "reason": "Hall topic must not drift to the course-selection hotline."
+    },
+    {
+      "id": "D04",
+      "question": "Where can I download this?",
+      "previousTopicKeys": [
+        "CCNU-FAQ-003"
+      ],
+      "expectedRoute": "rewrite",
+      "reason": "Current-student change form must not drift to transcript templates."
+    },
+    {
+      "id": "D05",
+      "question": "What are the routine opening hours of CCNU Museum?",
+      "previousTopicKeys": [
+        "CCNU-FAQ-026"
+      ],
+      "expectedRoute": "direct",
+      "reason": "Explicit independent new museum topic after VPN."
+    },
+    {
+      "id": "D06",
+      "question": "Where is the 2026-2027 CCNU academic calendar?",
+      "previousTopicKeys": [
+        "CCNU-FAQ-004"
+      ],
+      "expectedRoute": "direct",
+      "reason": "Explicit independent calendar topic after course selection."
+    },
+    {
+      "id": "D07",
+      "question": "Where can I find the CCNU academic calendar for 2026-2027, and does it include term dates?",
+      "previousTopicKeys": [],
+      "expectedRoute": "direct",
+      "reason": "Known conservative-gate false positive: explicit topic with internal it."
+    },
+    {
+      "id": "D08",
+      "question": "Can I use a wire instead?",
+      "previousTopicKeys": [
+        "CCNU-FAQ-020"
+      ],
+      "expectedRoute": "rewrite",
+      "reason": "Implicit comparison/ellipsis may be missed by current English rules."
+    },
+    {
+      "id": "D09",
+      "question": "Who should I contact?",
+      "previousTopicKeys": [
+        "CCNU-FAQ-031"
+      ],
+      "expectedRoute": "rewrite",
+      "reason": "Card PIN topic must not drift to an unrelated helpdesk."
+    },
+    {
+      "id": "D10",
+      "question": "Which one?",
+      "previousTopicKeys": [
+        "CCNU-FAQ-004",
+        "CCNU-FAQ-005"
+      ],
+      "expectedRoute": "clarify",
+      "reason": "Multiple plausible referents require semantic clarification; gate only is measured."
+    },
+    {
+      "id": "D11",
+      "question": "Which identification should an external museum visitor bring?",
+      "previousTopicKeys": [],
+      "expectedRoute": "direct",
+      "reason": "Complete independent question."
+    },
+    {
+      "id": "D12",
+      "question": "And on Android?",
+      "previousTopicKeys": [
+        "CCNU-FAQ-026"
+      ],
+      "expectedRoute": "rewrite",
+      "reason": "Platform follow-up to desktop VPN."
+    }
+  ]
+}
